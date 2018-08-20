@@ -1,0 +1,12 @@
+{
+  "apps": [{
+    "name": "limesociety",
+    "script": ".dist/server/index.js",
+    "watch": false,
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "exec_mode": "cluster",
+    "instances": 0
+  }]
+}

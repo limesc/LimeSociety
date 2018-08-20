@@ -1,0 +1,7 @@
+.dist
+.idea
+.next
+.pm2
+.vscode
+node_modules
+uploads
