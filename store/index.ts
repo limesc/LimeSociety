@@ -1,7 +1,15 @@
-import { createStore, applyMiddleware } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
-import thunkMiddleware from 'redux-thunk'
+export const state = () => ({
+  counter: 0
+})
 
-export const configureStore = (reducer, initialState = {}) => {
-  return createStore(reducer, initialState, composeWithDevTools(applyMiddleware(thunkMiddleware)))
+export const mutations = {
+  increment (state) {
+    state.counter ++
+  }
+}
+
+export const actions = {
+  increment (context) {
+    context.commit('increment')
+  }
 }
