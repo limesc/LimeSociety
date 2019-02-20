@@ -1,5 +1,5 @@
 {
-  "extends": "@nuxt/typescript-edge",
+  "extends": "@nuxt/typescript",
   "compilerOptions": {
     "baseUrl": ".",
     "experimentalDecorators": true,
@@ -8,7 +8,7 @@
     "paths": {
       "~/*": ["./*"]
     },
-    "types": ["@types/node", "@nuxt/vue-app-edge"]
+    "types": ["@types/node", "@nuxt/vue-app", "@types/jest"]
   },
   "exclude": [
     ".idea",

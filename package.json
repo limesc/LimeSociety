@@ -12,19 +12,26 @@
     "start": "nuxt-ts start",
     "lint": "tslint --project .",
     "post-update": "yarn upgrade --latest",
-    "prettier": "prettier-tslint"
+    "prettier": "prettier-tslint",
+    "test": "jest"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.6",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "babel-core": "^6.26.3",
+    "jest": "^24.1.0",
     "prettier": "^1.16.4",
     "prettier-tslint": "^0.4.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "ts-jest": "^24.0.0",
     "tslint-config-prettier": "^1.18.0",
-    "tslint-config-standard": "^8.0.1"
+    "tslint-config-standard": "^8.0.1",
+    "vue-jest": "^3.0.3"
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "nuxt-ts-edge": "^2.5.0-25843687.febcd6c5",
+    "nuxt-ts": "^2.4.3",
     "vue-property-decorator": "^7.3.0",
     "vuetify": "^1.5.2",
     "vuetify-loader": "^1.2.1",
