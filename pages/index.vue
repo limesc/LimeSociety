@@ -1,21 +1,14 @@
 <template>
   <div>
-    <v-container
-      overlay
-      img-scr="../images/lime.jpg"
-      fill-height
-      grid-list-md
-      text-xs-center
-      justify-center
-    >
+    <v-container overlay fill-height grid-list-md text-xs-center justify-center>
       <div class="row" style="padding:110px 0px 100px 0px">
         <v-layout fill-height>
           <v-flex xs12>
             <v-card-text class="px=0">
-              <div class="page-heading">
+              <v-page-heading>
                 <h1>Lime Society</h1>
                 <span class="subheading">Challenge the Future with Commitment and Passion</span>
-              </div>
+              </v-page-heading>
             </v-card-text>
           </v-flex>
         </v-layout>
@@ -37,7 +30,7 @@
                 <div class="v-responsive__sizer" style="padding-bottom: 66.7273%;"></div>
                 <div
                   class="v-image__image v-image__image--cover"
-                  style="background-image: url(&quot;https://free-blog.vuetifyjs.com/img/blurcamera.d2d68327.jpg&quot;); background-position: center center;"
+                  style="background-image: url(&quot;https://cdn.pixabay.com/photo/2014/04/17/05/26/teamwork-326160_960_720.jpg&quot;); background-position: center center;"
                 ></div>
                 <div class="v-responsive__content">
                   <div class="layout fill-height align-center pa-3">
@@ -97,7 +90,7 @@
               <div class="v-responsive v-image" style="height: 100%;">
                 <div
                   class="v-image__image v-image__image--cover"
-                  style="background-image: linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)), url(&quot;https://free-blog.vuetifyjs.com/img/autumnclouds.e44135e5.jpg&quot;); background-position: center center;"
+                  style="background-image: linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)), url(&quot;https://vitaldb.net/static/img/home/splash-1.png&quot;); background-position: center center;"
                 ></div>
                 <div class="v-responsive__content">
                   <div class="layout fill-height wrap text-xs-right ma-0">

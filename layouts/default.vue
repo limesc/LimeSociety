@@ -100,6 +100,6 @@ export default class DefaultLayout extends Vue {
 
 <style scoped>
   .title {
-    padding-left: 20px;
+    padding-left: 20px
   }
 </style>

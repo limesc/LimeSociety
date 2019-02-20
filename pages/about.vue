@@ -5,11 +5,10 @@
         <v-layout row wrap>
           <v-flex xs12>
             <v-card-text class="px=0">
-              <div class="page-heading">
+              <v-page-heading>
                 <h1>About Us</h1>
-                <hr class="small">
                 <span class="subheading">Who we are, what we do.</span>
-              </div>
+              </v-page-heading>
             </v-card-text>
           </v-flex>
         </v-layout>
@@ -24,13 +23,7 @@
           <h2 class="section-heading">Founded</h2>
           <p>February 14, 2012</p>
           <h2 class="section-heading">Number of Members</h2>
-          <p>17</p>
-          <h2 class="section-heading">Address</h2>
-          <p>(06199) Room 402, 10-12, Seolleung-ro 72-gil, Gangnam-gu, Seoul, 135-843 Rep. of KOREA</p>
-          <h2 class="section-heading">Contact</h2>
-          <p>
-            <a href="mailto:contact@limesociety.com">contact@limesociety.com</a>
-          </p>
+          <p>17</p>          
           <h2 class="section-heading">History</h2>
           <p>
             <small>2012.02</small> 법인설립

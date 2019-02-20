@@ -5,11 +5,10 @@
         <v-layout row wrap>
           <v-flex xs12>
             <v-card-text class="px=0">
-              <div class="page-heading">
+              <v-page-heading>
                 <h1>blog</h1>
-                <hr class="small">
                 <span class="subheading">News about us</span>
-              </div>
+              </v-page-heading>
             </v-card-text>
           </v-flex>
         </v-layout>
@@ -17,11 +16,34 @@
     </v-container>
 
     <v-container>
-      <v-container>
-        <div class="row">
-          <v-carousel :data="data"></v-carousel>
-        </div>
-      </v-container>
+      <v-carousel>
+        <v-carousel-item v-for="(item,i) in items" :key="i" :src="item.src"></v-carousel-item>
+      </v-carousel>
+    </v-container>
+    <v-container>
+    <v-flex xs12 md3>
+      <v-layout>
+        <v-card>
+          <v-card align="left">
+
+          </v-card>
+        </v-card>
+      </v-layout>    
+    </v-flex>
     </v-container>
   </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      items: [
+        {
+          src:"../images/company.jpg"
+        }
+      ]
+    }
+  }
+}
+</script>
