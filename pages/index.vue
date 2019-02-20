@@ -16,6 +16,7 @@
     </v-container>
 
     <v-container>
+      <img src="~/assets/images/lime.jpg">
       <p class="text-md-center">라임 소사이어티는 다양한 사람들이 모여 때 묻지 않은 색다른 재미를 만들어갑니다.</p>
       <p
         class="text-md-center"
