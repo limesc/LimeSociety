@@ -1,9 +1,9 @@
 <template>
   <v-app>
-    <v-toolbar color="default" fixed="false">
+    <v-toolbar color="default" :fixed="false">
       <v-toolbar-side-icon @click.native.stop="drawer = !drawer" />
       <V-btn flat router nuxt to="/">
-        <image v-bind:src="logo"></image>
+        <image :src="logo"></image>
       </V-btn>
       <v-toolbar-title>
         <strong>Lime Society</strong>

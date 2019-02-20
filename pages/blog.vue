@@ -15,7 +15,7 @@
         </v-layout>
       </div>
     </v-container>
-    
+
     <v-container>
       <v-container>
         <div class="row">

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container fill-height grid-list-md text-xs-center justify-center >
+    <v-container fill-height grid-list-md text-xs-center justify-center>
       <div v-bind:class="row" style="padding:110px 0px 100px 0px">
         <v-layout row wrap>
           <v-flex xs12>
@@ -61,12 +61,12 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   data() {
     return {
       dialog: false
-    };
+    }
   }
-};
+}
 </script>

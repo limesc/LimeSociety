@@ -1,5 +1,5 @@
 {
-  "name": "revuit",
+  "name": "limesociety",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -11,18 +11,22 @@
     "script": "ts-node",
     "start": "nuxt-ts start",
     "lint": "tslint --project .",
-    "post-update": "yarn upgrade --latest"
+    "post-update": "yarn upgrade --latest",
+    "prettier": "prettier-tslint"
   },
   "devDependencies": {
+    "prettier": "^1.16.4",
+    "prettier-tslint": "^0.4.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^8.0.1"
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "nuxt-ts-edge": "^2.5.0-25833609.21e7936e",
+    "nuxt-ts-edge": "^2.5.0-25843687.febcd6c5",
     "vue-property-decorator": "^7.3.0",
-    "vuetify": "^1.5.1",
+    "vuetify": "^1.5.2",
     "vuetify-loader": "^1.2.1",
     "vuex-class": "^0.3.1"
   }

@@ -1,6 +1,18 @@
+# OS generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
 # dotenv
 .env
 .env.production
+
+# jest
+coverage
 
 # Nuxt
 .nuxt/
@@ -14,8 +26,19 @@ yarn-error.log
 # pm2
 .pm2/
 
+# VSCode
+.vscode/
+
+# Vim
+*.swp
+*.swo
+
+# WebStorm
+.idea/
+
 # Custom
 scripts/**/*.*
 !scripts/**/*.ts
 uploads/
 tmp/
+lint.log

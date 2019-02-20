@@ -1,5 +1,5 @@
 <template>
-  <div>    
+  <div>
     <v-container
       overlay
       img-scr="../images/lime.jpg"
@@ -7,8 +7,8 @@
       grid-list-md
       text-xs-center
       justify-center
-      >
-      <div v-bind:class="row" style="padding:110px 0px 100px 0px">
+    >
+      <div class="row" style="padding:110px 0px 100px 0px">
         <v-layout fill-height>
           <v-flex xs12>
             <v-card-text class="px=0">
@@ -143,7 +143,11 @@
                       ></span>
                       <h3 class="title font-weight-bold mb-2">Next Medicine</h3>
                     </div>
-                    <a class="flex align-self-end" href="http://nextmedicine.com/signin" target="_blank">
+                    <a
+                      class="flex align-self-end"
+                      href="http://nextmedicine.com/signin"
+                      target="_blank"
+                    >
                       <v-btn
                         flat
                         router
@@ -201,20 +205,20 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator"
+import { Component, Vue } from 'vue-property-decorator'
+import { mapActions, mapState } from 'vuex'
 
-import HelloWorld from "~/components/HelloWorld.vue"
-import { mapState, mapActions } from "vuex"
+import HelloWorld from '~/components/HelloWorld.vue'
 
 @Component({
   components: {
     HelloWorld
   },
   computed: {
-    ...mapState(["counter"])
+    ...mapState(['counter'])
   },
   methods: {
-    ...mapActions(["increment"])
+    ...mapActions(['increment'])
   }
 })
 export default class AboutPage extends Vue {
@@ -225,7 +229,7 @@ export default class AboutPage extends Vue {
   // fetch(context) is called by the server-side
   // and nuxt before instantiating the component
   fetch({ store }) {
-    store.commit("increment")
+    store.commit('increment')
   }
 }
 </script>
