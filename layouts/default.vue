@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-toolbar color="default" fixed="false">
+    <v-toolbar color="default" :fixed="false">
       <v-toolbar-side-icon @click.native.stop="drawer = !drawer" />
       <V-btn flat router nuxt to="/">
         <image v-bind:src="logo"></image>
@@ -100,6 +100,6 @@ export default class DefaultLayout extends Vue {
 
 <style scoped>
   .title {
-    padding-left: 20px;
+    padding-left: 20px
   }
 </style>
