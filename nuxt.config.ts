@@ -2,11 +2,11 @@
 
 const config = {
   head: {
-    title: 'revuit',
+    title: 'Lime Society',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui' },
-      { hid: 'description', name: 'description', content: 'revuit project' }
+      { hid: 'description', name: 'description', content: 'Lime Society project' }
     ],
     link: [
       { rel: 'shortcut icon', href: '/favicon.ico' },

@@ -5,24 +5,19 @@
       <V-btn flat router nuxt to="/">
         <image :src="logo"></image>
       </V-btn>
-      <v-toolbar-title>
-        <strong>Lime Society</strong>
-      </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
       <v-toobar-items>
-        <v-btn flat router nuxt to="/">HOME</v-btn>
+        <v-btn flat router nuxt to="/">PRODUCTS</v-btn>
       </v-toobar-items>
       <v-toobar-items>
-        <v-btn flat router nuxt to="/about">About</v-btn>
+        <v-btn flat router nuxt to="/">COMPANY</v-btn>
       </v-toobar-items>
       <v-toobar-items>
         <v-btn flat router nuxt to="/blog">BLOG</v-btn>
       </v-toobar-items>
-      <v-toobar-items>
-        <v-btn flat router nuxt to="/contact">CONTACT</v-btn>
-      </v-toobar-items>
+      
     </v-toolbar>
     
     <v-navigation-drawer v-model="drawer" absolute temporary>
@@ -36,8 +31,8 @@
         <v-list-tile router nuxt to="/">
           <v-list-tile-title>HOME</v-list-tile-title>
         </v-list-tile>
-        <v-list-tile router nuxt to="/about">
-          <v-list-tile-title>ABOUT</v-list-tile-title>
+        <v-list-tile router nuxt to="/">
+          <v-list-tile-title>COMPANY</v-list-tile-title>
         </v-list-tile>
         <v-list-tile router nuxt to="/blog">
           <v-list-tile-title>BLOG</v-list-tile-title>
@@ -45,9 +40,7 @@
 
         <v-divider></v-divider>
 
-        <v-list-tile router nuxt to="/contact">
-          <v-list-tile-title>CONTACT</v-list-tile-title>
-        </v-list-tile>
+        
       </v-list>
     </v-navigation-drawer>
 
@@ -92,7 +85,8 @@ export default class DefaultLayout extends Vue {
   data () {
     return {
       drawer: false,
-      logo: '/favicon.ico'
+      logo: '/favicon.ico',
+      row: 1
     }
   }
 }
