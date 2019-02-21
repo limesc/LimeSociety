@@ -325,7 +325,9 @@ import HelloWorld from '~/components/HelloWorld.vue'
 })
 export default class AboutPage extends Vue {
   data() {
-    return {}
+    return {
+      row: 1
+    }
   }
 
   // fetch(context) is called by the server-side
