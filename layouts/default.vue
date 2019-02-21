@@ -2,8 +2,9 @@
   <v-app>
     <v-toolbar color="default" :fixed="false">
       <v-toolbar-side-icon @click.native.stop="drawer = !drawer" />
-      <V-btn flat router nuxt to="/">
-        <image :src="logo"></image>
+      <V-btn flat router nuxt to="/" img src="../assets/static/favicon.ico">
+        
+        <h1>Lime Society</h1>
       </V-btn>
 
       <v-spacer></v-spacer>
