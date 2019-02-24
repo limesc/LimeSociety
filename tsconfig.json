@@ -8,7 +8,9 @@
     "paths": {
       "~/*": ["./*"]
     },
-    "types": ["@types/node", "@nuxt/vue-app", "@types/jest"]
+    "types": ["@types/node", "@nuxt/vue-app", "@types/jest"],
+
+    "plugins": [{ "name": "typescript-tslint-plugin" }]
   },
   "exclude": [
     ".idea",

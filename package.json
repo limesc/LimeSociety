@@ -27,6 +27,7 @@
     "ts-jest": "^24.0.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^8.0.1",
+    "typescript-tslint-plugin": "^0.3.1",
     "vue-jest": "^3.0.3"
   },
   "dependencies": {
