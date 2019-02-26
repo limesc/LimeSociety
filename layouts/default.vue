@@ -1,22 +1,22 @@
 <template>
   <v-app>
-    <v-toolbar color="default" :fixed="false">
+    <v-toolbar color="lime" :fixed="true">
       <v-toolbar-side-icon @click.native.stop="drawer = !drawer" />
-      <V-btn flat router nuxt to="/" img src="../assets/static/favicon.ico">
-        
+      <V-btn flat router nuxt to="/" on:click="main">
+        <v-img src="~/accets/static/favicon.ico"></v-img>
         <h1>Lime Society</h1>
       </V-btn>
 
       <v-spacer></v-spacer>
 
       <v-toobar-items>
-        <v-btn flat router nuxt to="/">PRODUCTS</v-btn>
+        <v-btn flat to="/">PRODUCTS</v-btn>
       </v-toobar-items>
       <v-toobar-items>
-        <v-btn flat router nuxt to="/">COMPANY</v-btn>
+        <v-btn flat nuxt to="/">COMPANY</v-btn>
       </v-toobar-items>
       <v-toobar-items>
-        <v-btn flat router nuxt to="/blog">BLOG</v-btn>
+        <v-btn flat nuxt to="/blog">BLOG</v-btn>
       </v-toobar-items>
       
     </v-toolbar>
@@ -81,13 +81,15 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 
-@Component
+@Component({
+  
+})
+
 export default class DefaultLayout extends Vue {
   data () {
     return {
       drawer: false,
-      logo: '/favicon.ico',
-      row: 1
+      logo: '/favicon.ico'
     }
   }
 }
@@ -97,4 +99,5 @@ export default class DefaultLayout extends Vue {
   .title {
     padding-left: 20px
   }
+  
 </style>
