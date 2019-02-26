@@ -1,9 +1,9 @@
 <template>
   <v-app>
     <v-toolbar color="lime" :fixed="true">
-      <v-toolbar-side-icon @click.native.stop="drawer = !drawer" />
+      <v-toolbar-side-icon @click.native.stop="drawer = !drawer"/>
       <V-btn flat router nuxt to="/" on:click="main">
-        <v-img src="~/accets/static/favicon.ico"></v-img>
+        <v-img src="~/assets/static/favicon.ico"></v-img>
         <h1>Lime Society</h1>
       </V-btn>
 
@@ -18,9 +18,8 @@
       <v-toobar-items>
         <v-btn flat nuxt to="/blog">BLOG</v-btn>
       </v-toobar-items>
-      
     </v-toolbar>
-    
+
     <v-navigation-drawer v-model="drawer" absolute temporary>
       <v-title>
         <h1>Lime Society</h1>
@@ -40,39 +39,19 @@
         </v-list-tile>
 
         <v-divider></v-divider>
-
-        
       </v-list>
     </v-navigation-drawer>
 
     <main>
       <v-content>
-        <v-container
-          fluid
-          height="64px"
-        >
-          <nuxt />
+        <v-container fluid height="64px">
+          <nuxt/>
         </v-container>
       </v-content>
     </main>
-    <v-footer
-      fixed
-      bottom="0"
-      color="lime"
-    >
-      <v-layout
-        justify-center
-        row
-        wrap
-      >
-      <v-flex
-        py-12
-        text-xs-center
-        white--text
-        xs12
-        >
-        &copy;Copyright © Lime Society Co., Ltd. 2019
-        </v-flex>
+    <v-footer fixed bottom="0" color="lime">
+      <v-layout justify-center row wrap>
+        <v-flex py-12 text-xs-center white--text xs12>&copy;Copyright © Lime Society Co., Ltd. 2019</v-flex>
       </v-layout>
     </v-footer>
   </v-app>
@@ -81,12 +60,9 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 
-@Component({
-  
-})
-
+@Component({})
 export default class DefaultLayout extends Vue {
-  data () {
+  data() {
     return {
       drawer: false,
       logo: '/favicon.ico'
@@ -96,8 +72,7 @@ export default class DefaultLayout extends Vue {
 </script>
 
 <style scoped>
-  .title {
-    padding-left: 20px
-  }
-  
+.title {
+  padding-left: 20px;
+}
 </style>
