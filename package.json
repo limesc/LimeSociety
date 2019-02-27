@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "nuxt-ts": "^2.4.3",
+    "nuxt-ts": "^2.4.5",
     "vue-property-decorator": "^7.3.0",
     "vuetify": "^1.5.2",
     "vuetify-loader": "^1.2.1",
