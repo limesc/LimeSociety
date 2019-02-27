@@ -1,27 +1,26 @@
 <template>
   <v-app>
-    <v-toolbar color="lime" :fixed="true">
-      <v-toolbar-side-icon @click.native.stop="drawer = !drawer" />
+    <v-toolbar flat color="white" :fixed="true">
+      <!-- <v-toolbar-side-icon @click.native.stop="drawer = !drawer" /> -->
       <V-btn flat router nuxt to="/" on:click="main">
-        <v-img src="~/accets/static/favicon.ico"></v-img>
-        <h1>Lime Society</h1>
+        <img src="~/assets/images/logo.jpg">
       </V-btn>
 
       <v-spacer></v-spacer>
 
       <v-toobar-items>
-        <v-btn flat to="/">PRODUCTS</v-btn>
+        <v-btn flat depressed nuxt to="/">PRODUCTS</v-btn>
       </v-toobar-items>
       <v-toobar-items>
-        <v-btn flat nuxt to="/">COMPANY</v-btn>
+        <v-btn flat depressed nuxt to="/">COMPANY</v-btn>
       </v-toobar-items>
       <v-toobar-items>
-        <v-btn flat nuxt to="/blog">BLOG</v-btn>
+        <v-btn flat depressed nuxt to="/blog">BLOG</v-btn>
       </v-toobar-items>
       
     </v-toolbar>
     
-    <v-navigation-drawer v-model="drawer" absolute temporary>
+    <!-- <v-navigation-drawer v-model="drawer" absolute temporary>
       <v-title>
         <h1>Lime Society</h1>
       </v-title>
@@ -43,7 +42,7 @@
 
         
       </v-list>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
 
     <main>
       <v-content>
@@ -56,9 +55,7 @@
       </v-content>
     </main>
     <v-footer
-      fixed
-      bottom="0"
-      color="lime"
+      color="defal"
     >
       <v-layout
         justify-center
