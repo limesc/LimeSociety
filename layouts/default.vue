@@ -4,6 +4,7 @@
       <!-- <v-toolbar-side-icon @click.native.stop="drawer = !drawer" /> -->
       <V-btn flat router nuxt to="/" on:click="main">
         <img src="~/assets/images/logo.jpg">
+
       </V-btn>
 
       <v-spacer></v-spacer>
@@ -17,8 +18,8 @@
       <v-toobar-items>
         <v-btn flat depressed nuxt to="/blog">BLOG</v-btn>
       </v-toobar-items>
-      
     </v-toolbar>
+
     
     <!-- <v-navigation-drawer v-model="drawer" absolute temporary>
       <v-title>
@@ -39,21 +40,17 @@
         </v-list-tile>
 
         <v-divider></v-divider>
-
-        
       </v-list>
     </v-navigation-drawer> -->
 
     <main>
       <v-content>
-        <v-container
-          fluid
-          height="64px"
-        >
-          <nuxt />
+        <v-container fluid height="64px">
+          <nuxt/>
         </v-container>
       </v-content>
     </main>
+
     <v-footer
       color="defal"
     >
@@ -70,6 +67,7 @@
         >
         &copy;Copyright © Lime Society Co., Ltd. 2019
         </v-flex>
+
       </v-layout>
     </v-footer>
   </v-app>
@@ -78,12 +76,9 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 
-@Component({
-  
-})
-
+@Component({})
 export default class DefaultLayout extends Vue {
-  data () {
+  data() {
     return {
       drawer: false,
       logo: '/favicon.ico'
@@ -93,8 +88,7 @@ export default class DefaultLayout extends Vue {
 </script>
 
 <style scoped>
-  .title {
-    padding-left: 20px
-  }
-  
+.title {
+  padding-left: 20px;
+}
 </style>

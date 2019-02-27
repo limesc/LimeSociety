@@ -1,10 +1,9 @@
 <template>  
   <div id="app">
     <v-app light>
-      
       <v-content>
         <section>
-          <v-parallax src="~/assets/images/lime.jpg" height="600">
+          <v-parallax src="https://cdn.pixabay.com/photo/2017/10/02/21/56/lemon-2810490_960_720.jpg" height="600">
             <v-layout column align-center justify-center class="white--text">
               <img src="~/assets/images/logo.jpg" alt="Vuetify.js" height="200">
               <h1 class="white--text mb-2 display-1 text-xs-center">Challenge the Future with Commitment and Passion</h1>
@@ -153,7 +152,7 @@
         </section>
 
         <section>
-          <v-parallax src="~/assets/images/lime2.jpg" height="380">
+          <v-parallax src="https://cdn.pixabay.com/photo/2017/10/02/21/56/lemon-2810490_960_720.jpg" height="380">
             <v-layout column align-center justify-center>
               <div class="headline white--text mb-3 text-xs-center">COMPANY</div>
               <em>Kick-start your application today</em>
@@ -450,7 +449,8 @@
     </section>-->
   </div>
 </template>
-
+<script src="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"></script>
+<script src="https://unpkg.com/vuetify/dist/vuetify.min.css"></script>
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
 
@@ -466,9 +466,8 @@ import HelloWorld from '~/components/HelloWorld.vue'
     title: 'Lime Society',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
-      { name: 'keywords', content: 'keyword 1, keyword 2'},
-      { hid: 'description', name: 'description', content: 'This is the generic description.'}
+      { name: 'viewport' },
+      { content: 'width=device-width, initial-scale=1.0' }     
     ],
   },
   components: {
@@ -488,7 +487,6 @@ export default class AboutPage extends Vue {
       row: 1
     }
   }
-  
   // fetch(context) is called by the server-side
   // and nuxt before instantiating the component
   fetch({ store }) {
