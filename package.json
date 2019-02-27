@@ -35,7 +35,7 @@
     "nuxt-ts": "^2.4.5",
     "vue-cli": "^2.9.6",
     "vue-property-decorator": "^7.3.0",
-    "vuetify": "^1.5.2",
+    "vuetify": "^1.5.3",
     "vuetify-loader": "^1.2.1",
     "vuex-class": "^0.3.1"
   }
