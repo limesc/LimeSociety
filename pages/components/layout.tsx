@@ -233,34 +233,14 @@ class Layout extends React.Component<
                   <ListItemText primary='Exercises' />
                 </ListItem>
               </Link>
-              <Link href='/viewer'>
+              <Link href='/mobx-store'>
                 <ListItem button>
                   <ListItemIcon className={classes.drawerListItemIcon}>
                     <LayersIcon />
                   </ListItemIcon>
-                  <ListItemText primary='Viewer' />
+                  <ListItemText primary='Mobx Store' />
                 </ListItem>
               </Link>
-              {!store.viewer && (
-                <Link href='/login'>
-                  <ListItem button>
-                    <ListItemIcon className={classes.drawerListItemIcon}>
-                      <LayersIcon />
-                    </ListItemIcon>
-                    <ListItemText primary='Login' />
-                  </ListItem>
-                </Link>
-              )}
-              {store.viewer && (
-                <Link href='/logout'>
-                  <ListItem button>
-                    <ListItemIcon className={classes.drawerListItemIcon}>
-                      <LayersIcon />
-                    </ListItemIcon>
-                    <ListItemText primary='Logout' />
-                  </ListItem>
-                </Link>
-              )}
             </List>
             <Divider />
             <List>
