@@ -30,4 +30,3 @@ yarn start
 yarn export
 yarn serve
 ```
-
