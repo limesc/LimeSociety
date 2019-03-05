@@ -34,7 +34,7 @@ class Page extends React.Component<PageProps> {
             title: pageTitle
           }}
         />
-        <div className={classes.root}>
+        {/* <div className={classes.root}>
           <Typography variant='h4' gutterBottom>
             Material-UI
           </Typography>
@@ -49,7 +49,7 @@ class Page extends React.Component<PageProps> {
           <Button variant='contained' color='primary'>
             Do nothing button
           </Button>
-        </div>
+        </div> */}
       </>
     )
   }

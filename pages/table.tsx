@@ -47,7 +47,7 @@ const SimpleTable = withStyles(simpleTableStyles)(
 
       return (
         <Paper className={classes.root}>
-          <Table className={classes.table}>
+          {/* <Table className={classes.table}>
             <TableHead>
               <TableRow>
                 <TableCell>Dessert (100g serving)</TableCell>
@@ -70,7 +70,7 @@ const SimpleTable = withStyles(simpleTableStyles)(
                 </TableRow>
               ))}
             </TableBody>
-          </Table>
+          </Table> */}
         </Paper>
       )
     }
@@ -102,7 +102,7 @@ class Page extends React.Component<PageProps> {
             title: pageTitle
           }}
         />
-        <Typography
+        {/* <Typography
           variant='h4'
           gutterBottom
           component={'h2' as any}
@@ -112,7 +112,7 @@ class Page extends React.Component<PageProps> {
         </Typography>
         <div className={classes.tableContainer}>
           <SimpleTable />
-        </div>
+        </div> */}
       </>
     )
   }

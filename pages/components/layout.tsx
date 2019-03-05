@@ -262,8 +262,8 @@ class Layout extends React.Component<
                 </Link>
               )}
             </List>
-            <Divider />
-            <List>
+            {/* <Divider /> */}
+            {/* <List>
               <ListItem button>
                 <ListItemIcon className={classes.drawerListItemIcon}>
                   <AssignmentIcon />
@@ -282,7 +282,7 @@ class Layout extends React.Component<
                 </ListItemIcon>
                 <ListItemText primary='Year-end sale' />
               </ListItem>
-            </List>
+            </List> */}
           </Drawer>
           <main className={classes.content}>
             <div className={classes.appBarSpacer} />
@@ -350,3 +350,5 @@ export const withLayout = (layoutProps: any = {}) => ComposedComponent => {
 
   return HOC
 }
+
+export default withStyles(styles)(Layout);
