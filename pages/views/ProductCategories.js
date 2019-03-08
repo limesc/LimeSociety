@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import LayoutBody from '../components/LayoutBody';
-import Typography from '../components/Typography';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import ButtonBase from '@material-ui/core/ButtonBase'
+import LayoutBody from '../components/LayoutBody'
+import Typography from '../components/Typography'
 
 const styles = theme => ({
   root: {
@@ -83,70 +83,41 @@ const styles = theme => ({
   },
 });
 
-function ProductCategories(props) {
+function ProductCategories(props) {   // anchor id 지정 하기
   const { classes } = props;
 
   const images = [
     {
       url:
-        'https://images.unsplash.com/photo-1534081333815-ae5019106622?auto=format&fit=crop&w=400&q=80',
-      title: 'Snorkeling',
+        'https://cdn.pixabay.com/photo/2013/07/18/10/59/heartbeat-163709_960_720.jpg',
+      title: 'Medical DB',
       width: '40%',
+      
     },
     {
       url:
-        'https://images.unsplash.com/photo-1531299204812-e6d44d9a185c?auto=format&fit=crop&w=400&q=80',
-      title: 'Massage',
-      width: '20%',
+        'https://vitaldb.net/static/img/home/splash-1.png',
+      title: 'Vital DB',
+      width: '60%',
     },
     {
       url:
         'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=400&q=80',
-      title: 'Hiking',
-      width: '40%',
+      title: 'Next Medicine',
+      width: '60%',
     },
     {
       url:
         'https://images.unsplash.com/photo-1453747063559-36695c8771bd?auto=format&fit=crop&w=400&q=80',
-      title: 'Tour',
-      width: '38%',
-    },
-    {
-      url:
-        'https://images.unsplash.com/photo-1523309996740-d5315f9cc28b?auto=format&fit=crop&w=400&q=80',
-      title: 'Gastronomy',
-      width: '38%',
-    },
-    {
-      url:
-        'https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=400&q=80',
-      title: 'Shopping',
-      width: '24%',
-    },
-    {
-      url:
-        'https://images.unsplash.com/photo-1506941433945-99a2aa4bd50a?auto=format&fit=crop&w=400&q=80',
-      title: 'Walking',
+      title: 'cPMTB',
       width: '40%',
-    },
-    {
-      url:
-        'https://images.unsplash.com/photo-1533727937480-da3a97967e95?auto=format&fit=crop&w=400&q=80',
-      title: 'Fitness',
-      width: '20%',
-    },
-    {
-      url:
-        'https://images.unsplash.com/photo-1518136247453-74e7b5265980?auto=format&fit=crop&w=400&q=80',
-      title: 'Reading',
-      width: '40%',
-    },
+    }
   ];
 
   return (
     <LayoutBody className={classes.root} component="section" width="large">
-      <Typography variant="h4" marked="center" align="center" component="h2">
-        For all tastes and all desires
+      <Typography variant="h4" align="center" component="h2">
+        products
       </Typography>
       <div className={classes.images}>
         {images.map(image => (
@@ -186,4 +157,4 @@ ProductCategories.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ProductCategories);
+export default withStyles(styles)(ProductCategories)

@@ -1,11 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
-import LayoutBody from '../components/LayoutBody';
-import Button from '../components/Button';
-import Typography from '../components/Typography';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import Grid from '@material-ui/core/Grid'
+import Link from '@material-ui/core/Link'
+import LayoutBody from '../components/LayoutBody'
+import Button from '../components/Button'
+import Typography from '../components/Typography'
+import { withBaseIcon } from 'react-icons-kit'
+import { ic_group } from 'react-icons-kit/md/ic_group'
 
 const styles = theme => ({
   root: {
@@ -50,84 +52,74 @@ const styles = theme => ({
   button: {
     marginTop: theme.spacing.unit * 8,
   },
-});
+})
 
 function ProductHowItWorks(props) {
-  const { classes } = props;
-
+  const { classes } = props
+  const SideIconContainer = withBaseIcon({ size: 64, style: {color: '#EF233C'}})
+  
   return (
     <section className={classes.root}>
-      <LayoutBody className={classes.layoutBody} width="large">
-        <img
-          src="/static/themes/onepirate/productCurvyLines.png"
-          className={classes.curvyLines}
-          alt="curvy lines"
-        />
-        <Typography variant="h4" marked="center" className={classes.title} component="h2">
-          How it works
+      <LayoutBody className={classes.layoutBody} width="large">        
+        <Typography variant="h4" className={classes.title} component="h2">
+          company
         </Typography>
         <div>
           <Grid container spacing={5}>
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
-                <div className={classes.number}>1.</div>
-                <img
-                  src="/static/themes/onepirate/productHowItWorks1.svg"
-                  alt="suitcase"
-                  className={classes.image}
-                />
+                <Typography variant="h6" align="center">
+                  team
+                </Typography>
+                <container xs={12} style={{ height: '25px' }}></container>
                 <Typography variant="h5" align="center">
-                  Appointment every Wednesday 9am.
+                  February 14, 2012
+                </Typography>
+                <Typography variant="h5" align="center">
+                  Number of Members 8
+                </Typography>
+              </div>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <div className={classes.item}>  
+                <Typography variant="h6" align="center">
+                  location_city
+                </Typography>
+                <container xs={12} style={{ height: '25px' }}></container>
+                <Typography variant="h5" align="center">
+                  803 ho - 8F, 311
+                </Typography>
+                <Typography variant="h5" align="center">
+                  Teheran-ro   Gangnam-gu Seoul
+                </Typography>
+                <Typography variant="h5" align="center">
+                  Republic of Korea
                 </Typography>
               </div>
             </Grid>
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
-                <div className={classes.number}>2.</div>
-                <img
-                  src="/static/themes/onepirate/productHowItWorks2.svg"
-                  alt="graph"
-                  className={classes.image}
-                />
-                <Typography variant="h5" align="center">
-                  First come, first served. Our offers are in limited quantities, so be quick.
+                <Typography variant="h6" align="center">
+                  contact
                 </Typography>
-              </div>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <div className={classes.item}>
-                <div className={classes.number}>3.</div>
-                <img
-                  src="/static/themes/onepirate/productHowItWorks3.svg"
-                  alt="clock"
-                  className={classes.image}
-                />
+                <container xs={12} style={{ height: '25px' }}></container>
                 <Typography variant="h5" align="center">
-                  {'New offers every week. New experiences, new surprises. '}
-                  {'Your Sundays will no longer be alike.'}
+                  contact@limesociety.com
+                </Typography>
+                <Typography variant="h5" align="center">
+                  +82-70-4129-0214
                 </Typography>
               </div>
             </Grid>
           </Grid>
         </div>
-        <Button
-          color="secondary"
-          size="large"
-          variant="contained"
-          className={classes.button}
-          component={linkProps => (
-            <Link {...linkProps} href="/premium-themes/onepirate/sign-up" variant="button" />
-          )}
-        >
-          Get started
-        </Button>
       </LayoutBody>
     </section>
-  );
+  )
 }
 
 ProductHowItWorks.propTypes = {
   classes: PropTypes.object.isRequired,
-};
+}
 
-export default withStyles(styles)(ProductHowItWorks);
+export default withStyles(styles)(ProductHowItWorks)

@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import { withStyles } from '@material-ui/core/styles';
-import LayoutBody from '../components/LayoutBody';
+import React from 'react'
+import PropTypes from 'prop-types'
+import clsx from 'clsx'
+import { withStyles } from '@material-ui/core/styles'
+import LayoutBody from '../components/LayoutBody'
 
 const styles = theme => ({
   root: {
@@ -65,4 +65,4 @@ ProductHeroLayout.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ProductHeroLayout);
+export default withStyles(styles)(ProductHeroLayout)

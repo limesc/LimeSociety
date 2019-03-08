@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import LayoutBody from '../components/LayoutBody';
-import Paper from '../components/Paper';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import LayoutBody from '../components/LayoutBody'
+import Paper from '../components/Paper'
 
 const styles = theme => ({
   root: {
@@ -16,7 +16,7 @@ const styles = theme => ({
       padding: theme.spacing(10, 8),
     },
   },
-});
+})
 
 function AppForm(props) {
   const { children, classes } = props;
@@ -33,6 +33,6 @@ function AppForm(props) {
 AppForm.propTypes = {
   children: PropTypes.node.isRequired,
   classes: PropTypes.object.isRequired,
-};
+}
 
-export default withStyles(styles)(AppForm);
+export default withStyles(styles)(AppForm)

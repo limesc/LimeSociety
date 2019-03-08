@@ -1,18 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Link from '@material-ui/core/Link';
-import Button from '../components/Button';
-import Typography from '../components/Typography';
-import ProductHeroLayout from './ProductHeroLayout';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import Link from '@material-ui/core/Link'
+import Button from '../components/Button'
+import Typography from '../components/Typography'
+import ProductHeroLayout from './ProductHeroLayout'
 
+//  anchor id 지정 하기
 const backgroundImage =
-  'https://images.unsplash.com/photo-1534854638093-bada1813ca19?auto=format&fit=crop&w=1400&q=80';
+  'https://cdn.pixabay.com/photo/2018/05/17/09/04/american-3408110_960_720.jpg'
 
 const styles = theme => ({
   background: {
     backgroundImage: `url(${backgroundImage})`,
-    backgroundColor: '#7fc7d9', // Average color of the background image.
+    backgroundColor: '#7fc7d9',
     backgroundPosition: 'center',
   },
   button: {
@@ -28,7 +29,7 @@ const styles = theme => ({
   more: {
     marginTop: theme.spacing.unit * 2,
   },
-});
+})
 
 function ProductHero(props) {
   const { classes } = props;
@@ -37,12 +38,11 @@ function ProductHero(props) {
     <ProductHeroLayout backgroundClassName={classes.background}>
       {/* Increase the network loading priority of the background image. */}
       <img style={{ display: 'none' }} src={backgroundImage} alt="" />
-      <Typography color="inherit" align="center" variant="h2" marked="center">
-        Upgrade your Sundays
+      <Typography color="inherit" align="center" variant="h2">
+        Challenge the Future with Commitment and Passion
       </Typography>
-      <Typography color="inherit" align="center" variant="h5" className={classes.h5}>
-        Enjoy secret offers up to -70% off the best luxury hotels every Sunday.
-      </Typography>
+      
+      <container xs={12} style={{ height: '75px' }}></container>
       <Button
         color="secondary"
         variant="contained"
@@ -52,11 +52,8 @@ function ProductHero(props) {
           <Link {...linkProps} href="/" variant="button" />
         )}
       >
-        Register
+        tell me more
       </Button>
-      <Typography variant="body2" color="inherit" className={classes.more}>
-        Discover the experience
-      </Typography>
     </ProductHeroLayout>
   );
 }
@@ -65,4 +62,4 @@ ProductHero.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ProductHero);
+export default withStyles(styles)(ProductHero)

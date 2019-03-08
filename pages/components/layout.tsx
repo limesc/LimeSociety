@@ -201,22 +201,6 @@ class Layout extends React.Component<
                   <ListItemText primary='Dashboard' />
                 </ListItem>
               </Link>
-              <Link href='/about'>
-                <ListItem button>
-                  <ListItemIcon className={classes.drawerListItemIcon}>
-                    <ShoppingCartIcon />
-                  </ListItemIcon>
-                  <ListItemText primary='About' />
-                </ListItem>
-              </Link>
-              <Link href='/table'>
-                <ListItem button>
-                  <ListItemIcon className={classes.drawerListItemIcon}>
-                    <PeopleIcon />
-                  </ListItemIcon>
-                  <ListItemText primary='Table' />
-                </ListItem>
-              </Link>
               <Link href='/form'>
                 <ListItem button>
                   <ListItemIcon className={classes.drawerListItemIcon}>
@@ -225,44 +209,7 @@ class Layout extends React.Component<
                   <ListItemText primary='Form' />
                 </ListItem>
               </Link>
-              <Link href='/exercises'>
-                <ListItem button>
-                  <ListItemIcon className={classes.drawerListItemIcon}>
-                    <PeopleIcon />
-                  </ListItemIcon>
-                  <ListItemText primary='Exercises' />
-                </ListItem>
-              </Link>
-              <Link href='/mobx-store'>
-                <ListItem button>
-                  <ListItemIcon className={classes.drawerListItemIcon}>
-                    <LayersIcon />
-                  </ListItemIcon>
-                  <ListItemText primary='Mobx Store' />
-                </ListItem>
-              </Link>
             </List>
-            {/* <Divider /> */}
-            {/* <List>
-              <ListItem button>
-                <ListItemIcon className={classes.drawerListItemIcon}>
-                  <AssignmentIcon />
-                </ListItemIcon>
-                <ListItemText primary='Current month' />
-              </ListItem>
-              <ListItem button>
-                <ListItemIcon className={classes.drawerListItemIcon}>
-                  <AssignmentIcon />
-                </ListItemIcon>
-                <ListItemText primary='Last quarter' />
-              </ListItem>
-              <ListItem button>
-                <ListItemIcon className={classes.drawerListItemIcon}>
-                  <AssignmentIcon />
-                </ListItemIcon>
-                <ListItemText primary='Year-end sale' />
-              </ListItem>
-            </List> */}
           </Drawer>
           <main className={classes.content}>
             <div className={classes.appBarSpacer} />

@@ -1,9 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
-import LayoutBody from '../components/LayoutBody';
-import Typography from '../components/Typography';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Button from '@material-ui/core/Button'
+import { withStyles } from '@material-ui/core/styles'
+import LayoutBody from '../components/LayoutBody'
+import Typography from '../components/Typography'
+import { Icon } from '@material-ui/core'
 
 const styles = theme => ({
   root: {
@@ -34,20 +35,19 @@ function ProductSmokingHero(props) {
   return (
     <LayoutBody className={classes.root} component="section">
       <Button className={classes.button}>
-        <Typography variant="h4" component="span">
-          Got any questions? Need help?
+        <Typography variant="h6" component="span">
+          go to blog
         </Typography>
       </Button>
-      <Typography variant="subtitle1" className={classes.link}>
+      {/* <Typography variant="subtitle1" className={classes.link}>
         We are here to help. Get in touch!
-      </Typography>
-      <img src="/static/themes/onepirate/producBuoy.svg" className={classes.buoy} alt="buoy" />
+      </Typography> */}      
     </LayoutBody>
   );
 }
 
 ProductSmokingHero.propTypes = {
   classes: PropTypes.object.isRequired,
-};
+}
 
-export default withStyles(styles)(ProductSmokingHero);
+export default withStyles(styles)(ProductSmokingHero)
