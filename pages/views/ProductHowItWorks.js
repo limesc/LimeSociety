@@ -6,13 +6,15 @@ import Link from '@material-ui/core/Link'
 import LayoutBody from '../components/LayoutBody'
 import Button from '../components/Button'
 import Typography from '../components/Typography'
-import { withBaseIcon } from 'react-icons-kit'
-import { ic_group } from 'react-icons-kit/md/ic_group'
+import { Icon, withBaseIcon } from 'react-icons-kit'
+import {personStalker} from 'react-icons-kit/ionicons/personStalker'
+import {androidPin} from 'react-icons-kit/ionicons/androidPin'
+import {ic_phone} from 'react-icons-kit/md/ic_phone'
 
 const styles = theme => ({
   root: {
     display: 'flex',
-    backgroundColor: theme.palette.secondary.light,
+    backgroundColor: '#FBFBEF',
     overflow: 'hidden',
   },
   layoutBody: {
@@ -30,7 +32,7 @@ const styles = theme => ({
     padding: theme.spacing.unit * (0, 5),
   },
   title: {
-    marginBottom: theme.spacing.unit * 14,
+    marginBottom: theme.spacing.unit * 7,
   },
   number: {
     fontSize: 24,
@@ -56,22 +58,24 @@ const styles = theme => ({
 
 function ProductHowItWorks(props) {
   const { classes } = props
-  const SideIconContainer = withBaseIcon({ size: 64, style: {color: '#EF233C'}})
   
   return (
     <section className={classes.root}>
       <LayoutBody className={classes.layoutBody} width="large">        
-        <Typography variant="h4" className={classes.title} component="h2">
+        <Typography variant="h3" className={classes.title} component="h6">
           company
         </Typography>
         <div>
           <Grid container spacing={5}>
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
+              <div style={{ color: '#D8F781' }}>
+                <Icon size={64} icon={personStalker}/>
+              </div>
                 <Typography variant="h6" align="center">
                   team
                 </Typography>
-                <container xs={12} style={{ height: '25px' }}></container>
+                <container xs={12} style={{ height: '15px' }}></container>
                 <Typography variant="h5" align="center">
                   February 14, 2012
                 </Typography>
@@ -81,13 +85,16 @@ function ProductHowItWorks(props) {
               </div>
             </Grid>
             <Grid item xs={12} md={4}>
-              <div className={classes.item}>  
+              <div className={classes.item}>
+                <div style={{ color: '#D8F781' }}>
+                  <Icon size={64} icon={androidPin}/>
+                </div>
                 <Typography variant="h6" align="center">
-                  location_city
+                  location
                 </Typography>
-                <container xs={12} style={{ height: '25px' }}></container>
+                <container xs={12} style={{ height: '15px' }}></container>
                 <Typography variant="h5" align="center">
-                  803 ho - 8F, 311
+                  Room 803 - 8F, 311
                 </Typography>
                 <Typography variant="h5" align="center">
                   Teheran-ro   Gangnam-gu Seoul
@@ -99,10 +106,13 @@ function ProductHowItWorks(props) {
             </Grid>
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
+                <div style={{ color: '#D8F781' }}>
+                  <Icon size={64} icon={ic_phone}/>
+                </div>
                 <Typography variant="h6" align="center">
                   contact
                 </Typography>
-                <container xs={12} style={{ height: '25px' }}></container>
+                <container xs={12} style={{ height: '15px' }}></container>
                 <Typography variant="h5" align="center">
                   contact@limesociety.com
                 </Typography>

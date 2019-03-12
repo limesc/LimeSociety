@@ -6,7 +6,6 @@ import Button from '../components/Button'
 import Typography from '../components/Typography'
 import ProductHeroLayout from './ProductHeroLayout'
 
-//  anchor id 지정 하기
 const backgroundImage =
   'https://cdn.pixabay.com/photo/2018/05/17/09/04/american-3408110_960_720.jpg'
 
@@ -38,13 +37,16 @@ function ProductHero(props) {
     <ProductHeroLayout backgroundClassName={classes.background}>
       {/* Increase the network loading priority of the background image. */}
       <img style={{ display: 'none' }} src={backgroundImage} alt="" />
-      <Typography color="inherit" align="center" variant="h2">
-        Challenge the Future with Commitment and Passion
+      <Typography color="inherit" align="center" variant="h1">
+        Challenge the Future
+      </Typography>
+      <Typography color="inherit" align="center" variant="h3">
+        with Commitment and Passion
       </Typography>
       
       <container xs={12} style={{ height: '75px' }}></container>
       <Button
-        color="secondary"
+        // color="secondary"
         variant="contained"
         size="large"
         className={classes.button}

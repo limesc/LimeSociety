@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles'
 import ButtonBase from '@material-ui/core/ButtonBase'
 import LayoutBody from '../components/LayoutBody'
 import Typography from '../components/Typography'
+import { Link, Button } from '@material-ui/core';
 
 const styles = theme => ({
   root: {
@@ -81,9 +82,12 @@ const styles = theme => ({
     left: 'calc(50% - 9px)',
     transition: theme.transitions.create('opacity'),
   },
-});
+  hrefs: {
 
-function ProductCategories(props) {   // anchor id 지정 하기
+  }
+})
+
+function ProductCategories(props) {
   const { classes } = props;
 
   const images = [
@@ -92,7 +96,6 @@ function ProductCategories(props) {   // anchor id 지정 하기
         'https://cdn.pixabay.com/photo/2013/07/18/10/59/heartbeat-163709_960_720.jpg',
       title: 'Medical DB',
       width: '40%',
-      
     },
     {
       url:
@@ -102,7 +105,7 @@ function ProductCategories(props) {   // anchor id 지정 하기
     },
     {
       url:
-        'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=400&q=80',
+        'https://cdn.pixabay.com/photo/2019/01/28/10/22/america-3960037_960_720.jpg',
       title: 'Next Medicine',
       width: '60%',
     },
@@ -112,11 +115,30 @@ function ProductCategories(props) {   // anchor id 지정 하기
       title: 'cPMTB',
       width: '40%',
     }
-  ];
+  ]
 
+  const hrefs = [
+    {
+      title: 'Medical DB',
+      href: ''
+    },
+    {
+      title: 'Vital DB',
+      href: 'https://vitaldb.net/'
+    },
+    {
+      title: 'Next Medicine',
+      href: 'http://nextmedicine.com/signin'
+    },
+    {
+      title: 'cPMTB',
+      href: ''
+    }
+  ]
+  
   return (
     <LayoutBody className={classes.root} component="section" width="large">
-      <Typography variant="h4" align="center" component="h2">
+      <Typography variant="h3" align="center" component="h6">
         products
       </Typography>
       <div className={classes.images}>
@@ -127,7 +149,16 @@ function ProductCategories(props) {   // anchor id 지정 하기
             style={{
               width: image.width,
             }}
-          >
+            href={hrefs}
+            // title="Vital DB"
+            // href="https://vitaldb.net/"
+            // target="_blank"
+            // rel="noopener"
+            // title="Next Medicine"
+            // href="http://nextmedicine.com/signin"
+            // target="_blank"
+            // rel="noopener"
+          >            
             <div
               className={classes.imageSrc}
               style={{
@@ -150,11 +181,11 @@ function ProductCategories(props) {   // anchor id 지정 하기
         ))}
       </div>
     </LayoutBody>
-  );
+  )
 }
 
 ProductCategories.propTypes = {
   classes: PropTypes.object.isRequired,
-};
+}
 
 export default withStyles(styles)(ProductCategories)

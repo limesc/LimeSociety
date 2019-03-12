@@ -5,18 +5,17 @@ import { withStyles } from '@material-ui/core/styles'
 import Link from '@material-ui/core/Link'
 import AppBar from '../components/AppBar'
 import Toolbar, { styles as toolbarStyles } from '../components/Toolbar'
-import { autorun } from 'mobx';
 
 const styles = theme => ({
   title: {
-    fontSize: 30,
+    fontSize: 25,
   },
   placeholder: toolbarStyles(theme).root,
   toolbar: {
     justifyContent: 'space-between',
   },
   left: {
-    marginLeft: 'auto',
+    flex: 1,
   },
   leftLinkActive: {
     color: theme.palette.common.white,
@@ -32,7 +31,7 @@ const styles = theme => ({
     marginLeft: theme.spacing.unit * 3,
   },
   linkSecondary: {
-    color: theme.palette.secondary.main,
+    color: theme.palette.main,
   },
 })
 
@@ -43,15 +42,14 @@ function AppAppBar(props) {
     <div>
       <AppBar position="fixed">
         <Toolbar className={classes.toolbar}>
-          <div className={classes.left} />
           <Link
-            variant="h6"
+            variant="h5"
             underline="none"
             color="inherit"
             className={classes.title}
             href="/"
           >
-            {'Lime Sciety'}
+            {'Lime Society'}
           </Link>
           <div className={classes.right}>
             <Link
@@ -66,7 +64,7 @@ function AppAppBar(props) {
             <Link
               variant="h6"
               underline="none"
-              className={clsx(classes.rightLink, classes.linkSecondary)}
+              className={classes.rightLink}
               href="/"
             >
               {'blog'}
