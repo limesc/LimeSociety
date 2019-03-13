@@ -16,7 +16,7 @@ const styles = theme => ({
     backgroundPosition: 'center',
   },
   button: {
-    minWidth: 200,
+    minWidth: 250,
   },
   h5: {
     marginBottom: theme.spacing.unit *4,
@@ -37,7 +37,7 @@ function ProductHero(props) {
     <ProductHeroLayout backgroundClassName={classes.background}>
       {/* Increase the network loading priority of the background image. */}
       <img style={{ display: 'none' }} src={backgroundImage} alt="" />
-      <Typography color="inherit" align="center" variant="h1">
+      <Typography color="inherit" align="center" variant="h1" style={{marginBottom: '25px'}}>
         Challenge the Future
       </Typography>
       <Typography color="inherit" align="center" variant="h3">
@@ -54,14 +54,14 @@ function ProductHero(props) {
           <Link {...linkProps} href="/" variant="button" />
         )}
       >
-        tell me more
+        Tell Me More
       </Button>
     </ProductHeroLayout>
-  );
+  )
 }
 
 ProductHero.propTypes = {
   classes: PropTypes.object.isRequired,
-};
+}
 
 export default withStyles(styles)(ProductHero)

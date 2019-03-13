@@ -38,10 +38,7 @@ function ProductSmokingHero(props) {
         <Typography variant="h6" component="span">
           go to blog
         </Typography>
-      </Button>
-      {/* <Typography variant="subtitle1" className={classes.link}>
-        We are here to help. Get in touch!
-      </Typography> */}      
+      </Button> 
     </LayoutBody>
   );
 }

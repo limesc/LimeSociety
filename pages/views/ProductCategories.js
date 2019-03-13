@@ -8,8 +8,10 @@ import { Link, Button } from '@material-ui/core';
 
 const styles = theme => ({
   root: {
-    marginTop: theme.spacing.unit * 8,
-    marginBottom: theme.spacing.unit * 4,
+    overflow: 'hidden',
+    marginTop: theme.spacing.unit * 10,
+    marginBottom: theme.spacing.unit * 15,
+    backgroundColor: '#FBFBEF',
   },
   images: {
     marginTop: theme.spacing.unit * 8,
@@ -138,7 +140,7 @@ function ProductCategories(props) {
   
   return (
     <LayoutBody className={classes.root} component="section" width="large">
-      <Typography variant="h3" align="center" component="h6">
+      <Typography variant="h4" align="center" component="h6">
         products
       </Typography>
       <div className={classes.images}>

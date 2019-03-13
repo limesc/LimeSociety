@@ -26,7 +26,7 @@ const styles = theme => ({
     justifyContent: 'flex-end',
   },
   rightLink: {
-    fontSize: 16,
+    fontSize: 23,
     color: theme.palette.common.white,
     marginLeft: theme.spacing.unit * 3,
   },
@@ -40,34 +40,35 @@ function AppAppBar(props) {
 
   return (
     <div>
-      <AppBar position="fixed">
+      <AppBar position="fixed" color="inherit">
         <Toolbar className={classes.toolbar}>
-          <Link
+          {/* <Link
             variant="h5"
             underline="none"
-            color="inherit"
+            color="default"
             className={classes.title}
             href="/"
           >
             {'Lime Society'}
-          </Link>
+          </Link> */}
           <div className={classes.right}>
             <Link
-              color="inherit"
-              variant="h6"
+              color="default"
+              variant="h5"
               underline="none"
               className={classes.rightLink}
               href="/"
             >
-              {'products'}
+              {'PRODUCT'}
             </Link>
             <Link
-              variant="h6"
+              color="default"
+              variant="h5"
               underline="none"
               className={classes.rightLink}
               href="/"
             >
-              {'blog'}
+              {'BLOG'}
             </Link>
           </div>
         </Toolbar>

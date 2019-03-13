@@ -14,7 +14,7 @@ import {ic_phone} from 'react-icons-kit/md/ic_phone'
 const styles = theme => ({
   root: {
     display: 'flex',
-    backgroundColor: '#FBFBEF',
+    //backgroundColor: '#FBFBEF',
     overflow: 'hidden',
   },
   layoutBody: {
@@ -62,7 +62,7 @@ function ProductHowItWorks(props) {
   return (
     <section className={classes.root}>
       <LayoutBody className={classes.layoutBody} width="large">        
-        <Typography variant="h3" className={classes.title} component="h6">
+        <Typography variant="h4" className={classes.title} component="h6">
           company
         </Typography>
         <div>
