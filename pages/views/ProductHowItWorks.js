@@ -75,8 +75,8 @@ function ProductHowItWorks(props) {
                   alt='aligment'
                   marginBottom='theme.spacing.unit *4'
                 />
-                <Typography variant='markedH4Center' align='center'>
-                  team
+                <Typography variant='h6' align='center'>
+                  Team
                 </Typography>
                 <container xs={12} style={{ height: '15px' }} />
                 <Typography variant='h5' align='center'>
@@ -96,7 +96,7 @@ function ProductHowItWorks(props) {
                   marginBottom='theme.spacing.unit *4'
                 />
                 <Typography variant='h6' align='center'>
-                  location
+                  Location
                 </Typography>
                 <container xs={12} style={{ height: '15px' }} />
                 <Typography variant='h5' align='center'>
@@ -119,7 +119,7 @@ function ProductHowItWorks(props) {
                   marginBottom='theme.spacing.unit *4'
                 />
                 <Typography variant='h6' align='center'>
-                  contact
+                  Contact
                 </Typography>
                 <container xs={12} style={{ height: '15px' }} />
                 <Typography variant='h5' align='center'>
