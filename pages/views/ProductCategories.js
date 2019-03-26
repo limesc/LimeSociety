@@ -4,17 +4,20 @@ import { withStyles } from '@material-ui/core/styles'
 import ButtonBase from '@material-ui/core/ButtonBase'
 import LayoutBody from '../components/LayoutBody'
 import Typography from '../components/Typography'
-import { Link, Button } from '@material-ui/core';
+import { Link, Button } from '@material-ui/core'
 
 const styles = theme => ({
+  background: {
+    backgroundColor: '#FBFBEF',
+    overflow:'hidden',
+  },
   root: {
     overflow: 'hidden',
     marginTop: theme.spacing.unit * 10,
     marginBottom: theme.spacing.unit * 15,
-    backgroundColor: '#FBFBEF',
   },
   images: {
-    marginTop: theme.spacing.unit * 8,
+    marginTop: theme.spacing.unit * 10,
     display: 'flex',
     flexWrap: 'wrap',
   },
@@ -139,8 +142,9 @@ function ProductCategories(props) {
   ]
   
   return (
+  <LayoutBody className={classes.background} component="section" width="full">  
     <LayoutBody className={classes.root} component="section" width="large">
-      <Typography variant="h4" align="center" component="h6">
+      <Typography variant="h4" align="center" component="h6"> 
         products
       </Typography>
       <div className={classes.images}>
@@ -183,6 +187,7 @@ function ProductCategories(props) {
         ))}
       </div>
     </LayoutBody>
+  </LayoutBody>
   )
 }
 

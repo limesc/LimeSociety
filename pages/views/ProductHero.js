@@ -37,6 +37,11 @@ function ProductHero(props) {
     <ProductHeroLayout backgroundClassName={classes.background}>
       {/* Increase the network loading priority of the background image. */}
       <img style={{ display: 'none' }} src={backgroundImage} alt="" />
+      
+        <img src="../../static/MainLogo1.png" className="rounded float-left" alt="aligment"
+        marginBottom= "theme.spacing.unit *4"
+        />
+      <container xs={12} style={{ height: '50px' }}></container>
       <Typography color="inherit" align="center" variant="h1" style={{marginBottom: '25px'}}>
         Challenge the Future
       </Typography>

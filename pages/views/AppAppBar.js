@@ -42,15 +42,11 @@ function AppAppBar(props) {
     <div>
       <AppBar position="fixed" color="inherit">
         <Toolbar className={classes.toolbar}>
-          {/* <Link
-            variant="h5"
-            underline="none"
-            color="default"
-            className={classes.title}
+          <Link
             href="/"
           >
-            {'Lime Society'}
-          </Link> */}
+            <img src="../../static/AppbarLogo.png" className="rounded float-left" alt="aligment" />
+          </Link>
           <div className={classes.right}>
             <Link
               color="default"

@@ -17,8 +17,8 @@ const styles = theme => ({
     },
   },
   layoutBody: {
-    marginTop: theme.spacing.unit * 3,
-    marginBottom: theme.spacing.unit * 14,
+    marginTop: theme.spacing.unit * 0,
+    marginBottom: theme.spacing.unit * 0,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
