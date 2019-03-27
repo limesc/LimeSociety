@@ -14,11 +14,9 @@ const styles = theme => ({
     background: 'transparent',
     boxShadow: 'none',
     transform: 'translatrY(0)',
-    transition: 'transform .5s'
   },
   show: {
     transform: 'translateY(0)',
-    transition: 'transform .5s'
   },
   title: {
     fontSize: 25
