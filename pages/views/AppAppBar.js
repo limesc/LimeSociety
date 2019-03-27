@@ -13,10 +13,11 @@ const styles = theme => ({
   invisible: {
     background: 'transparent',
     boxShadow: 'none',
+    transform: 'translateY(10%)',
     transition: 'transform .5s'
   },
   show: {    
-    transform: 'translateY(20%)',
+    transform: 'translateY(-10%)',
     transition: 'transform .5s'
   },
   title: {
