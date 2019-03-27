@@ -13,8 +13,8 @@ const styles = theme => ({
   },
   root: {
     overflow: 'hidden',
-    marginTop: theme.spacing.unit * 10,
-    marginBottom: theme.spacing.unit * 15,
+    marginTop: theme.spacing.unit * 20,
+    marginBottom: theme.spacing.unit * 10,
   },
   images: {
     marginTop: theme.spacing.unit * 10,
@@ -144,7 +144,7 @@ function ProductCategories(props) {
   return (
   <LayoutBody className={classes.background} component="section" width="full">  
     <LayoutBody className={classes.root} component="section" width="large">
-      <Typography variant="h4" align="center" component="h6"> 
+      <Typography variant="h4" align="center" component="h6" id={'ProductCategories'}>
         products
       </Typography>
       <div className={classes.images}>

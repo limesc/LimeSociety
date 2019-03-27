@@ -6,10 +6,6 @@ import Link from '@material-ui/core/Link'
 import LayoutBody from '../components/LayoutBody'
 import Button from '../components/Button'
 import Typography from '../components/Typography'
-import { Icon, withBaseIcon } from 'react-icons-kit'
-import { personStalker } from 'react-icons-kit/ionicons/personStalker'
-import { androidPin } from 'react-icons-kit/ionicons/androidPin'
-import { ic_phone } from 'react-icons-kit/md/ic_phone'
 
 const styles = theme => ({
   root: {
@@ -18,7 +14,7 @@ const styles = theme => ({
     overflow: 'hidden'
   },
   layoutBody: {
-    marginTop: theme.spacing.unit * 10,
+    marginTop: theme.spacing.unit * 15,
     marginBottom: theme.spacing.unit * 15,
     position: 'relative',
     display: 'flex',
@@ -75,7 +71,7 @@ function ProductHowItWorks(props) {
                   alt='aligment'
                   marginBottom='theme.spacing.unit *4'
                 />
-                <Typography variant='h6' align='center'>
+                <Typography variant='h6'  align='center'>
                   Team
                 </Typography>
                 <container xs={12} style={{ height: '15px' }} />
