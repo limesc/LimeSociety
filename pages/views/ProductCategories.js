@@ -98,25 +98,25 @@ function ProductCategories(props) {
   const images = [
     {
       url:
-        'https://cdn.pixabay.com/photo/2013/07/18/10/59/heartbeat-163709_960_720.jpg',
+        '../static/ProductCategories/medicalDB.jpg',
       title: 'Medical DB',
       width: '40%',
     },
     {
       url:
-        'https://vitaldb.net/static/img/home/splash-1.png',
+        '../static/ProductCategories/vitalDB.png',
       title: 'Vital DB',
       width: '60%',
     },
     {
       url:
-        'https://cdn.pixabay.com/photo/2019/01/28/10/22/america-3960037_960_720.jpg',
+        '../static/ProductCategories/nextMedicine.jpg',
       title: 'Next Medicine',
       width: '60%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1453747063559-36695c8771bd?auto=format&fit=crop&w=400&q=80',
+        '../static/ProductCategories/cpmtb.jpg',
       title: 'cPMTB',
       width: '40%',
     }

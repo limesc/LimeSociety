@@ -46,6 +46,12 @@ const fontHeader = {
   textTransform: 'uppercase',
 };
 
+const Editfont = {
+  color: rawTheme.palette.text.primary,
+  fontWeight: rawTheme.typography.fontWeightMedium,
+  fontFamily: rawTheme.typography.fontFamilySecondary,
+};
+
 const theme = {
   ...rawTheme,
   palette: {
@@ -78,11 +84,11 @@ const theme = {
     h4: {
       ...rawTheme.typography.h4,
       ...fontHeader,
-      fontSize: 36,
+      fontSize: 32,
     },
     h5: {
       ...rawTheme.typography.h5,
-      fontSize: 20,
+      fontSize: 14,
       fontWeight: rawTheme.typography.fontWeightLight,
     },
     h6: {
@@ -92,6 +98,7 @@ const theme = {
     },
     subtitle1: {
       ...rawTheme.typography.subtitle1,
+      ...Editfont,
       fontSize: 18,
     },
     body1: {

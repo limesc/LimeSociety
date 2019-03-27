@@ -62,7 +62,7 @@ function ProductHowItWorks(props) {
           company
         </Typography>
         <div>
-          <Grid container spacing={5}>
+          <Grid container spacing={32}>
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
                 <img
@@ -71,7 +71,7 @@ function ProductHowItWorks(props) {
                   alt='aligment'
                   marginBottom='theme.spacing.unit *4'
                 />
-                <Typography variant='h6'  align='center'>
+                <Typography variant='subtitle1'  align='center'>
                   Team
                 </Typography>
                 <container xs={12} style={{ height: '15px' }} />
@@ -91,7 +91,7 @@ function ProductHowItWorks(props) {
                   alt='aligment'
                   marginBottom='theme.spacing.unit *4'
                 />
-                <Typography variant='h6' align='center'>
+                <Typography variant='subtitle1' align='center'>
                   Location
                 </Typography>
                 <container xs={12} style={{ height: '15px' }} />
@@ -114,7 +114,7 @@ function ProductHowItWorks(props) {
                   alt='aligment'
                   marginBottom='theme.spacing.unit *4'
                 />
-                <Typography variant='h6' align='center'>
+                <Typography variant='subtitle1' align='center'>
                   Contact
                 </Typography>
                 <container xs={12} style={{ height: '15px' }} />

@@ -7,7 +7,7 @@ import Typography from '../components/Typography'
 import ProductHeroLayout from './ProductHeroLayout'
 
 const backgroundImage =
-  'https://cdn.pixabay.com/photo/2018/05/17/09/04/american-3408110_960_720.jpg'
+  './static/ProductHero/header-bg.jpg'
 
 const styles = theme => ({
   background: {
@@ -51,7 +51,7 @@ function ProductHero(props) {
       
       <container xs={12} style={{ height: '75px' }}></container>
       <Button
-        // color="secondary"
+        color="error"
         variant="contained"
         size="large"
         className={classes.button}

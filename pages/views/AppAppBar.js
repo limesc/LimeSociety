@@ -5,6 +5,9 @@ import { withStyles } from '@material-ui/core/styles'
 import Link from '@material-ui/core/Link'
 import AppBar from '../components/AppBar'
 import Toolbar, { styles as toolbarStyles } from '../components/Toolbar'
+import { Container } from 'next/app'
+import Typography from '../components/Typography'
+import { values } from 'mobx';
 
 const styles = theme => ({
   root: {
@@ -16,7 +19,7 @@ const styles = theme => ({
     transform: 'translateY(10%)',
     transition: 'transform .5s'
   },
-  show: {    
+  show: {
     transform: 'translateY(-10%)',
     transition: 'transform .5s'
   },
@@ -45,15 +48,19 @@ const styles = theme => ({
   },
   linkSecondary: {
     color: theme.palette.main
-  },
+  }
 })
+
+const theme = {
+  spacing: values => values ** 2
+}
 
 class AppAppBar extends React.PureComponent {
   constructor(props) {
-    super(props) 
+    super(props)
 
     this.state = {
-      shouldShow:null
+      shouldShow: null
     }
 
     this.lastScroll = null
@@ -70,11 +77,12 @@ class AppAppBar extends React.PureComponent {
 
   handlwScroll() {
     const lastScroll = window.scrollY
-    if(lastScroll === this.state.lastScroll) {
+    if (lastScroll === this.state.lastScroll) {
       return
     }
 
-    const shouldShow = this.lastScroll !== null ? lastScroll < this.lastScroll : null
+    const shouldShow =
+      this.lastScroll !== null ? lastScroll < this.lastScroll : null
 
     if (shouldShow !== this.state.shouldShow) {
       this.setState(prevState => ({
@@ -100,7 +108,7 @@ class AppAppBar extends React.PureComponent {
     const { classes } = this.props
     return (
       <AppBar
-        position="fixed"
+        position='fixed'
         className={`${classes.root} ${this.getScrollClassName()}`}
       >
         <Toolbar className={classes.toolbar}>
@@ -109,26 +117,32 @@ class AppAppBar extends React.PureComponent {
               src='../../static/AppbarLogo.png'
               className='rounded float-left'
               alt='aligment'
-            >
-            </img>
+            />
           </Link>
           <div className={classes.right}>
-            <Link
-              color='default'
-              variant='h5'
+            <Link              
               underline='none'
               className={classes.rightLink}
+              href='/'
             >
-              {'PRODUCT'}
+              <Typography
+                variant='body2'
+                // color='inherit'
+              >
+              PRODUCT
+              </Typography>
             </Link>
             <Link
-              color='default'
-              variant='h5'
               underline='none'
               className={classes.rightLink}
               href='/blog'
             >
-              {'BLOG'}
+              <Typography
+                variant='body2'
+                // color='inherit'
+              >
+              BLOG
+              </Typography>
             </Link>
           </div>
         </Toolbar>
@@ -136,55 +150,6 @@ class AppAppBar extends React.PureComponent {
     )
   }
 }
-
-// function AppAppBar(props) {
-//   const { classes } = props
-//   return (
-//     <div>
-//       <AppBar
-//         position='fixed'
-//         color='default'
-//         // className={
-//         //   `${classes.root} ${
-//         //     this.getScrollClassName}
-//         //   }`
-//         // }
-//         // style={{ background: 'transparent',
-//         // boxShadow: 'none'}}
-//       >
-//         <Toolbar className={classes.toolbar}>
-//           <Link href='/'>
-//             <img
-//               src='../../static/AppbarLogo.png'
-//               className='rounded float-left'
-//               alt='aligment'
-//             />
-//           </Link>
-//           <div className={classes.right}>
-//             <Link
-//               color='default'
-//               variant='h5'
-//               underline='none'
-//               className={classes.rightLink}
-//             >
-//               {'PRODUCT'}
-//             </Link>
-//             <Link
-//               color='default'
-//               variant='h5'
-//               underline='none'
-//               className={classes.rightLink}
-//               href='/blog'
-//             >
-//               {'BLOG'}
-//             </Link>
-//           </div>
-//         </Toolbar>
-//       </AppBar>
-//       <div className={classes.placeholder} />
-//     </div>
-//   )
-// }
 
 AppAppBar.propTypes = {
   classes: PropTypes.object.isRequired
