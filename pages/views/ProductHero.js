@@ -38,7 +38,7 @@ function ProductHero(props) {
       {/* Increase the network loading priority of the background image. */}
       <img style={{ display: 'none' }} src={backgroundImage} alt="" />
       
-        <img src="../../static/MainLogo1.png" className="rounded float-left" alt="aligment"
+        <img src="../../static/ProductHero/MainLogo3.png" className="rounded float-left" alt="aligment"
         marginBottom= "theme.spacing.unit *4"
         />
       <container xs={12} style={{ height: '50px' }}></container>
@@ -56,7 +56,7 @@ function ProductHero(props) {
         size="large"
         className={classes.button}
         component={linkProps => (
-          <Link {...linkProps} href="/" variant="button" />
+          <Link {...linkProps} href='#ProductCategories' variant="button" />
         )}
       >
         Tell Me More

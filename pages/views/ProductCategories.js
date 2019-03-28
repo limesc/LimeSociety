@@ -142,9 +142,9 @@ function ProductCategories(props) {
   ]
   
   return (
-  <LayoutBody className={classes.background} component="section" width="full">  
+    <LayoutBody className={classes.background} component="section" width="full" id={'ProductCategories'}>  
     <LayoutBody className={classes.root} component="section" width="large">
-      <Typography variant="h4" align="center" component="h6" id={'ProductCategories'}>
+  <Typography variant="h4" align="center" component="h6">
         products
       </Typography>
       <div className={classes.images}>

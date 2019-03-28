@@ -103,16 +103,18 @@ class AppAppBar extends React.PureComponent {
       ? this.props.classes.invisible
       : this.props.classes.show
   }
-
+  // Anchor 수정 중
   render() {
     const { classes } = this.props
     return (
-      <AppBar
+      <AppBar     
         position='fixed'
         className={`${classes.root} ${this.getScrollClassName()}`}
-      >
+        >
         <Toolbar className={classes.toolbar}>
-          <Link href='/'>
+          <Link
+            className={classes.rightLink}
+            href='#'>
             <img
               src='../../static/AppbarLogo.png'
               className='rounded float-left'
@@ -123,7 +125,7 @@ class AppAppBar extends React.PureComponent {
             <Link              
               underline='none'
               className={classes.rightLink}
-              href='/'
+              href='#ProductCategories'
             >
               <Typography
                 variant='body2'
