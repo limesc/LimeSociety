@@ -5,6 +5,7 @@ import Link from '@material-ui/core/Link'
 import Button from '../components/Button'
 import Typography from '../components/Typography'
 import ProductHeroLayout from './ProductHeroLayout'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const backgroundImage =
   './static/ProductHero/header-bg.jpg'
@@ -56,9 +57,9 @@ function ProductHero(props) {
         size="large"
         className={classes.button}
         component={linkProps => (
-          <Link {...linkProps} href='#ProductCategories' variant="button" />
+          <AnchorLink {...linkProps} href='#ProductCategories' variant="button" />
         )}
-      >
+      >        
         Tell Me More
       </Button>
     </ProductHeroLayout>

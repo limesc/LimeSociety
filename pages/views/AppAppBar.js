@@ -7,7 +7,8 @@ import AppBar from '../components/AppBar'
 import Toolbar, { styles as toolbarStyles } from '../components/Toolbar'
 import { Container } from 'next/app'
 import Typography from '../components/Typography'
-import { values } from 'mobx';
+import { values } from 'mobx'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const styles = theme => ({
   root: {
@@ -103,18 +104,21 @@ class AppAppBar extends React.PureComponent {
       ? this.props.classes.invisible
       : this.props.classes.show
   }
-  // Anchor 수정 중
   render() {
     const { classes } = this.props
     return (
-      <AppBar     
+      <AppBar
+        id={'top'}
         position='fixed'
         className={`${classes.root} ${this.getScrollClassName()}`}
         >
         <Toolbar className={classes.toolbar}>
           <Link
             className={classes.rightLink}
-            href='#'>
+            component={linkProps => (
+              <AnchorLink {...linkProps} href='#top' variant="button" />
+            )}
+            >
             <img
               src='../../static/AppbarLogo.png'
               className='rounded float-left'
@@ -122,16 +126,18 @@ class AppAppBar extends React.PureComponent {
             />
           </Link>
           <div className={classes.right}>
-            <Link              
-              underline='none'
+            <Link
               className={classes.rightLink}
-              href='#ProductCategories'
+              underline='none'
+              component={linkProps => (
+                <AnchorLink {...linkProps} href='#ProductCategories' variant="button" />
+              )}
             >
               <Typography
                 variant='body2'
                 // color='inherit'
               >
-              PRODUCT
+                PRODUCT
               </Typography>
             </Link>
             <Link
