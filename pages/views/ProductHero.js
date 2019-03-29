@@ -7,59 +7,68 @@ import Typography from '../components/Typography'
 import ProductHeroLayout from './ProductHeroLayout'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
-const backgroundImage =
-  './static/ProductHero/header-bg.jpg'
+const backgroundImage = './static/ProductHero/header-bg.jpg'
 
 const styles = theme => ({
   background: {
     backgroundImage: `url(${backgroundImage})`,
     backgroundColor: '#7fc7d9',
-    backgroundPosition: 'center',
+    backgroundPosition: 'center'
   },
   button: {
-    minWidth: 250,
+    minWidth: 250
   },
   h5: {
-    marginBottom: theme.spacing.unit *4,
-    marginTop: theme.spacing.unit *4,
+    marginBottom: theme.spacing.unit * 4,
+    marginTop: theme.spacing.unit * 4,
     [theme.breakpoints.up('sm')]: {
-      marginTop: theme.spacing.unit * 10,
-    },
+      marginTop: theme.spacing.unit * 10
+    }
   },
   more: {
-    marginTop: theme.spacing.unit * 2,
-  },
+    marginTop: theme.spacing.unit * 2
+  }
 })
 
 function ProductHero(props) {
-  const { classes } = props;
+  const { classes } = props
 
   return (
     <ProductHeroLayout backgroundClassName={classes.background}>
-      {/* Increase the network loading priority of the background image. */}
-      <img style={{ display: 'none' }} src={backgroundImage} alt="" />
-      
-        <img src="../../static/ProductHero/MainLogo3.png" className="rounded float-left" alt="aligment"
-        marginBottom= "theme.spacing.unit *4"
-        />
-      <container xs={12} style={{ height: '50px' }}></container>
-      <Typography color="inherit" align="center" variant="h1" style={{marginBottom: '25px'}}>
+      <img style={{ display: 'none' }} src={backgroundImage} alt='' />
+      <img
+        src='../../static/ProductHero/MainLogo3.png'
+        className='rounded float-left'
+        alt='aligment'
+        marginBottom='theme.spacing.unit *4'
+      />
+      <div style={{ height: '50px' }} />
+      <Typography
+        color='inherit'
+        align='center'
+        variant='h1'
+        style={{ marginBottom: '25px' }}
+      >
         Challenge the Future
       </Typography>
-      <Typography color="inherit" align="center" variant="h3">
+      <Typography color='inherit' align='center' variant='h3'>
         with Commitment and Passion
       </Typography>
-      
-      <container xs={12} style={{ height: '75px' }}></container>
+
+      <div style={{ height: '75px' }} />
       <Button
-        color="error"
-        variant="contained"
-        size="large"
+        color='error'
+        variant='contained'
+        size='large'
         className={classes.button}
         component={linkProps => (
-          <AnchorLink {...linkProps} href='#ProductCategories' variant="button" />
+          <AnchorLink
+            {...linkProps}
+            href='#ProductCategories'
+            variant='button'
+          />
         )}
-      >        
+      >
         Tell Me More
       </Button>
     </ProductHeroLayout>
@@ -67,7 +76,7 @@ function ProductHero(props) {
 }
 
 ProductHero.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(ProductHero)

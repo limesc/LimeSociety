@@ -15,14 +15,15 @@ const styles = theme => ({
     flexGrow: 1
   },
   invisible: {
+    padding: '15px 0',
     background: 'transparent',
     boxShadow: 'none',
-    transform: 'translateY(10%)',
-    transition: 'transform .5s'
+    transform: 'translateY(1%)',
+    transition: 'all .5s'
   },
   show: {
-    transform: 'translateY(-10%)',
-    transition: 'transform .5s'
+    transform: 'translateY(-3%)',
+    transition: 'all .5s'
   },
   title: {
     fontSize: 25
@@ -61,29 +62,22 @@ class AppAppBar extends React.PureComponent {
     super(props)
 
     this.state = {
-      shouldShow: null
+      shouldShow: false
     }
 
-    this.lastScroll = null
-    this.handlwScroll = this.handlwScroll.bind(this)
+    this.handleScroll = this.handleScroll.bind(this)
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handlwScroll)
+    window.addEventListener('scroll', this.handleScroll)
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handlwScroll)
+    window.removeEventListener('scroll', this.handleScroll)
   }
 
-  handlwScroll() {
-    const lastScroll = window.scrollY
-    if (lastScroll === this.state.lastScroll) {
-      return
-    }
-
-    const shouldShow =
-      this.lastScroll !== null ? lastScroll < this.lastScroll : null
+  handleScroll() {
+    const shouldShow = window.scrollY >= 700
 
     if (shouldShow !== this.state.shouldShow) {
       this.setState(prevState => ({
@@ -91,34 +85,28 @@ class AppAppBar extends React.PureComponent {
         shouldShow
       }))
     }
-
-    this.lastScroll = lastScroll
   }
 
   getScrollClassName() {
-    if (this.state.shouldShow === null) {
-      return
-    }
-
     return this.state.shouldShow
-      ? this.props.classes.invisible
-      : this.props.classes.show
+      ? this.props.classes.show
+      : this.props.classes.invisible
   }
+
   render() {
     const { classes } = this.props
     return (
       <AppBar
-        id={'top'}
         position='fixed'
         className={`${classes.root} ${this.getScrollClassName()}`}
-        >
+      >
         <Toolbar className={classes.toolbar}>
           <Link
-            className={classes.rightLink}
+            className={classes.leftLinkActive}
             component={linkProps => (
-              <AnchorLink {...linkProps} href='#top' variant="button" />
+              <AnchorLink {...linkProps} href='#top' variant='button' />
             )}
-            >
+          >
             <img
               src='../../static/AppbarLogo.png'
               className='rounded float-left'
@@ -130,27 +118,17 @@ class AppAppBar extends React.PureComponent {
               className={classes.rightLink}
               underline='none'
               component={linkProps => (
-                <AnchorLink {...linkProps} href='#ProductCategories' variant="button" />
+                <AnchorLink
+                  {...linkProps}
+                  href='#ProductCategories'
+                  variant='button'
+                />
               )}
             >
-              <Typography
-                variant='body2'
-                // color='inherit'
-              >
-                PRODUCT
-              </Typography>
+              <Typography variant='body2'>PRODUCT</Typography>
             </Link>
-            <Link
-              underline='none'
-              className={classes.rightLink}
-              href='/blog'
-            >
-              <Typography
-                variant='body2'
-                // color='inherit'
-              >
-              BLOG
-              </Typography>
+            <Link underline='none' className={classes.rightLink} href='/blog'>
+              <Typography variant='body2'>BLOG</Typography>
             </Link>
           </div>
         </Toolbar>

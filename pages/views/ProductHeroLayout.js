@@ -13,15 +13,15 @@ const styles = theme => ({
     [theme.breakpoints.up('sm')]: {
       height: '80vh',
       minHeight: 500,
-      maxHeight: 1300,
-    },
+      maxHeight: 1300
+    }
   },
   layoutBody: {
     marginTop: theme.spacing.unit * 0,
     marginBottom: theme.spacing.unit * 0,
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   backdrop: {
     position: 'absolute',
@@ -31,7 +31,7 @@ const styles = theme => ({
     bottom: 0,
     backgroundColor: theme.palette.common.black,
     opacity: 0.5,
-    zIndex: -1,
+    zIndex: -1
   },
   background: {
     position: 'absolute',
@@ -41,28 +41,28 @@ const styles = theme => ({
     bottom: 0,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
-    zIndex: -2,
+    zIndex: -2
   }
-});
+})
 
 function ProductHeroLayout(props) {
-  const { backgroundClassName, children, classes } = props;
+  const { backgroundClassName, children, classes } = props
 
   return (
-    <section className={classes.root}>
-      <LayoutBody className={classes.layoutBody} width="full">
+    <section className={classes.root} id={'top'}>
+      <LayoutBody className={classes.layoutBody} width='full'>
         {children}
         <div className={classes.backdrop} />
         <div className={clsx(classes.background, backgroundClassName)} />
       </LayoutBody>
     </section>
-  );
+  )
 }
 
 ProductHeroLayout.propTypes = {
   backgroundClassName: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
-  classes: PropTypes.object.isRequired,
-};
+  classes: PropTypes.object.isRequired
+}
 
 export default withStyles(styles)(ProductHeroLayout)
