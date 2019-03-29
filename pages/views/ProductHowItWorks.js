@@ -6,6 +6,10 @@ import Link from '@material-ui/core/Link'
 import LayoutBody from '../components/LayoutBody'
 import Button from '../components/Button'
 import Typography from '../components/Typography'
+import { Icon, withBaseIcon } from 'react-icons-kit'
+import {personStalker} from 'react-icons-kit/ionicons/personStalker'
+import {iosPaperplane} from 'react-icons-kit/ionicons/iosPaperplane'
+import {mail} from 'react-icons-kit/entypo/mail'
 
 const styles = theme => ({
   root: {
@@ -58,19 +62,23 @@ function ProductHowItWorks(props) {
   return (
     <section className={classes.root}>
       <LayoutBody className={classes.layoutBody} width='large'>
-        <Typography variant='h4' className={classes.title} component='h6'>
+        <Typography variant='h4' className={classes.title} component='h6'style={{marginBottom: '80px'}}>
           company
         </Typography>
         <div>
           <Grid container spacing={32}>
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
-                <img
-                  src='../../static/Icon1.png'
-                  className='rounded float-left'
-                  alt='aligment'
-                  marginBottom='theme.spacing.unit *4'
-                />
+                <div style={{
+                  width:'64',
+                  margin:'30px auto',
+                  padding:'10px 10px', backgroundColor:'#fed136',
+                  borderRadius:'50%',
+                  textAlign:'center',
+                  color: '#ffffff'
+                }}>
+                  <Icon size={64} icon={personStalker}/>
+                </div>
                 <Typography variant='subtitle1'  align='center'>
                   Team
                 </Typography>
@@ -85,12 +93,16 @@ function ProductHowItWorks(props) {
             </Grid>
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
-                <img
-                  src='../../static/Icon2.png'
-                  className='rounded float-left'
-                  alt='aligment'
-                  marginBottom='theme.spacing.unit *4'
-                />
+                <div style={{
+                  width:'64',
+                  margin:'30px auto',
+                  padding:'10px 10px', backgroundColor:'#fed136',
+                  borderRadius:'50%',
+                  textAlign:'center',
+                  color: '#ffffff'
+                }}>
+                  <Icon size={64} icon={iosPaperplane}/>
+                </div>
                 <Typography variant='subtitle1' align='center'>
                   Location
                 </Typography>
@@ -108,12 +120,16 @@ function ProductHowItWorks(props) {
             </Grid>
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
-                <img
-                  src='../../static/Icon3.png'
-                  className='rounded float-left'
-                  alt='aligment'
-                  marginBottom='theme.spacing.unit *4'
-                />
+                <div style={{
+                  width:'64',
+                  margin:'30px auto',
+                  padding:'10px 10px', backgroundColor:'#fed136',
+                  borderRadius:'50%',
+                  textAlign:'center',
+                  color: '#ffffff'
+                }}>
+                  <Icon size={64} icon={mail}/>
+                </div>
                 <Typography variant='subtitle1' align='center'>
                   Contact
                 </Typography>
