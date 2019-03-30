@@ -1,6 +1,6 @@
-import React, { PureComponent } from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import MuiButton from '@material-ui/core/Button';
+import React, { PureComponent } from 'react'
+import { withStyles } from '@material-ui/core/styles'
+import MuiButton from '@material-ui/core/Button'
 import { performScroll, scrollToHref } from '../scroll/scroll'
 
 const handleHashChange = () => {
@@ -20,25 +20,25 @@ const styles = theme => ({
     fontSize: theme.typography.pxToRem(14),
     boxShadow: 'none',
     '&:active, &:focus': {
-      boxShadow: 'none',
-    },
+      boxShadow: 'none'
+    }
   },
   sizeSmall: {
     padding: `${theme.spacing.unit}px ${theme.spacing.unit * 3}px`,
-    fontSize: theme.typography.pxToRem(13),
+    fontSize: theme.typography.pxToRem(13)
   },
   sizeLarge: {
     padding: `${theme.spacing.unit * 3 - 3}px ${theme.spacing.unit * 6}px`,
-    fontSize: theme.typography.pxToRem(16),
-  },
-});
+    fontSize: theme.typography.pxToRem(16)
+  }
+})
 
 function Button(props) {
-  return <MuiButton {...props} />;
+  return <MuiButton {...props} />
 }
 
-export default withStyles(styles)(Button);
-
+export default withStyles(styles)(Button)
+/*
 export default class hashChangeHeander extends PureComponent {
   componentDidMount = () => {
     window.onhashchange = handleHashChange
@@ -48,3 +48,4 @@ export default class hashChangeHeander extends PureComponent {
     return null
   }
 }
+*/
