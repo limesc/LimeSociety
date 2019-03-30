@@ -1,5 +1,4 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
@@ -17,9 +16,7 @@
     "removeComments": false,
     "skipLibCheck": true,
     "sourceMap": true,
-    "target": "esnext",
-    "typeRoots": ["./node_modules/@types", "./typings"],
-    "types": ["@types/node"]
+    "target": "esnext"
   },
-  "exclude": [".idea", ".next", ".vscode", "node_modules", "out", "static"]
+  "exclude": [".idea", ".next", ".vscode", "node_modules", "static"]
 }
