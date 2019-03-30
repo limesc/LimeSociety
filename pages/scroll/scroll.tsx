@@ -1,12 +1,12 @@
-export const performScroll = (top) => {
-    window.scrollTo ({
-      behavior: 'smooth',
-      top
-    })
+export const performScroll = top => {
+  window.scrollTo({
+    behavior: 'smooth',
+    top
+  })
 }
 
-export const scrollToHref = (herf) => {
-  const destinationElement = document.querySelector(herf)
+export const scrollToHref = href => {
+  const destinationElement = document.querySelector(href)
 
   performScroll(destinationElement.offsetTop)
 }

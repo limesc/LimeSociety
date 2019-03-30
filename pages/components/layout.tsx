@@ -14,15 +14,11 @@ import {
   WithStyles,
   withStyles
 } from '@material-ui/core'
-import AssignmentIcon from '@material-ui/icons/Assignment'
-import BarChartIcon from '@material-ui/icons/BarChart'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import DashboardIcon from '@material-ui/icons/Dashboard'
-import LayersIcon from '@material-ui/icons/Layers'
 import MenuIcon from '@material-ui/icons/Menu'
 import NotificationsIcon from '@material-ui/icons/Notifications'
 import PeopleIcon from '@material-ui/icons/People'
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import classNames from 'classnames'
 import { inject } from 'mobx-react'
 import Error from 'next/error'
@@ -278,4 +274,4 @@ export const withLayout = (layoutProps: any = {}) => ComposedComponent => {
   return HOC
 }
 
-export default withStyles(styles)(Layout);
+export default withStyles(styles)(Layout)

@@ -4,7 +4,6 @@ import Button from '@material-ui/core/Button'
 import { withStyles } from '@material-ui/core/styles'
 import LayoutBody from '../components/LayoutBody'
 import Typography from '../components/Typography'
-import { Icon } from '@material-ui/core'
 
 const styles = theme => ({
   root: {
@@ -12,39 +11,39 @@ const styles = theme => ({
     flexDirection: 'column',
     alignItems: 'center',
     marginTop: theme.spacing.unit * 20,
-    marginBottom: theme.spacing.unit * 10,
+    marginBottom: theme.spacing.unit * 10
   },
   button: {
     border: '4px solid currentColor',
     borderRadius: 0,
     height: 'auto',
-    padding: theme.spacing.unit * (2, 5),
+    padding: theme.spacing.unit * (2, 5)
   },
   link: {
     marginTop: theme.spacing.unit * 3,
-    marginBottom: theme.spacing.unit * 3,
+    marginBottom: theme.spacing.unit * 3
   },
   buoy: {
-    width: 60,
-  },
-});
+    width: 60
+  }
+})
 
 function ProductSmokingHero(props) {
-  const { classes } = props;
+  const { classes } = props
 
   return (
-    <LayoutBody className={classes.root} component="section">
+    <LayoutBody className={classes.root} component='section'>
       <Button className={classes.button} href='/blog'>
-        <Typography variant="h6" component="span">
+        <Typography variant='h6' component='span'>
           go to blog
         </Typography>
-      </Button> 
+      </Button>
     </LayoutBody>
-  );
+  )
 }
 
 ProductSmokingHero.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(ProductSmokingHero)
