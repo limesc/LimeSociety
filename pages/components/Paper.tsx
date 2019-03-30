@@ -4,6 +4,7 @@ import {
   WithStyles,
   withStyles
 } from '@material-ui/core'
+import { PaperProps as MuiPaperProps } from '@material-ui/core/Paper'
 import { capitalize } from '@material-ui/core/utils/helpers'
 import clsx from 'clsx'
 import React from 'react'
@@ -24,11 +25,12 @@ const styles = theme =>
     }
   })
 
-interface PaperProps extends WithStyles<typeof styles> {
+interface PaperOwnProps extends WithStyles<typeof styles> {
   background?: string | 'light' | 'main' | 'dark'
   className?: string
   padding?: boolean
 }
+type PaperProps = MuiPaperProps & PaperOwnProps & WithStyles<typeof styles>
 
 class Paper extends React.Component<PaperProps> {
   static defaultProps = {

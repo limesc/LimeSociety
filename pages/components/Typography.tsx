@@ -1,5 +1,6 @@
 import { Typography as MuiTypography } from '@material-ui/core'
 import { createStyles, WithStyles, withStyles } from '@material-ui/core/styles'
+import { TypographyProps as MuiTypographyProps } from '@material-ui/core/Typography'
 import { capitalize } from '@material-ui/core/utils/helpers'
 import React from 'react'
 
@@ -35,10 +36,13 @@ const styles = theme =>
     }
   })
 
-interface TypographyProps extends WithStyles<typeof styles> {
+interface TypographyOwnProps {
   marked?: boolean | 'center' | 'left'
   variant?: any
 }
+type TypographyProps = MuiTypographyProps &
+  TypographyOwnProps &
+  WithStyles<typeof styles>
 
 class Typography extends React.Component<TypographyProps> {
   static defaultProps = {

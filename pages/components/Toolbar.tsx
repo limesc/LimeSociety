@@ -4,6 +4,7 @@ import {
   WithStyles,
   withStyles
 } from '@material-ui/core'
+import { ToolbarProps as MuiToolbarProps } from '@material-ui/core/Toolbar'
 import React from 'react'
 
 export const styles = theme =>
@@ -16,7 +17,7 @@ export const styles = theme =>
     }
   })
 
-interface ToolbarProps extends WithStyles<typeof styles> {}
+type ToolbarProps = MuiToolbarProps & WithStyles<typeof styles>
 
 class Toolbar extends React.Component<ToolbarProps> {
   render () {
