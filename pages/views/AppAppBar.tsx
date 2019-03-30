@@ -1,82 +1,75 @@
+import { createStyles, Link, WithStyles, withStyles } from '@material-ui/core'
 import React from 'react'
-import PropTypes from 'prop-types'
-import clsx from 'clsx'
-import { withStyles } from '@material-ui/core/styles'
-import Link from '@material-ui/core/Link'
-import AppBar from '../components/AppBar'
-import Toolbar, { styles as toolbarStyles } from '../components/Toolbar'
-import { Container } from 'next/app'
-import Typography from '../components/Typography'
-import { values } from 'mobx'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1
-  },
-  invisible: {
-    padding: '15px 0',
-    background: 'transparent',
-    boxShadow: 'none',
-    transform: 'translateY(1%)',
-    transition: 'all .5s'
-  },
-  show: {
-    transform: 'translateY(-3%)',
-    transition: 'all .5s'
-  },
-  title: {
-    fontSize: 25
-  },
-  placeholder: toolbarStyles(theme).root,
-  toolbar: {
-    justifyContent: 'space-between'
-  },
-  left: {
-    flex: 1
-  },
-  leftLinkActive: {
-    color: theme.palette.common.white
-  },
-  right: {
-    flex: 1,
-    display: 'flex',
-    justifyContent: 'flex-end'
-  },
-  rightLink: {
-    fontSize: 23,
-    color: theme.palette.common.white,
-    marginLeft: theme.spacing.unit * 3
-  },
-  linkSecondary: {
-    color: theme.palette.main
-  }
-})
+import AppBar from '../components/AppBar'
+import Toolbar, { styles as toolbarStyles } from '../components/Toolbar'
+import Typography from '../components/Typography'
 
-const theme = {
-  spacing: values => values ** 2
+const styles = theme =>
+  createStyles({
+    root: {
+      flexGrow: 1
+    },
+    invisible: {
+      padding: '15px 0',
+      background: 'transparent',
+      boxShadow: 'none',
+      transform: 'translateY(1%)',
+      transition: 'all .5s'
+    },
+    show: {
+      transform: 'translateY(-3%)',
+      transition: 'all .5s'
+    },
+    title: {
+      fontSize: 25
+    },
+    placeholder: toolbarStyles(theme).root,
+    toolbar: {
+      justifyContent: 'space-between'
+    },
+    left: {
+      flex: 1
+    },
+    leftLinkActive: {
+      color: theme.palette.common.white
+    },
+    right: {
+      flex: 1,
+      display: 'flex',
+      justifyContent: 'flex-end'
+    },
+    rightLink: {
+      fontSize: 23,
+      color: theme.palette.common.white,
+      marginLeft: theme.spacing.unit * 3
+    },
+    linkSecondary: {
+      color: theme.palette.main
+    }
+  })
+
+type AppAppBarProps = WithStyles<typeof styles>
+
+interface AppAppBarState {
+  shouldShow: boolean
 }
 
-class AppAppBar extends React.PureComponent {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      shouldShow: false
-    }
-
-    this.handleScroll = this.handleScroll.bind(this)
+class AppAppBar extends React.PureComponent<AppAppBarProps, AppAppBarState> {
+  state: AppAppBarState = {
+    shouldShow: false
   }
 
-  componentDidMount() {
+  componentDidMount () {
     window.addEventListener('scroll', this.handleScroll)
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     window.removeEventListener('scroll', this.handleScroll)
   }
 
-  handleScroll() {
+  handleScroll = () => {
     const shouldShow = window.scrollY >= 700
 
     if (shouldShow !== this.state.shouldShow) {
@@ -87,13 +80,13 @@ class AppAppBar extends React.PureComponent {
     }
   }
 
-  getScrollClassName() {
+  getScrollClassName () {
     return this.state.shouldShow
       ? this.props.classes.show
       : this.props.classes.invisible
   }
 
-  render() {
+  render () {
     const { classes } = this.props
     return (
       <AppBar
@@ -135,10 +128,6 @@ class AppAppBar extends React.PureComponent {
       </AppBar>
     )
   }
-}
-
-AppAppBar.propTypes = {
-  classes: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(AppAppBar)
