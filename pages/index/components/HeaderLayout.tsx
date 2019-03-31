@@ -2,7 +2,7 @@ import { createStyles, WithStyles, withStyles } from '@material-ui/core'
 import clsx from 'clsx'
 import React from 'react'
 
-import LayoutBody from '../components/LayoutBody'
+import LayoutBody from '../../components/LayoutBody'
 
 const styles = theme =>
   createStyles({
@@ -46,14 +46,13 @@ const styles = theme =>
     }
   })
 
-interface ProductHeroLayoutOwnProps {
+interface HeaderLayoutOwnProps {
   backgroundClassName: string
 }
 
-type ProductHeroLayoutProps = ProductHeroLayoutOwnProps &
-  WithStyles<typeof styles>
+type HeaderLayoutProps = HeaderLayoutOwnProps & WithStyles<typeof styles>
 
-class ProductHeroLayout extends React.Component<ProductHeroLayoutProps> {
+class HeaderLayout extends React.Component<HeaderLayoutProps> {
   render () {
     const { backgroundClassName, children, classes } = this.props
 
@@ -69,4 +68,4 @@ class ProductHeroLayout extends React.Component<ProductHeroLayoutProps> {
   }
 }
 
-export default withStyles(styles)(ProductHeroLayout)
+export default withStyles(styles)(HeaderLayout)

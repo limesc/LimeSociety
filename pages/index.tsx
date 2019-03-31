@@ -2,8 +2,8 @@ import NextSeo from 'next-seo'
 import React from 'react'
 
 import AppBar from './index/components/AppBar'
+import Header from './index/components/Header'
 import ProductCategories from './views/ProductCategories'
-import ProductHero from './views/ProductHero'
 import ProductHowItWorks from './views/ProductHowItWorks'
 import ProductSmokingHero from './views/ProductSmokingHero'
 
@@ -18,7 +18,7 @@ function Page () {
         }}
       />
       <AppBar />
-      <ProductHero />
+      <Header />
       <ProductCategories />
       <ProductSmokingHero />
       <ProductHowItWorks />

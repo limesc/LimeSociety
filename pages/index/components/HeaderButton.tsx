@@ -12,7 +12,6 @@ const styles = theme =>
     root: {
       borderRadius: 0,
       fontWeight: theme.typography.fontWeightMedium,
-      fontFamily: theme.typography.fontFamilySecondary,
       padding: `${theme.spacing.unit * 2 - 1}px ${theme.spacing.unit * 4}px`,
       fontSize: theme.typography.pxToRem(14),
       boxShadow: 'none',
@@ -31,12 +30,12 @@ const styles = theme =>
     }
   })
 
-type ButtonProps = MuiButtonProps & WithStyles<typeof styles>
+type HeaderButtonProps = MuiButtonProps & WithStyles<typeof styles>
 
-class Button extends React.Component<ButtonProps> {
+class HeaderButton extends React.Component<HeaderButtonProps> {
   render () {
     return <MuiButton {...this.props} />
   }
 }
 
-export default withStyles(styles)(Button)
+export default withStyles(styles)(HeaderButton)
