@@ -11,13 +11,13 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 
-import LayoutBody from '../components/LayoutBody'
-import Typography from '../components/Typography'
+import LayoutBody from '../../components/LayoutBody'
+import Typography from '../../components/Typography'
 
 const styles = theme =>
   createStyles({
     background: {
-      backgroundColor: '#FBFBEF',
+      backgroundColor: '#EFFBEF',
       overflow: 'hidden'
     },
     root: {
@@ -108,9 +108,9 @@ const styles = theme =>
     }
   })
 
-type ProductCategoriesProps = WithStyles<typeof styles>
+type ProductsProps = WithStyles<typeof styles>
 
-class ProductCategories extends React.Component<ProductCategoriesProps> {
+class Products extends React.Component<ProductsProps> {
   render () {
     const { classes } = this.props
     return (
@@ -118,7 +118,7 @@ class ProductCategories extends React.Component<ProductCategoriesProps> {
         className={classes.background}
         component='section'
         width='full'
-        {...{ id: 'ProductCategories' }}
+        {...{ id: 'products' }}
       >
         <LayoutBody className={classes.root} component='section' width='large'>
           <Typography
@@ -129,7 +129,7 @@ class ProductCategories extends React.Component<ProductCategoriesProps> {
           >
             products
           </Typography>
-          <Grid container spacing={4}>
+          <Grid container spacing={0}>
             <Grid item xs={12} md={5}>
               <Card className={classes.card}>
                 <CardActionArea>
@@ -241,4 +241,4 @@ class ProductCategories extends React.Component<ProductCategoriesProps> {
   }
 }
 
-export default withStyles(styles)(ProductCategories)
+export default withStyles(styles)(Products)

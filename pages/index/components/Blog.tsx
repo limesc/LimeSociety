@@ -1,8 +1,8 @@
 import { Button, createStyles, WithStyles, withStyles } from '@material-ui/core'
 import React from 'react'
 
-import LayoutBody from '../components/LayoutBody'
-import Typography from '../components/Typography'
+import LayoutBody from '../../components/LayoutBody'
+import Typography from '../../components/Typography'
 
 const styles = theme =>
   createStyles({
@@ -28,9 +28,9 @@ const styles = theme =>
     }
   })
 
-type ProductSmokingHeroProps = WithStyles<typeof styles>
+type BlogProps = WithStyles<typeof styles>
 
-class ProductSmokingHero extends React.Component<ProductSmokingHeroProps> {
+class Blog extends React.Component<BlogProps> {
   render () {
     const { classes } = this.props
 
@@ -46,4 +46,4 @@ class ProductSmokingHero extends React.Component<ProductSmokingHeroProps> {
   }
 }
 
-export default withStyles(styles)(ProductSmokingHero)
+export default withStyles(styles)(Blog)

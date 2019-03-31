@@ -39,11 +39,7 @@ class Header extends React.Component<HeaderProps> {
           className={classes.button}
           color='primary'
           component={linkProps => (
-            <AnchorLink
-              {...linkProps}
-              href='#ProductCategories'
-              variant='button'
-            />
+            <AnchorLink {...linkProps} href='#products' variant='button' />
           )}
           size='large'
           variant='contained'

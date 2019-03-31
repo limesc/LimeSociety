@@ -5,8 +5,8 @@ import { mail } from 'react-icons-kit/entypo/mail'
 import { iosPaperplane } from 'react-icons-kit/ionicons/iosPaperplane'
 import { personStalker } from 'react-icons-kit/ionicons/personStalker'
 
-import LayoutBody from '../components/LayoutBody'
-import Typography from '../components/Typography'
+import LayoutBody from '../../components/LayoutBody'
+import Typography from '../../components/Typography'
 
 const styles = theme =>
   createStyles({
@@ -54,15 +54,19 @@ const styles = theme =>
     }
   })
 
-type ProductHowItWorksProps = WithStyles<typeof styles>
+type CompanyProps = WithStyles<typeof styles>
 
-class ProductHowItWorks extends React.Component<ProductHowItWorksProps> {
+class Company extends React.Component<CompanyProps> {
   render () {
     const { classes } = this.props
 
     return (
       <section className={classes.root}>
-        <LayoutBody className={classes.layoutBody} width='large'>
+        <LayoutBody
+          className={classes.layoutBody}
+          width='large'
+          {...{ id: 'company' }}
+        >
           <Typography
             variant='h4'
             className={classes.title}
@@ -165,4 +169,4 @@ class ProductHowItWorks extends React.Component<ProductHowItWorksProps> {
   }
 }
 
-export default withStyles(styles)(ProductHowItWorks)
+export default withStyles(styles)(Company)

@@ -19,12 +19,16 @@ const styles = theme =>
     invisible: {
       background: 'transparent',
       boxShadow: 'none',
-      transform: 'translateY(5%)',
-      transition: 'all .5s'
+      [theme.breakpoints.up('sm')]: {
+        transform: 'translateY(5%)',
+        transition: 'all .5s'
+      }
     },
     show: {
       background: 'black',
-      transition: 'all .5s'
+      [theme.breakpoints.up('sm')]: {
+        transition: 'all .5s'
+      }
     },
     title: {
       fontSize: 25
@@ -117,18 +121,23 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
           <div className={classes.right}>
             <Link
               className={classes.rightLink}
-              underline='none'
               component={linkProps => (
-                <AnchorLink
-                  {...linkProps}
-                  href='#ProductCategories'
-                  variant='button'
-                />
+                <AnchorLink {...linkProps} href='#products' variant='button' />
               )}
+              underline='none'
             >
-              <Typography variant='body2'>PRODUCT</Typography>
+              <Typography variant='body2'>PRODUCTS</Typography>
             </Link>
-            <Link underline='none' className={classes.rightLink} href='/blog'>
+            <Link
+              className={classes.rightLink}
+              component={linkProps => (
+                <AnchorLink {...linkProps} href='#company' variant='button' />
+              )}
+              underline='none'
+            >
+              <Typography variant='body2'>COMPANY</Typography>
+            </Link>
+            <Link className={classes.rightLink} href='/blog' underline='none'>
               <Typography variant='body2'>BLOG</Typography>
             </Link>
           </div>
