@@ -1,5 +1,9 @@
-import { Typography as MuiTypography } from '@material-ui/core'
-import { createStyles, WithStyles, withStyles } from '@material-ui/core/styles'
+import {
+  createStyles,
+  Typography as MuiTypography,
+  WithStyles,
+  withStyles
+} from '@material-ui/core'
 import { TypographyProps as MuiTypographyProps } from '@material-ui/core/Typography'
 import { capitalize } from '@material-ui/core/utils/helpers'
 import React from 'react'

@@ -1,0 +1,72 @@
+import { createStyles, WithStyles, withStyles } from '@material-ui/core'
+import clsx from 'clsx'
+import React from 'react'
+
+import LayoutBody from '../components/LayoutBody'
+
+const styles = theme =>
+  createStyles({
+    root: {
+      color: theme.palette.common.white,
+      position: 'relative',
+      display: 'flex',
+      alignItems: 'center',
+      [theme.breakpoints.up('sm')]: {
+        height: '80vh',
+        minHeight: 500,
+        maxHeight: 1300
+      }
+    },
+    layoutBody: {
+      marginTop: theme.spacing.unit * 0,
+      marginBottom: theme.spacing.unit * 0,
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center'
+    },
+    backdrop: {
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0,
+      backgroundColor: theme.palette.common.black,
+      opacity: 0.5,
+      zIndex: -1
+    },
+    background: {
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      zIndex: -2
+    }
+  })
+
+interface ProductHeroLayoutOwnProps {
+  backgroundClassName: string
+}
+
+type ProductHeroLayoutProps = ProductHeroLayoutOwnProps &
+  WithStyles<typeof styles>
+
+class ProductHeroLayout extends React.Component<ProductHeroLayoutProps> {
+  render () {
+    const { backgroundClassName, children, classes } = this.props
+
+    return (
+      <section className={classes.root} id={'top'}>
+        <LayoutBody className={classes.layoutBody} width='full'>
+          {children}
+          <div className={classes.backdrop} />
+          <div className={clsx(classes.background, backgroundClassName)} />
+        </LayoutBody>
+      </section>
+    )
+  }
+}
+
+export default withStyles(styles)(ProductHeroLayout)
