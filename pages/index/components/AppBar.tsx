@@ -3,13 +3,12 @@ import {
   createStyles,
   Link,
   Toolbar,
+  Typography,
   WithStyles,
   withStyles
 } from '@material-ui/core'
 import React from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-
-import Typography from '../../components/Typography'
 
 const styles = theme =>
   createStyles({
