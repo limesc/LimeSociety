@@ -6,12 +6,10 @@ import Button from '../components/Button'
 import Typography from '../components/Typography'
 import ProductHeroLayout from './ProductHeroLayout'
 
-const backgroundImage = './static/ProductHero/header-bg.jpg'
-
 const styles = theme =>
   createStyles({
     background: {
-      backgroundImage: `url(${backgroundImage})`,
+      backgroundImage: 'url("/static/img/index/header-bg.jpg")',
       backgroundColor: '#7fc7d9',
       backgroundPosition: 'center'
     },
@@ -38,29 +36,20 @@ class ProductHero extends React.Component<ProductHeroProps> {
 
     return (
       <ProductHeroLayout backgroundClassName={classes.background}>
-        <img style={{ display: 'none' }} src={backgroundImage} alt='' />
-        <img
-          src='../../static/ProductHero/MainLogo3.png'
-          className='rounded float-left'
-          alt='aligment'
-          marginBottom='theme.spacing.unit *4'
-        />
-        <div style={{ height: '50px' }} />
         <Typography
           color='inherit'
           align='center'
           variant='h1'
-          style={{ marginBottom: '25px' }}
+          style={{ marginBottom: 25 }}
         >
           Challenge the Future
         </Typography>
         <Typography color='inherit' align='center' variant='h3'>
           with Commitment and Passion
         </Typography>
-
-        <div style={{ height: '75px' }} />
+        <div style={{ height: 75 }} />
         <Button
-          color='error'
+          color='primary'
           variant='contained'
           size='large'
           className={classes.button}

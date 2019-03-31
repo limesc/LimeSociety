@@ -101,7 +101,7 @@ class AppAppBar extends React.PureComponent<AppAppBarProps, AppAppBarState> {
             )}
           >
             <img
-              src='../../static/AppbarLogo.png'
+              src='../../static/img/index/appbar-logo.png'
               className='rounded float-left'
               alt='aligment'
             />

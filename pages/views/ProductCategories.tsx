@@ -136,7 +136,7 @@ class ProductCategories extends React.Component<ProductCategoriesProps> {
                   <CardMedia
                     component={'img' as any}
                     className={classes.imageBackdrop.media}
-                    image='../static/ProductCategories/medicalDB.jpg'
+                    image='../static/img/index/products-medical-db.jpg'
                     title='Contemplative Reptile'
                     {...{ alt: 'Contemplative Reptile', height: 400 }}
                   />
@@ -165,7 +165,7 @@ class ProductCategories extends React.Component<ProductCategoriesProps> {
                   <CardMedia
                     component={'img' as any}
                     className={classes.media.imageBackdrop}
-                    image='../static/ProductCategories/vitalDB.png'
+                    image='../static/img/index/products-vital-db.png'
                     title='Contemplative Reptile'
                     {...{ alt: 'Contemplative Reptile', height: 400 }}
                   />
@@ -194,7 +194,7 @@ class ProductCategories extends React.Component<ProductCategoriesProps> {
                   <CardMedia
                     component={'img' as any}
                     className={classes.media.imageBackdrop}
-                    image='../static/ProductCategories/nextMedicine.jpg'
+                    image='../static/img/index/products-next-medicine.jpg'
                     title='Contemplative Reptile'
                     {...{ alt: 'Contemplative Reptile', height: 400 }}
                   />
@@ -217,7 +217,7 @@ class ProductCategories extends React.Component<ProductCategoriesProps> {
                   <CardMedia
                     component={'img' as any}
                     className={classes.media.imageBackdrop}
-                    image='../static/ProductCategories/cpmtb.jpg'
+                    image='../static/img/index/products-cpmtb.jpg'
                     title='Contemplative Reptile'
                     {...{ alt: 'Contemplative Reptile', height: 400 }}
                   />
@@ -240,84 +240,5 @@ class ProductCategories extends React.Component<ProductCategoriesProps> {
     )
   }
 }
-
-//   const images = [
-//     {
-//       url: '../static/ProductCategories/medicalDB.jpg',
-//       title: 'Medical DB',
-//       width: '40%'
-//     },
-//     {
-//       url: '../static/ProductCategories/vitalDB.png',
-//       title: 'Vital DB',
-//       width: '60%',
-//       id: 'vitaldb'
-//     },
-//     {
-//       url: '../static/ProductCategories/nextMedicine.jpg',
-//       title: 'Next Medicine',
-//       width: '60%',
-//       id: 'nextmedicine'
-//     },
-//     {
-//       url: '../static/ProductCategories/cpmtb.jpg',
-//       title: 'cPMTB',
-//       width: '40%'
-//     }
-//   ]
-
-//   return (
-//     <LayoutBody
-//       className={classes.background}
-//       component='section'
-//       width='full'
-//       id={'ProductCategories'}
-//     >
-//       <LayoutBody className={classes.root} component='section' width='large'>
-//         <Typography variant='h4' align='center' component='h6'>
-//           products
-//         </Typography>
-//         <div className={classes.images}>
-//           {images.map(image => (
-//             <ButtonBase
-//               key={image.title}
-//               className={classes.imageWrapper}
-//               style={{
-//                 width: image.width
-//               }}
-//               title="Vital DB"
-//               href="https://vitaldb.net/"
-//               target="_blank"
-//               rel="noopener"
-//               title="Next Medicine"
-//               href="http://nextmedicine.com/signin"
-//               target="_blank"
-//               rel="noopener"
-//             >
-//               <div
-//                 className={classes.imageSrc}
-//                 style={{
-//                   backgroundImage: `url(${image.url})`
-//                 }}
-//               />
-//               <div className={classes.imageBackdrop} />
-//               <div className={classes.imageButton}>
-//                 <Typography
-//                   component='h3'
-//                   variant='h6'
-//                   color='inherit'
-//                   className={classes.imageTitle}
-//                 >
-//                   {image.title}
-//                   <div className={classes.imageMarked} />
-//                 </Typography>
-//               </div>
-//             </ButtonBase>
-//           ))}
-//         </div>
-//       </LayoutBody>
-//     </LayoutBody>
-//   )
-// }
 
 export default withStyles(styles)(ProductCategories)
