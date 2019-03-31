@@ -1,8 +1,13 @@
-import { Button, createStyles, WithStyles, withStyles } from '@material-ui/core'
+import {
+  Button,
+  createStyles,
+  Typography,
+  WithStyles,
+  withStyles
+} from '@material-ui/core'
 import React from 'react'
 
 import LayoutBody from '../../components/LayoutBody'
-import Typography from '../../components/Typography'
 
 const styles = theme =>
   createStyles({

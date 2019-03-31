@@ -1,8 +1,12 @@
-import { createStyles, WithStyles, withStyles } from '@material-ui/core'
+import {
+  createStyles,
+  Typography,
+  WithStyles,
+  withStyles
+} from '@material-ui/core'
 import React from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
-import Typography from '../../components/Typography'
 import HeaderButton from './HeaderButton'
 import HeaderLayout from './HeaderLayout'
 

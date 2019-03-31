@@ -1,4 +1,10 @@
-import { createStyles, Grid, WithStyles, withStyles } from '@material-ui/core'
+import {
+  createStyles,
+  Grid,
+  Typography,
+  WithStyles,
+  withStyles
+} from '@material-ui/core'
 import React from 'react'
 import { Icon } from 'react-icons-kit'
 import { mail } from 'react-icons-kit/entypo/mail'
@@ -6,7 +12,6 @@ import { iosPaperplane } from 'react-icons-kit/ionicons/iosPaperplane'
 import { personStalker } from 'react-icons-kit/ionicons/personStalker'
 
 import LayoutBody from '../../components/LayoutBody'
-import Typography from '../../components/Typography'
 
 const styles = theme =>
   createStyles({
