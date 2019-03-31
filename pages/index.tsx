@@ -1,25 +1,29 @@
+import NextSeo from 'next-seo'
+import React from 'react'
+
 import AppAppBar from './views/AppAppBar'
 import ProductCategories from './views/ProductCategories'
 import ProductHero from './views/ProductHero'
 import ProductHowItWorks from './views/ProductHowItWorks'
 import ProductSmokingHero from './views/ProductSmokingHero'
-import withRoot from './withRoot'
-// import Layout from './components/layout'
 
-import React from 'react'
+const pageTitle = 'Lime Society'
 
-function Index () {
+function Page () {
   return (
-    <React.Fragment>
-      {/* <Layout> */}
-        <AppAppBar />
-        <ProductHero />
-        <ProductCategories />
-        <ProductSmokingHero />
-        <ProductHowItWorks />
-      {/* </Layout> */}
-    </React.Fragment>
+    <>
+      <NextSeo
+        config={{
+          title: pageTitle
+        }}
+      />
+      <AppAppBar />
+      <ProductHero />
+      <ProductCategories />
+      <ProductSmokingHero />
+      <ProductHowItWorks />
+    </>
   )
 }
 
-export default withRoot(Index)
+export default Page
