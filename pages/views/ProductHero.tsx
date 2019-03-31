@@ -36,6 +36,7 @@ class ProductHero extends React.Component<ProductHeroProps> {
 
     return (
       <ProductHeroLayout backgroundClassName={classes.background}>
+        <div style={{ height: 75 }} />
         <Typography
           color='inherit'
           align='center'

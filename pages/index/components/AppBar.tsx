@@ -1,10 +1,15 @@
-import { createStyles, Link, WithStyles, withStyles } from '@material-ui/core'
+import {
+  AppBar as MuiAppBar,
+  createStyles,
+  Link,
+  Toolbar,
+  WithStyles,
+  withStyles
+} from '@material-ui/core'
 import React from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
-import AppBar from '../components/AppBar'
-import Toolbar, { styles as toolbarStyles } from '../components/Toolbar'
-import Typography from '../components/Typography'
+import Typography from '../../components/Typography'
 
 const styles = theme =>
   createStyles({
@@ -12,28 +17,32 @@ const styles = theme =>
       flexGrow: 1
     },
     invisible: {
-      padding: '15px 0',
       background: 'transparent',
       boxShadow: 'none',
-      transform: 'translateY(1%)',
+      transform: 'translateY(5%)',
       transition: 'all .5s'
     },
     show: {
-      transform: 'translateY(-3%)',
+      background: 'black',
       transition: 'all .5s'
     },
     title: {
       fontSize: 25
     },
-    placeholder: toolbarStyles(theme).root,
     toolbar: {
-      justifyContent: 'space-between'
+      justifyContent: 'space-between',
+      height: 80,
+      [theme.breakpoints.up('sm')]: {
+        height: 100
+      }
     },
     left: {
-      flex: 1
+      flex: 1,
+      display: 'flex',
+      justifyContent: 'flex-start'
     },
-    leftLinkActive: {
-      color: theme.palette.common.white
+    leftLinkImg: {
+      verticalAlign: 'middle'
     },
     right: {
       flex: 1,
@@ -44,20 +53,17 @@ const styles = theme =>
       fontSize: 23,
       color: theme.palette.common.white,
       marginLeft: theme.spacing.unit * 3
-    },
-    linkSecondary: {
-      color: theme.palette.main
     }
   })
 
-type AppAppBarProps = WithStyles<typeof styles>
+type AppBarProps = WithStyles<typeof styles>
 
-interface AppAppBarState {
+interface AppBarState {
   shouldShow: boolean
 }
 
-class AppAppBar extends React.PureComponent<AppAppBarProps, AppAppBarState> {
-  state: AppAppBarState = {
+class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
+  state: AppBarState = {
     shouldShow: false
   }
 
@@ -70,7 +76,7 @@ class AppAppBar extends React.PureComponent<AppAppBarProps, AppAppBarState> {
   }
 
   handleScroll = () => {
-    const shouldShow = window.scrollY >= 700
+    const shouldShow = window.scrollY >= 500
 
     if (shouldShow !== this.state.shouldShow) {
       this.setState(prevState => ({
@@ -89,23 +95,25 @@ class AppAppBar extends React.PureComponent<AppAppBarProps, AppAppBarState> {
   render () {
     const { classes } = this.props
     return (
-      <AppBar
-        position='fixed'
+      <MuiAppBar
         className={`${classes.root} ${this.getScrollClassName()}`}
+        color='inherit'
+        elevation={0}
+        position='fixed'
       >
         <Toolbar className={classes.toolbar}>
-          <Link
-            className={classes.leftLinkActive}
-            component={linkProps => (
-              <AnchorLink {...linkProps} href='#top' variant='button' />
-            )}
-          >
-            <img
-              src='../../static/img/index/appbar-logo.png'
-              className='rounded float-left'
-              alt='aligment'
-            />
-          </Link>
+          <div className={classes.left}>
+            <Link
+              component={linkProps => (
+                <AnchorLink {...linkProps} href='#top' variant='button' />
+              )}
+            >
+              <img
+                className={classes.leftLinkImg}
+                src='/static/img/index/appbar-logo.png'
+              />
+            </Link>
+          </div>
           <div className={classes.right}>
             <Link
               className={classes.rightLink}
@@ -125,9 +133,9 @@ class AppAppBar extends React.PureComponent<AppAppBarProps, AppAppBarState> {
             </Link>
           </div>
         </Toolbar>
-      </AppBar>
+      </MuiAppBar>
     )
   }
 }
 
-export default withStyles(styles)(AppAppBar)
+export default withStyles(styles)(AppBar)

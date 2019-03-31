@@ -1,7 +1,7 @@
 import NextSeo from 'next-seo'
 import React from 'react'
 
-import AppAppBar from './views/AppAppBar'
+import AppBar from './index/components/AppBar'
 import ProductCategories from './views/ProductCategories'
 import ProductHero from './views/ProductHero'
 import ProductHowItWorks from './views/ProductHowItWorks'
@@ -17,7 +17,7 @@ function Page () {
           title: pageTitle
         }}
       />
-      <AppAppBar />
+      <AppBar />
       <ProductHero />
       <ProductCategories />
       <ProductSmokingHero />

@@ -108,13 +108,8 @@ const theme = {
       ...Editfont,
       fontSize: 18
     },
-    body1: {
-      ...rawTheme.typography.body2,
-      fontWeight: rawTheme.typography.fontWeightRegular,
-      fontSize: 16
-    },
     body2: {
-      ...rawTheme.typography.body1,
+      fontWeight: rawTheme.typography.fontWeightRegular,
       fontSize: 14
     }
   }
