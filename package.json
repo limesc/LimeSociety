@@ -13,7 +13,7 @@
     "lint": "tslint --project .",
     "prettier": "prettier-tslint",
     "start": "next start",
-    "serve": "python -m http.server 3000 --directory out",
+    "serve": "py -m http.server 3000 --directory out",
     "test": "jest",
     "type-check": "tsc"
   },
