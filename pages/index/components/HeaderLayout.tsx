@@ -2,7 +2,7 @@ import { createStyles, WithStyles, withStyles } from '@material-ui/core'
 import clsx from 'clsx'
 import React from 'react'
 
-import LayoutBody from '../../components/LayoutBody'
+import Container from './Container'
 
 const styles = theme =>
   createStyles({
@@ -58,11 +58,11 @@ class HeaderLayout extends React.Component<HeaderLayoutProps> {
 
     return (
       <section className={classes.root} id={'top'}>
-        <LayoutBody className={classes.layoutBody} width='full'>
+        <Container className={classes.layoutBody} width='full'>
           {children}
           <div className={classes.backdrop} />
           <div className={clsx(classes.background, backgroundClassName)} />
-        </LayoutBody>
+        </Container>
       </section>
     )
   }

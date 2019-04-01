@@ -7,7 +7,7 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 
-import LayoutBody from '../../components/LayoutBody'
+import Container from './Container'
 
 const styles = theme =>
   createStyles({
@@ -40,13 +40,13 @@ class Blog extends React.Component<BlogProps> {
     const { classes } = this.props
 
     return (
-      <LayoutBody className={classes.root} component='section'>
+      <Container className={classes.root} component='section'>
         <Button className={classes.button} href='/blog'>
           <Typography variant='h6' component='span'>
             go to blog
           </Typography>
         </Button>
-      </LayoutBody>
+      </Container>
     )
   }
 }

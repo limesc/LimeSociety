@@ -12,7 +12,7 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 
-import LayoutBody from '../../components/LayoutBody'
+import Container from './Container'
 
 const styles = theme =>
   createStyles({
@@ -114,13 +114,13 @@ class Products extends React.Component<ProductsProps> {
   render () {
     const { classes } = this.props
     return (
-      <LayoutBody
+      <Container
         className={classes.background}
         component='section'
+        id='products'
         width='full'
-        {...{ id: 'products' }}
       >
-        <LayoutBody className={classes.root} component='section' width='large'>
+        <Container className={classes.root} component='section'>
           <Typography
             variant='h4'
             align='center'
@@ -235,8 +235,8 @@ class Products extends React.Component<ProductsProps> {
               </Card>
             </Grid>
           </Grid>
-        </LayoutBody>
-      </LayoutBody>
+        </Container>
+      </Container>
     )
   }
 }

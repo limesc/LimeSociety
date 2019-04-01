@@ -11,7 +11,7 @@ import { mail } from 'react-icons-kit/entypo/mail'
 import { iosPaperplane } from 'react-icons-kit/ionicons/iosPaperplane'
 import { personStalker } from 'react-icons-kit/ionicons/personStalker'
 
-import LayoutBody from '../../components/LayoutBody'
+import Container from './Container'
 
 const styles = theme =>
   createStyles({
@@ -67,11 +67,7 @@ class Company extends React.Component<CompanyProps> {
 
     return (
       <section className={classes.root}>
-        <LayoutBody
-          className={classes.layoutBody}
-          width='large'
-          {...{ id: 'company' }}
-        >
+        <Container className={classes.layoutBody} id='company'>
           <Typography
             variant='h4'
             className={classes.title}
@@ -168,7 +164,7 @@ class Company extends React.Component<CompanyProps> {
               </Grid>
             </Grid>
           </div>
-        </LayoutBody>
+        </Container>
       </section>
     )
   }

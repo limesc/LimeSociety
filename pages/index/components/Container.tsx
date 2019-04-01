@@ -9,12 +9,6 @@ function round (value) {
 
 const styles = theme =>
   createStyles({
-    margin: {
-      margin: theme.spacing.unit * 7
-    },
-    marginBottom: {
-      marginBottom: theme.spacing.unit * 12
-    },
     widthSmall: {
       width: 'auto',
       marginLeft: theme.spacing.unit * 3,
@@ -75,26 +69,24 @@ const styles = theme =>
     }
   })
 
-interface LayoutBodyOwnProps {
+interface ContainerOwnProps {
   className?: string
   component?: string | (new (props: any) => React.Component)
   fullHeight?: boolean
   fullWidth?: boolean
-  margin?: boolean
-  marginBottom?: boolean
   style?: React.CSSProperties
   width?: string | 'small' | 'medium' | 'large' | 'xlarge' | 'full'
 }
-type LayoutBodyProps = LayoutBodyOwnProps & WithStyles<typeof styles>
+type ContainerProps = React.HTMLAttributes<HTMLDivElement> &
+  ContainerOwnProps &
+  WithStyles<typeof styles>
 
-class LayoutBody extends React.Component<LayoutBodyProps> {
+class Container extends React.Component<ContainerProps> {
   static defaultProps = {
     component: 'div',
     fullHeight: false,
     fullWidth: false,
-    margin: false,
-    marginBottom: false,
-    width: 'medium'
+    width: 'large'
   }
 
   render () {
@@ -105,8 +97,6 @@ class LayoutBody extends React.Component<LayoutBodyProps> {
       component: Component,
       fullHeight,
       fullWidth,
-      margin,
-      marginBottom,
       style,
       width,
       ...other
@@ -115,12 +105,9 @@ class LayoutBody extends React.Component<LayoutBodyProps> {
     return (
       <Component
         className={clsx(
-          // classes.root,
           {
             [classes[`width${capitalize(width)}`]]: !fullWidth,
-            [classes.fullHeight]: fullHeight,
-            [classes.margin]: margin,
-            [classes.marginBottom]: marginBottom
+            [classes.fullHeight]: fullHeight
           },
           className
         )}
@@ -133,4 +120,4 @@ class LayoutBody extends React.Component<LayoutBodyProps> {
   }
 }
 
-export default withStyles(styles)(LayoutBody)
+export default withStyles(styles)(Container)
