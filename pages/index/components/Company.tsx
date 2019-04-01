@@ -49,6 +49,10 @@ const styles = theme =>
       borderRadius: '50%',
       textAlign: 'center',
       color: '#ffffff'
+    },
+    itemDesc: {
+      marginTop: 15,
+      lineHeight: 1.6
     }
   })
 
@@ -78,8 +82,11 @@ class Company extends React.Component<CompanyProps> {
                 <Typography variant='subtitle1' align='center'>
                   Team
                 </Typography>
-                <div style={{ height: 15 }} />
-                <Typography variant='h5' align='center'>
+                <Typography
+                  className={classes.itemDesc}
+                  variant='h5'
+                  align='center'
+                >
                   Founded in 2012,
                   <br />
                   by passionate and experienced developers
@@ -94,8 +101,11 @@ class Company extends React.Component<CompanyProps> {
                 <Typography variant='subtitle1' align='center'>
                   Location
                 </Typography>
-                <div style={{ height: 15 }} />
-                <Typography variant='h5' align='center'>
+                <Typography
+                  className={classes.itemDesc}
+                  variant='h5'
+                  align='center'
+                >
                   Room 803, 311 Teheran-ro,
                   <br />
                   Gangnam-gu, Seoul
@@ -112,8 +122,11 @@ class Company extends React.Component<CompanyProps> {
                 <Typography variant='subtitle1' align='center'>
                   Contact
                 </Typography>
-                <div style={{ height: 15 }} />
-                <Typography variant='h5' align='center'>
+                <Typography
+                  className={classes.itemDesc}
+                  variant='h5'
+                  align='center'
+                >
                   <Link href='mailto:contact@limesociety.com'>
                     contact@limesociety.com
                   </Link>
