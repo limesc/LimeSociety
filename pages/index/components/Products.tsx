@@ -20,7 +20,6 @@ const styles = theme =>
       overflow: 'hidden'
     },
     root: {
-      overflow: 'hidden',
       marginTop: theme.spacing.unit * 10 + 80,
       [theme.breakpoints.up('sm')]: {
         marginTop: theme.spacing.unit * 10 + 100
@@ -43,12 +42,7 @@ class Products extends React.Component<ProductsProps> {
   render () {
     const { classes } = this.props
     return (
-      <Container
-        className={classes.background}
-        component='section'
-        id='products'
-        width='full'
-      >
+      <Container className={classes.background} id='products' width='full'>
         <Container className={classes.root} component='section'>
           <Typography
             align='center'
