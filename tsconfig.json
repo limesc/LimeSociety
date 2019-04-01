@@ -18,5 +18,5 @@
     "sourceMap": true,
     "target": "esnext"
   },
-  "exclude": [".idea", ".next", ".vscode", "node_modules", "static"]
+  "exclude": [".idea", ".next", ".vscode", "node_modules", "out", "static"]
 }
