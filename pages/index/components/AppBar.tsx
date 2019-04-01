@@ -1,12 +1,19 @@
 import {
   AppBar as MuiAppBar,
   createStyles,
+  Drawer,
+  IconButton,
   Link,
+  List,
+  ListItem,
+  ListItemText,
   Toolbar,
   Typography,
   WithStyles,
   withStyles
 } from '@material-ui/core'
+import MenuIcon from '@material-ui/icons/Menu'
+import classNames from 'classnames'
 import React from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
@@ -52,21 +59,39 @@ const styles = theme =>
       display: 'flex',
       justifyContent: 'flex-end'
     },
+    rightFolded: {
+      [theme.breakpoints.up('sm')]: {
+        display: 'none'
+      }
+    },
+    rightExpanded: {
+      [theme.breakpoints.down('xs')]: {
+        display: 'none'
+      }
+    },
+    rightMenu: {
+      color: theme.palette.common.white
+    },
     rightLink: {
       fontSize: 23,
       color: theme.palette.common.white,
       marginLeft: theme.spacing.unit * 3
+    },
+    drawerList: {
+      width: 250
     }
   })
 
 type AppBarProps = WithStyles<typeof styles>
 
 interface AppBarState {
+  drawer: boolean
   shouldShow: boolean
 }
 
 class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
   state: AppBarState = {
+    drawer: false,
     shouldShow: false
   }
 
@@ -79,7 +104,7 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
   }
 
   handleScroll = () => {
-    const shouldShow = window.scrollY >= 500
+    const shouldShow = window.scrollY >= 80
 
     if (shouldShow !== this.state.shouldShow) {
       this.setState(prevState => ({
@@ -93,6 +118,12 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
     return this.state.shouldShow
       ? this.props.classes.show
       : this.props.classes.invisible
+  }
+
+  toggleDrawer = (open: boolean) => () => {
+    this.setState({
+      drawer: open
+    })
   }
 
   render () {
@@ -117,7 +148,16 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
               />
             </Link>
           </div>
-          <div className={classes.right}>
+          <div className={classNames(classes.right, classes.rightFolded)}>
+            <IconButton
+              className={classes.rightMenu}
+              aria-label='Menu'
+              onClick={this.toggleDrawer(true)}
+            >
+              <MenuIcon />
+            </IconButton>
+          </div>
+          <div className={classNames(classes.right, classes.rightExpanded)}>
             <Link
               className={classes.rightLink}
               component={linkProps => (
@@ -141,6 +181,58 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
             </Link>
           </div>
         </Toolbar>
+        <Drawer
+          anchor='right'
+          open={this.state.drawer}
+          onClose={this.toggleDrawer(false)}
+        >
+          <div
+            tabIndex={0}
+            role='button'
+            onClick={this.toggleDrawer(false)}
+            onKeyDown={this.toggleDrawer(false)}
+          >
+            <div className={classes.drawerList}>
+              <List>
+                <Link
+                  component={linkProps => (
+                    <AnchorLink {...linkProps} href='#top' />
+                  )}
+                  underline='none'
+                >
+                  <ListItem button>
+                    <ListItemText primary={'Home'} />
+                  </ListItem>
+                </Link>
+                <Link
+                  component={linkProps => (
+                    <AnchorLink {...linkProps} href='#products' />
+                  )}
+                  underline='none'
+                >
+                  <ListItem button>
+                    <ListItemText primary={'Products'} />
+                  </ListItem>
+                </Link>
+                <Link
+                  component={linkProps => (
+                    <AnchorLink {...linkProps} href='#company' />
+                  )}
+                  underline='none'
+                >
+                  <ListItem button>
+                    <ListItemText primary={'Company'} />
+                  </ListItem>
+                </Link>
+                <Link href='/blog' underline='none'>
+                  <ListItem button>
+                    <ListItemText primary={'Blog'} />
+                  </ListItem>
+                </Link>
+              </List>
+            </div>
+          </div>
+        </Drawer>
       </MuiAppBar>
     )
   }
