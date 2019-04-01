@@ -10,7 +10,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import HeaderButton from './HeaderButton'
 import HeaderLayout from './HeaderLayout'
 
-const styles = () =>
+const styles = theme =>
   createStyles({
     background: {
       backgroundImage: 'url("/static/img/index/header-bg.jpg")',
@@ -19,6 +19,25 @@ const styles = () =>
     },
     button: {
       minWidth: 250
+    },
+    motto1: {
+      marginTop: 75,
+      marginBottom: 25,
+      [theme.breakpoints.down('sm')]: {
+        fontSize: 45
+      },
+      [theme.breakpoints.down('xs')]: {
+        fontSize: 30
+      }
+    },
+    motto2: {
+      marginBottom: 75,
+      [theme.breakpoints.down('sm')]: {
+        fontSize: 31
+      },
+      [theme.breakpoints.down('xs')]: {
+        fontSize: 21
+      }
     }
   })
 
@@ -30,15 +49,24 @@ class Header extends React.Component<HeaderProps> {
 
     return (
       <HeaderLayout backgroundClassName={classes.background}>
-        <div style={{ height: 75 }} />
-        <Typography align='center' color='inherit' variant='h1'>
+        <Typography
+          align='center'
+          className={classes.motto1}
+          component={'h2' as any}
+          color='inherit'
+          variant='h1'
+        >
           Challenge the Future
         </Typography>
-        <div style={{ height: 25 }} />
-        <Typography align='center' color='inherit' variant='h3'>
+        <Typography
+          align='center'
+          className={classes.motto2}
+          component={'h2' as any}
+          color='inherit'
+          variant='h3'
+        >
           with Commitment and Passion
         </Typography>
-        <div style={{ height: 75 }} />
         <HeaderButton
           className={classes.button}
           color='primary'

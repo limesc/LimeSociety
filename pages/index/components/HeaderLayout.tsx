@@ -17,9 +17,9 @@ const styles = theme =>
         maxHeight: 1300
       }
     },
-    layoutBody: {
-      marginTop: theme.spacing.unit * 0,
-      marginBottom: theme.spacing.unit * 0,
+    container: {
+      marginTop: theme.spacing.unit * 10,
+      marginBottom: theme.spacing.unit * 10,
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center'
@@ -58,7 +58,7 @@ class HeaderLayout extends React.Component<HeaderLayoutProps> {
 
     return (
       <section className={classes.root} id={'top'}>
-        <Container className={classes.layoutBody} width='full'>
+        <Container className={classes.container} width='full'>
           {children}
           <div className={classes.backdrop} />
           <div
