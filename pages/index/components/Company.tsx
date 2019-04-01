@@ -66,8 +66,8 @@ class Company extends React.Component<CompanyProps> {
     const { classes } = this.props
 
     return (
-      <section className={classes.root}>
-        <Container className={classes.layoutBody} id='company'>
+      <section className={classes.root} id='company'>
+        <Container className={classes.layoutBody}>
           <Typography
             variant='h4'
             className={classes.title}

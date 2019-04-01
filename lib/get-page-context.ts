@@ -35,7 +35,7 @@ const rawTheme = createMuiTheme({
     } */
   },
   typography: {
-    fontFamily: "'Work Sans', sans-serif",
+    fontFamily: 'sans-serif',
     fontSize: 14,
     fontWeightLight: 300,
     fontWeightRegular: 400,
@@ -44,19 +44,14 @@ const rawTheme = createMuiTheme({
   }
 })
 
-const fontFamilySecondary = "'Roboto Condensed', sans-serif"
-
 const fontHeader = {
   color: rawTheme.palette.text.primary,
-  fontWeight: rawTheme.typography.fontWeightMedium,
-  fontFamily: fontFamilySecondary,
-  textTransform: 'uppercase'
+  fontWeight: rawTheme.typography.fontWeightMedium
 }
 
-const Editfont = {
+const fontSubtitle = {
   color: rawTheme.palette.text.primary,
-  fontWeight: rawTheme.typography.fontWeightMedium,
-  fontFamily: fontFamilySecondary
+  fontWeight: rawTheme.typography.fontWeightMedium
 }
 
 const theme = {
@@ -105,7 +100,7 @@ const theme = {
     },
     subtitle1: {
       ...rawTheme.typography.subtitle1,
-      ...Editfont,
+      ...fontSubtitle,
       fontSize: 18
     },
     body2: {
