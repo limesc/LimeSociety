@@ -1,6 +1,6 @@
 import { createStyles, WithStyles, withStyles } from '@material-ui/core'
 import { capitalize } from '@material-ui/core/utils/helpers'
-import clsx from 'clsx'
+import classNames from 'classnames'
 import React from 'react'
 
 function round (value) {
@@ -104,7 +104,7 @@ class Container extends React.Component<ContainerProps> {
 
     return (
       <Component
-        className={clsx(
+        className={classNames(
           {
             [classes[`width${capitalize(width)}`]]: !fullWidth,
             [classes.fullHeight]: fullHeight

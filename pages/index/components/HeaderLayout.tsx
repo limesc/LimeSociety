@@ -1,5 +1,5 @@
 import { createStyles, WithStyles, withStyles } from '@material-ui/core'
-import clsx from 'clsx'
+import classNames from 'classnames'
 import React from 'react'
 
 import Container from './Container'
@@ -61,7 +61,9 @@ class HeaderLayout extends React.Component<HeaderLayoutProps> {
         <Container className={classes.layoutBody} width='full'>
           {children}
           <div className={classes.backdrop} />
-          <div className={clsx(classes.background, backgroundClassName)} />
+          <div
+            className={classNames(classes.background, backgroundClassName)}
+          />
         </Container>
       </section>
     )
