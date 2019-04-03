@@ -93,7 +93,7 @@ const styles = theme => ({
     marginLeft: 'auto',
     marginRight: 'auto',
     [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
-      width: 1100
+      width: 1060
     }
   },
   mainFeaturedPostContent: {
@@ -104,11 +104,11 @@ const styles = theme => ({
   },
   mainGrid: {
     width: 'auto',
-    marginTop: theme.spacing.unit * 5,
+    marginTop: theme.spacing.unit * 10,
     marginLeft: 'auto',
     marginRight: 'auto',
     [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
-      width: 1200
+      width: 1100
     }
   },
   card: {
@@ -134,7 +134,7 @@ const styles = theme => ({
     backgroundColor: theme.palette.grey[200]
   },
   sidebarSection: {
-    marginTop: theme.spacing.unt * 4
+    padding: theme.spacing.unit * 2
   }
 })
 
@@ -177,7 +177,7 @@ function BlogMain (props) {
 
   return (
     <main>
-      <Container className={classes.background} id='products' width='full'>
+      <Container className={classes.background} id='main' width='full'>
         <Grid className={classes.layout}>
           <Grid container>
             <Grid item md={6}>
@@ -231,6 +231,7 @@ function BlogMain (props) {
           ))}
         </Grid>
       </Container>
+      <div id='posts' />
       <Grid container spacing={40} className={classes.mainGrid}>
         <Grid item xs={12} md={8}>
           <Typography variant='h4' gutterBottom>
@@ -254,26 +255,22 @@ function BlogMain (props) {
               nulla sed consectetur.
             </Typography>
           </Paper>
-          <Typography
-            variant='h6'
-            gutterBottom
-            className={classes.sidebarSection}
-          >
-            Archives
-          </Typography>
-          {archives.map(archive => (
-            <Typography key={archive}>{archive}</Typography>
-          ))}
-          <Typography
-            variant='h6'
-            gutterBottom
-            className={classes.sidebarSection}
-          >
-            Social
-          </Typography>
-          {social.map(network => (
-            <Typography key={network}>{network}</Typography>
-          ))}
+          <Grid className={classes.sidebarSection}>
+            <Typography variant='h6' gutterBottom>
+              Archives
+            </Typography>
+            {archives.map(archive => (
+              <Typography key={archive}>{archive}</Typography>
+            ))}
+          </Grid>
+          <Grid className={classes.sidebarSection}>
+            <Typography variant='h6' gutterBottom>
+              Social
+            </Typography>
+            {social.map(network => (
+              <Typography key={network}>{network}</Typography>
+            ))}
+          </Grid>
         </Grid>
       </Grid>
     </main>

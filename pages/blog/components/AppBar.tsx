@@ -26,10 +26,9 @@ const styles = theme =>
       margin: theme.spacing.unit * 2
     },
     invisible: {
-      background: 'transparent',
+      background: 'black',
       boxShadow: 'none',
       [theme.breakpoints.up('sm')]: {
-        transform: 'translateY(5%)',
         transition: 'all .5s'
       }
     },
@@ -148,11 +147,7 @@ class BlogAppBar extends React.PureComponent<AppBarProps, AppBarState> {
       >
         <Toolbar className={classes.toolbar}>
           <div className={classes.toolbarTitle}>
-            <Link
-              component={linkProps => (
-                <AnchorLink {...linkProps} href='#top' variant='button' />
-              )}
-            >
+            <Link href='/'>
               <img
                 className={classes.leftLinkImg}
                 src='/static/img/index/appbar-logo.png'
@@ -172,7 +167,7 @@ class BlogAppBar extends React.PureComponent<AppBarProps, AppBarState> {
             <Link
               className={classes.rightLink}
               component={linkProps => (
-                <AnchorLink {...linkProps} href='#products' variant='button' />
+                <AnchorLink {...linkProps} href='#main' variant='button' />
               )}
               underline='none'
             >
@@ -181,14 +176,11 @@ class BlogAppBar extends React.PureComponent<AppBarProps, AppBarState> {
             <Link
               className={classes.rightLink}
               component={linkProps => (
-                <AnchorLink {...linkProps} href='#company' variant='button' />
+                <AnchorLink {...linkProps} href='#posts' variant='button' />
               )}
               underline='none'
             >
-              <Typography variant='body2'>COMPANY</Typography>
-            </Link>
-            <Link className={classes.rightLink} href='/' underline='none'>
-              <Typography variant='body2'>HOME</Typography>
+              <Typography variant='body2'>POSTS</Typography>
             </Link>
           </div>
         </Toolbar>
@@ -207,17 +199,7 @@ class BlogAppBar extends React.PureComponent<AppBarProps, AppBarState> {
               <List>
                 <Link
                   component={linkProps => (
-                    <AnchorLink {...linkProps} href='#top' />
-                  )}
-                  underline='none'
-                >
-                  <ListItem button>
-                    <ListItemText primary={'Go to Top'} />
-                  </ListItem>
-                </Link>
-                <Link
-                  component={linkProps => (
-                    <AnchorLink {...linkProps} href='#products' />
+                    <AnchorLink {...linkProps} href='#main' />
                   )}
                   underline='none'
                 >
@@ -227,17 +209,12 @@ class BlogAppBar extends React.PureComponent<AppBarProps, AppBarState> {
                 </Link>
                 <Link
                   component={linkProps => (
-                    <AnchorLink {...linkProps} href='#company' />
+                    <AnchorLink {...linkProps} href='#posts' />
                   )}
                   underline='none'
                 >
                   <ListItem button>
-                    <ListItemText primary={'Company'} />
-                  </ListItem>
-                </Link>
-                <Link href='/blog' underline='none'>
-                  <ListItem button>
-                    <ListItemText primary={'Home'} />
+                    <ListItemText primary={'Posts'} />
                   </ListItem>
                 </Link>
               </List>

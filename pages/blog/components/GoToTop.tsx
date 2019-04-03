@@ -6,12 +6,14 @@ import {
   withStyles
 } from '@material-ui/core'
 import React from 'react'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import Container from '../../index/components/Container'
 
 const styles = theme =>
   createStyles({
     background: {
+      marginTop: theme.spacing.unit * 20,
       backgroundColor: '#EFFBEF',
       overflow: 'hidden'
     },
@@ -35,16 +37,21 @@ const styles = theme =>
 
 type BlogProps = WithStyles<typeof styles>
 
-class Blog extends React.Component<BlogProps> {
+class GoToTop extends React.Component<BlogProps> {
   render () {
     const { classes } = this.props
 
     return (
-      <Container className={classes.background} id='blog' width='full'>
+      <Container className={classes.background} width='full'>
         <Container className={classes.root} component='section'>
-          <Button className={classes.button} href='/blog'>
+          <Button
+            className={classes.button}
+            component={linkProps => (
+              <AnchorLink {...linkProps} href='#main' variant='button' />
+            )}
+          >
             <Typography variant='h6' component='span'>
-              go to blog
+              go to Top
             </Typography>
           </Button>
         </Container>
@@ -53,4 +60,4 @@ class Blog extends React.Component<BlogProps> {
   }
 }
 
-export default withStyles(styles)(Blog)
+export default withStyles(styles)(GoToTop)

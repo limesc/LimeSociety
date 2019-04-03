@@ -40,11 +40,11 @@ class Blog extends React.Component<BlogProps> {
     const { classes } = this.props
 
     return (
-      <Container className={classes.background} id='blog' width='full'>
+      <Container className={classes.background} width='full'>
         <Container className={classes.root} component='section'>
-          <Button className={classes.button} href='/'>
+          <Button className={classes.button} href='/Blog'>
             <Typography variant='h6' component='span'>
-              go to Main Home
+              go to blog
             </Typography>
           </Button>
         </Container>
