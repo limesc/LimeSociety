@@ -188,7 +188,9 @@ function BlogMain (props) {
                   color='inherit'
                   gutterBottom
                 >
-                  Title of a longer featured blog post
+                  Lime Society
+                  <br />
+                  Blog
                 </Typography>
                 <Typography variant='body1' color='inherit' paragraph>
                   Multiple lines of text that form the lede, informing new
