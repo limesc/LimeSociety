@@ -1,9 +1,12 @@
 import NextSeo from 'next-seo'
 import React from 'react'
 
-import BlogFooter from './index/components/BlogFooter'
+import BlogAppBar from './index/components/BlogAppBar'
+// import BlogFooter from './index/components/BlogFooter'
 import BlogMain from './index/components/BlogMain'
-import BlogToolbar from './index/components/BlogToolbar'
+import Company from './index/components/Company'
+import Header from './index/components/Header'
+import Home from './index/components/Home'
 
 const pageTitle = 'Lime Society Blog'
 
@@ -15,9 +18,12 @@ function Page () {
           title: pageTitle
         }}
       />
-      <BlogToolbar />
+      <BlogAppBar />
+      <Header />
       <BlogMain />
-      <BlogFooter />
+      <Company />
+      {/* <BlogFooter /> */}
+      <Home />
     </>
   )
 }
