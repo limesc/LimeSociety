@@ -104,11 +104,11 @@ const styles = theme => ({
   },
   mainGrid: {
     width: 'auto',
-    marginTop: theme.spacing.unit * 3,
+    marginTop: theme.spacing.unit * 5,
     marginLeft: 'auto',
     marginRight: 'auto',
     [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
-      width: 1100
+      width: 1200
     }
   },
   card: {
@@ -134,7 +134,7 @@ const styles = theme => ({
     backgroundColor: theme.palette.grey[200]
   },
   sidebarSection: {
-    marginTop: theme.spacing.unit * 3
+    marginTop: theme.spacing.unt * 4
   }
 })
 
@@ -190,7 +190,7 @@ function BlogMain (props) {
                 >
                   Title of a longer featured blog post
                 </Typography>
-                <Typography variant='subtitle1' color='inherit' paragraph>
+                <Typography variant='body1' color='inherit' paragraph>
                   Multiple lines of text that form the lede, informing new
                   readers quickly and efficiently about what&apos;s most
                   interesting in this post&apos;s contents…
