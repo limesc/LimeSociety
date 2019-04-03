@@ -12,7 +12,7 @@ import {
 import PropTypes from 'prop-types'
 import Markdown from './markdown'
 
-import Container from './Container'
+import Container from '../../index/components/Container'
 
 // post1 ~ 3 까지는 별도의 md파일이 있어 import 하는 것이였습니다. 찬일님께 질문한 결과 당장 고치긴 어려우니 임시방편으로 const post1 ~ 3을 사용하여 글을 넣어라 하여 밑에와 같이 했습니다.
 

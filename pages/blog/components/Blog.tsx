@@ -7,7 +7,7 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 
-import Container from './Container'
+import Container from '../../index/components/Container'
 
 const styles = theme =>
   createStyles({
