@@ -89,11 +89,14 @@ const styles = theme => ({
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
     width: 'auto',
-    marginTop: theme.spacing.unit * 20,
+    marginTop: theme.spacing.unit * 10,
     marginLeft: 'auto',
     marginRight: 'auto',
     [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
-      width: 1060
+      width: 1060,
+      marginTop: theme.spacing.unit * 17,
+      marginLeft: 'auto',
+      marginRight: 'auto'
     }
   },
   mainFeaturedPostContent: {
@@ -104,11 +107,14 @@ const styles = theme => ({
   },
   mainGrid: {
     width: 'auto',
-    marginTop: theme.spacing.unit * 10,
+    marginTop: theme.spacing.unit * 5,
     marginLeft: 'auto',
     marginRight: 'auto',
     [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
-      width: 1100
+      width: 1100,
+      marginTop: theme.spacing.unit * 10,
+      marginLeft: 'auto',
+      marginRight: 'auto'
     }
   },
   card: {
@@ -119,7 +125,7 @@ const styles = theme => ({
   },
   cardGrid: {
     width: 'auto',
-    margin: theme.spacing.unit * 4,
+    margin: theme.spacing.unit * 2,
     marginLeft: 'auto',
     marginRight: 'auto',
     [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
@@ -177,7 +183,7 @@ function BlogMain (props) {
 
   return (
     <main>
-      <Container className={classes.background} id='main' width='full'>
+      <Container className={classes.background} width='full'>
         <Grid className={classes.layout}>
           <Grid container>
             <Grid item md={6}>
@@ -233,7 +239,6 @@ function BlogMain (props) {
           ))}
         </Grid>
       </Container>
-      <div id='posts' />
       <Grid container spacing={40} className={classes.mainGrid}>
         <Grid item xs={12} md={8}>
           <Typography variant='h4' gutterBottom>

@@ -20,19 +20,28 @@ const styles = theme =>
       overflow: 'hidden'
     },
     root: {
-      marginTop: theme.spacing.unit * 10 + 80,
-      [theme.breakpoints.up('sm')]: {
-        marginTop: theme.spacing.unit * 10 + 100
+      marginTop: theme.spacing.unit * 10 + 100,
+      [theme.breakpoints.down('sm')]: {
+        marginTop: theme.spacing.unit * 5,
+        marginBottom: theme.spacing.unit * 5
       },
       marginBottom: theme.spacing.unit * 10
     },
     title: {
-      marginBottom: theme.spacing.unit * 10
+      marginBottom: theme.spacing.unit * 10,
+      [theme.breakpoints.down('md')]: {
+        marginBottom: theme.spacing.unit * 5
+      }
     },
     card: {
       position: 'relative',
       margin: theme.spacing.unit,
       maxWidth: 'auto'
+    },
+    mobileImage: {
+      [theme.breakpoints.down('md')]: {
+        height: '200px'
+      }
     }
   })
 
@@ -57,6 +66,7 @@ class Products extends React.Component<ProductsProps> {
               <Card className={classes.card}>
                 <CardActionArea>
                   <CardMedia
+                    className={classes.mobileImage}
                     component={'img' as any}
                     image='/static/img/index/products-medical-db.jpg'
                     title='Medical DB'
@@ -83,6 +93,7 @@ class Products extends React.Component<ProductsProps> {
                   rel='noopener'
                 >
                   <CardMedia
+                    className={classes.mobileImage}
                     component={'img' as any}
                     image='/static/img/index/products-vital-db.png'
                     title='Vital DB'
@@ -109,6 +120,7 @@ class Products extends React.Component<ProductsProps> {
                   rel='noopener'
                 >
                   <CardMedia
+                    className={classes.mobileImage}
                     component={'img' as any}
                     image='/static/img/index/products-next-medicine.jpg'
                     title='Next Medicine'
@@ -131,6 +143,7 @@ class Products extends React.Component<ProductsProps> {
               <Card className={classes.card}>
                 <CardActionArea>
                   <CardMedia
+                    className={classes.mobileImage}
                     component={'img' as any}
                     image='/static/img/index/products-cpmtb.jpg'
                     title='cPMTb'

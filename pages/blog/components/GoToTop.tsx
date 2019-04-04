@@ -13,25 +13,46 @@ import Container from '../../index/components/Container'
 const styles = theme =>
   createStyles({
     background: {
-      marginTop: theme.spacing.unit * 20,
+      marginTop: theme.spacing.unit * 10,
       backgroundColor: '#EFFBEF',
-      overflow: 'hidden'
+      overflow: 'hidden',
+      [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
+        marginTop: theme.spacing.unit * 20,
+        backgroundColor: '#EFFBEF',
+        overflow: 'hidden'
+      }
     },
     root: {
-      marginTop: theme.spacing.unit * 10,
-      marginBottom: theme.spacing.unit * 10,
+      marginTop: theme.spacing.unit * 5,
+      marginBottom: theme.spacing.unit * 5,
       display: 'flex',
       flexDirection: 'column',
-      alignItems: 'center'
+      alignItems: 'center',
+      [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
+        marginTop: theme.spacing.unit * 10,
+        marginBottom: theme.spacing.unit * 10,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center'
+      }
     },
     button: {
       border: '4px solid currentColor',
       borderRadius: 0,
       height: 'auto',
-      paddingLeft: theme.spacing.unit * 5,
-      paddingRight: theme.spacing.unit * 5,
-      paddingTop: theme.spacing.unit * 2,
-      paddingBottom: theme.spacing.unit * 2
+      paddingLeft: theme.spacing.unit * 3,
+      paddingRight: theme.spacing.unit * 3,
+      paddingTop: theme.spacing.unit * 1,
+      paddingBottom: theme.spacing.unit * 1,
+      [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
+        border: '4px solid currentColor',
+        borderRadius: 0,
+        height: 'auto',
+        paddingLeft: theme.spacing.unit * 5,
+        paddingRight: theme.spacing.unit * 5,
+        paddingTop: theme.spacing.unit * 2,
+        paddingBottom: theme.spacing.unit * 2
+      }
     }
   })
 

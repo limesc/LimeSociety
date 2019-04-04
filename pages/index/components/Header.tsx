@@ -18,7 +18,10 @@ const styles = theme =>
       backgroundPosition: 'center'
     },
     button: {
-      minWidth: 250
+      minWidth: 250,
+      [theme.breakpoints.down('sm')]: {
+        minWidth: 200
+      }
     },
     motto1: {
       marginTop: 75,

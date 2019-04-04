@@ -167,20 +167,23 @@ class BlogAppBar extends React.PureComponent<AppBarProps, AppBarState> {
             <Link
               className={classes.rightLink}
               component={linkProps => (
-                <AnchorLink {...linkProps} href='#main' variant='button' />
+                <AnchorLink {...linkProps} href='#products' variant='button' />
               )}
               underline='none'
             >
-              <Typography variant='body2'>MAIN</Typography>
+              <Typography variant='body2'>PRODUCTS</Typography>
             </Link>
             <Link
               className={classes.rightLink}
               component={linkProps => (
-                <AnchorLink {...linkProps} href='#posts' variant='button' />
+                <AnchorLink {...linkProps} href='#company' variant='button' />
               )}
               underline='none'
             >
-              <Typography variant='body2'>POSTS</Typography>
+              <Typography variant='body2'>COMPANY</Typography>
+            </Link>
+            <Link className={classes.rightLink} href='/blog' underline='none'>
+              <Typography variant='body2'>BLOG</Typography>
             </Link>
           </div>
         </Toolbar>
@@ -197,24 +200,29 @@ class BlogAppBar extends React.PureComponent<AppBarProps, AppBarState> {
           >
             <div className={classes.drawerList}>
               <List>
-                <Link
-                  component={linkProps => (
-                    <AnchorLink {...linkProps} href='#main' />
-                  )}
-                  underline='none'
-                >
+                <Link href='/' underline='none'>
                   <ListItem button>
-                    <ListItemText primary={'Main'} />
+                    <ListItemText primary={'Home'} />
                   </ListItem>
                 </Link>
                 <Link
                   component={linkProps => (
-                    <AnchorLink {...linkProps} href='#posts' />
+                    <AnchorLink {...linkProps} href='#products' />
                   )}
                   underline='none'
                 >
                   <ListItem button>
-                    <ListItemText primary={'Posts'} />
+                    <ListItemText primary={'Products'} />
+                  </ListItem>
+                </Link>
+                <Link href='/Company' underline='none'>
+                  <ListItem button>
+                    <ListItemText primary={'Company'} />
+                  </ListItem>
+                </Link>
+                <Link href='/blog' underline='none'>
+                  <ListItem button>
+                    <ListItemText primary={'Blog'} />
                   </ListItem>
                 </Link>
               </List>

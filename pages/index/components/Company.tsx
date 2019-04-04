@@ -21,9 +21,10 @@ const styles = theme =>
       overflow: 'hidden'
     },
     root: {
-      marginTop: theme.spacing.unit * 10 + 80,
-      [theme.breakpoints.up('sm')]: {
-        marginTop: theme.spacing.unit * 10 + 100
+      marginTop: theme.spacing.unit * 10 + 100,
+      [theme.breakpoints.down('sm')]: {
+        marginTop: theme.spacing.unit * 5,
+        marginBottom: theme.spacing.unit * 3
       },
       marginBottom: theme.spacing.unit * 10,
       position: 'relative',
@@ -32,18 +33,25 @@ const styles = theme =>
       alignItems: 'center'
     },
     title: {
-      marginBottom: theme.spacing.unit * 10
+      marginBottom: theme.spacing.unit * 10,
+      [theme.breakpoints.down('md')]: {
+        marginBottom: theme.spacing.unit * 5
+      }
     },
     item: {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
+      marginBottom: theme.spacing.unit * 5,
       [theme.breakpoints.down('md')]: {
-        marginBottom: theme.spacing.unit * 10
+        marginBottom: theme.spacing.unit * 3
       }
     },
     itemIcon: {
       marginBottom: 30,
+      [theme.breakpoints.down('md')]: {
+        marginBottom: 10
+      },
       padding: '18px',
       backgroundColor: '#a2cb0f',
       borderRadius: '50%',
