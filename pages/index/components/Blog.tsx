@@ -42,7 +42,7 @@ class Blog extends React.Component<BlogProps> {
     return (
       <Container className={classes.background} width='full'>
         <Container className={classes.root} component='section'>
-          <Button className={classes.button} href='/Blog'>
+          <Button className={classes.button} href='/blog'>
             <Typography variant='h6' component='span'>
               go to blog
             </Typography>
