@@ -206,7 +206,7 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
                 </Link>
                 <Link
                   component={linkProps => (
-                    <AnchorLink {...linkProps} href='#products' />
+                    <AnchorLink {...linkProps} href='#products2' />
                   )}
                   underline='none'
                 >
@@ -216,7 +216,7 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
                 </Link>
                 <Link
                   component={linkProps => (
-                    <AnchorLink {...linkProps} href='#company' />
+                    <AnchorLink {...linkProps} href='#company2' />
                   )}
                   underline='none'
                 >

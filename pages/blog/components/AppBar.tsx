@@ -15,7 +15,6 @@ import {
 import MenuIcon from '@material-ui/icons/Menu'
 import classNames from 'classnames'
 import React from 'react'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const styles = theme =>
   createStyles({
@@ -166,18 +165,14 @@ class BlogAppBar extends React.PureComponent<AppBarProps, AppBarState> {
           <div className={classNames(classes.right, classes.rightExpanded)}>
             <Link
               className={classes.rightLink}
-              component={linkProps => (
-                <AnchorLink {...linkProps} href='#products' variant='button' />
-              )}
+              href='/#products'
               underline='none'
             >
               <Typography variant='body2'>PRODUCTS</Typography>
             </Link>
             <Link
               className={classes.rightLink}
-              component={linkProps => (
-                <AnchorLink {...linkProps} href='#company' variant='button' />
-              )}
+              href='/#company'
               underline='none'
             >
               <Typography variant='body2'>COMPANY</Typography>
@@ -205,17 +200,12 @@ class BlogAppBar extends React.PureComponent<AppBarProps, AppBarState> {
                     <ListItemText primary={'Home'} />
                   </ListItem>
                 </Link>
-                <Link
-                  component={linkProps => (
-                    <AnchorLink {...linkProps} href='#products' />
-                  )}
-                  underline='none'
-                >
+                <Link href='/#products' underline='none'>
                   <ListItem button>
                     <ListItemText primary={'Products'} />
                   </ListItem>
                 </Link>
-                <Link href='/Company' underline='none'>
+                <Link href='/#company' underline='none'>
                   <ListItem button>
                     <ListItemText primary={'Company'} />
                   </ListItem>

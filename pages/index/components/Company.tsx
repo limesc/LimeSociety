@@ -22,9 +22,9 @@ const styles = theme =>
     },
     root: {
       marginTop: theme.spacing.unit * 10 + 100,
-      [theme.breakpoints.down('sm')]: {
-        marginTop: theme.spacing.unit * 5,
-        marginBottom: theme.spacing.unit * 3
+      [theme.breakpoints.down('md')]: {
+        marginTop: theme.spacing.unit * 4,
+        marginBottom: theme.spacing.unit * 2
       },
       marginBottom: theme.spacing.unit * 10,
       position: 'relative',
@@ -35,7 +35,7 @@ const styles = theme =>
     title: {
       marginBottom: theme.spacing.unit * 10,
       [theme.breakpoints.down('md')]: {
-        marginBottom: theme.spacing.unit * 5
+        marginBottom: theme.spacing.unit * 4
       }
     },
     item: {

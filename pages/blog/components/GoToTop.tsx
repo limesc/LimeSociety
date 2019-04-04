@@ -13,7 +13,7 @@ import Container from '../../index/components/Container'
 const styles = theme =>
   createStyles({
     background: {
-      marginTop: theme.spacing.unit * 10,
+      marginTop: theme.spacing.unit * 4,
       backgroundColor: '#EFFBEF',
       overflow: 'hidden',
       [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
@@ -23,8 +23,8 @@ const styles = theme =>
       }
     },
     root: {
-      marginTop: theme.spacing.unit * 5,
-      marginBottom: theme.spacing.unit * 5,
+      marginTop: theme.spacing.unit * 4,
+      marginBottom: theme.spacing.unit * 4,
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
@@ -68,7 +68,7 @@ class GoToTop extends React.Component<BlogProps> {
           <Button
             className={classes.button}
             component={linkProps => (
-              <AnchorLink {...linkProps} href='#main' variant='button' />
+              <AnchorLink {...linkProps} href='#top' variant='button' />
             )}
           >
             <Typography variant='h6' component='span'>

@@ -16,8 +16,8 @@ const styles = theme =>
       overflow: 'hidden'
     },
     root: {
-      marginTop: theme.spacing.unit * 5,
-      marginBottom: theme.spacing.unit * 5,
+      marginTop: theme.spacing.unit * 4,
+      marginBottom: theme.spacing.unit * 4,
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',

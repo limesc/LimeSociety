@@ -81,6 +81,7 @@ class Header extends React.Component<HeaderProps> {
         >
           Tell Me More
         </HeaderButton>
+        <div id='products2' />
       </HeaderLayout>
     )
   }

@@ -20,17 +20,17 @@ const styles = theme =>
       overflow: 'hidden'
     },
     root: {
-      marginTop: theme.spacing.unit * 10 + 100,
+      marginTop: theme.spacing.unit * 10 + 80,
       [theme.breakpoints.down('sm')]: {
-        marginTop: theme.spacing.unit * 5,
-        marginBottom: theme.spacing.unit * 5
+        marginTop: theme.spacing.unit * 4,
+        marginBottom: theme.spacing.unit * 4
       },
       marginBottom: theme.spacing.unit * 10
     },
     title: {
       marginBottom: theme.spacing.unit * 10,
       [theme.breakpoints.down('md')]: {
-        marginBottom: theme.spacing.unit * 5
+        marginBottom: theme.spacing.unit * 4
       }
     },
     card: {
@@ -40,7 +40,7 @@ const styles = theme =>
     },
     mobileImage: {
       [theme.breakpoints.down('md')]: {
-        height: '200px'
+        height: '250px'
       }
     }
   })
@@ -157,6 +157,7 @@ class Products extends React.Component<ProductsProps> {
                       align='center'
                     >
                       cPMTb
+                      <div id='company2' />
                     </Typography>
                   </CardContent>
                 </CardActionArea>
