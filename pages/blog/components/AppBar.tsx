@@ -200,12 +200,12 @@ class BlogAppBar extends React.PureComponent<AppBarProps, AppBarState> {
                     <ListItemText primary={'Home'} />
                   </ListItem>
                 </Link>
-                <Link href='/#products' underline='none'>
+                <Link href='/#products2' underline='none'>
                   <ListItem button>
                     <ListItemText primary={'Products'} />
                   </ListItem>
                 </Link>
-                <Link href='/#company' underline='none'>
+                <Link href='/#company2' underline='none'>
                   <ListItem button>
                     <ListItemText primary={'Company'} />
                   </ListItem>
