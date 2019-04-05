@@ -170,7 +170,7 @@ const styles = theme => ({
     marginTop: theme.spacing.unit * 2,
     lineHeight: 1.6
   },
-  poststitle: {
+  mainpoststitle: {
     marginBottom: theme.spacing.unit * 5
   }
 })
@@ -285,7 +285,7 @@ function BlogMain (props) {
           <Typography
             component={'h2' as any}
             variant='h3'
-            className={classes.poststitle}
+            className={classes.mainpoststitle}
           >
             Posts
           </Typography>
@@ -327,30 +327,32 @@ function BlogMain (props) {
               nulla sed consectetur.
             </Typography>
           </Paper>
-          <Grid className={classes.sidebarSection}>
-            <Typography variant='h6' gutterBottom>
-              Archives
-            </Typography>
-            {archives.map(archive => (
-              <Link underline='none'>
-                <ListItem button>
-                  <Typography key={archive}>{archive}</Typography>
-                </ListItem>
-              </Link>
-            ))}
-          </Grid>
-          <Grid className={classes.sidebarSection}>
-            <Typography variant='h6' gutterBottom>
-              Social
-            </Typography>
-            {social.map(network => (
-              <Link underline='none'>
-                <ListItem button>
-                  <Typography key={network}>{network}</Typography>
-                </ListItem>
-              </Link>
-            ))}
-          </Grid>
+          <div style={{ position: 'sticky', top: '100px' }}>
+            <Grid className={classes.sidebarSection}>
+              <Typography variant='h6' gutterBottom>
+                Archives
+              </Typography>
+              {archives.map(archive => (
+                <Link underline='none'>
+                  <ListItem button>
+                    <Typography key={archive}>{archive}</Typography>
+                  </ListItem>
+                </Link>
+              ))}
+            </Grid>
+            <Grid className={classes.sidebarSection}>
+              <Typography variant='h6' gutterBottom>
+                Social
+              </Typography>
+              {social.map(network => (
+                <Link underline='none'>
+                  <ListItem button>
+                    <Typography key={network}>{network}</Typography>
+                  </ListItem>
+                </Link>
+              ))}
+            </Grid>
+          </div>
         </Grid>
       </Grid>
     </main>
