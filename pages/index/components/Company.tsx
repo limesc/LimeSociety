@@ -22,7 +22,7 @@ const styles = theme =>
     },
     root: {
       marginTop: theme.spacing.unit * 10 + 100,
-      [theme.breakpoints.down('md')]: {
+      [theme.breakpoints.down('sm')]: {
         marginTop: theme.spacing.unit * 4,
         marginBottom: theme.spacing.unit * 2
       },

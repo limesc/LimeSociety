@@ -25,7 +25,7 @@ const styles = theme =>
     invisible: {
       background: 'transparent',
       boxShadow: 'none',
-      [theme.breakpoints.up('sm')]: {
+      [theme.breakpoints.up('md')]: {
         transform: 'translateY(5%)',
         transition: 'all .5s'
       }
@@ -60,12 +60,12 @@ const styles = theme =>
       justifyContent: 'flex-end'
     },
     rightFolded: {
-      [theme.breakpoints.up('sm')]: {
+      [theme.breakpoints.up('md')]: {
         display: 'none'
       }
     },
     rightExpanded: {
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.down('sm')]: {
         display: 'none'
       }
     },

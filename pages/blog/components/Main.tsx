@@ -19,7 +19,10 @@ import Container from '../../index/components/Container'
 
 // post1 ~ 3 까지는 별도의 md파일이 있어 import 하는 것이였습니다. 찬일님께 질문한 결과 당장 고치긴 어려우니 임시방편으로 const post1 ~ 3을 사용하여 글을 넣어라 하여 밑에와 같이 했습니다.
 
-const post1 = `
+const posts = [
+  {
+    title: `Posts Title`,
+    description: `
 Sample blog post
 April 1, 2020 by Olivier
 This blog post shows a few different types of content that are supported and styled with Material styles. Basic typography, images, and code are all supported. You can extend these by modifying Markdown.js.
@@ -54,8 +57,10 @@ Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
 Maecenas sed diam eget risus varius blandit sit amet non magna.
 Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.
 `
-
-const post2 = `
+  },
+  {
+    title: `Posts Title`,
+    description: `
 Another blog post
 March 23, 2020 by Matt
 Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
@@ -66,8 +71,10 @@ Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus si
 
 Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
 `
-
-const post3 = `
+  },
+  {
+    title: `Posts Title`,
+    description: `
 New feature
 March 14, 2020 by Tom
 Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
@@ -79,6 +86,9 @@ Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus si
 
 Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.
 `
+  }
+]
+
 //
 
 import React from 'react'
@@ -112,8 +122,8 @@ const styles = theme => ({
   mainGrid: {
     width: 'auto',
     marginTop: theme.spacing.unit * 5,
-    marginLeft: 'auto',
-    marginRight: 'auto',
+    marginLeft: '16px',
+    marginRight: '16px',
     [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
       width: 1100,
       marginTop: theme.spacing.unit * 10,
@@ -159,6 +169,9 @@ const styles = theme => ({
   cardposts: {
     marginTop: theme.spacing.unit * 2,
     lineHeight: 1.6
+  },
+  poststitle: {
+    marginBottom: theme.spacing.unit * 5
   }
 })
 
@@ -176,8 +189,6 @@ const featuredPosts = [
       'This is a wider card with supporting text below as a natural lead-in to additional content.'
   }
 ]
-
-const posts = [post1, post2, post3]
 
 const archives = [
   'March 2020',
@@ -271,27 +282,38 @@ function BlogMain (props) {
       </Container>
       <Grid container spacing={40} className={classes.mainGrid}>
         <Grid item xs={12} md={8}>
-          <Link underline='none'>
-            <ListItem button>
-              <Typography variant='h4' gutterBottom>
-                From the Firehose
-              </Typography>
-            </ListItem>
-          </Link>
+          <Typography
+            component={'h2' as any}
+            variant='h3'
+            className={classes.poststitle}
+          >
+            Posts
+          </Typography>
+
           <Divider />
           {posts.map(post => (
-            <ListItem dense>
-              <Card>
-                <CardActionArea className={classes.textcard}>
-                  <Markdown
-                    className={classes.markdown}
-                    key={post.substring(0, 40)}
-                  >
-                    {post}
-                  </Markdown>
-                </CardActionArea>
-              </Card>
-            </ListItem>
+            <Grid item key={post.title} xs={12} md={9}>
+              <Link underline='none'>
+                <div style={{ marginTop: '40px' }}>
+                  <Link underline='none'>
+                    <ListItem button>
+                      <Typography component={'h2' as any} variant='h4'>
+                        {post.title}
+                      </Typography>
+                    </ListItem>
+                  </Link>
+                  <ListItem dense>
+                    <Typography
+                      variant='h5'
+                      paragraph
+                      className={classes.cardposts}
+                    >
+                      <Markdown>{post.description}</Markdown>
+                    </Typography>
+                  </ListItem>
+                </div>
+              </Link>
+            </Grid>
           ))}
         </Grid>
         <Grid item xs={12} md={4}>

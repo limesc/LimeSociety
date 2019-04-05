@@ -21,11 +21,11 @@ const styles = theme =>
     },
     root: {
       marginTop: theme.spacing.unit * 10 + 80,
+      marginBottom: theme.spacing.unit * 10,
       [theme.breakpoints.down('sm')]: {
         marginTop: theme.spacing.unit * 4,
         marginBottom: theme.spacing.unit * 4
-      },
-      marginBottom: theme.spacing.unit * 10
+      }
     },
     title: {
       marginBottom: theme.spacing.unit * 10,
@@ -39,7 +39,7 @@ const styles = theme =>
       maxWidth: 'auto'
     },
     mobileImage: {
-      [theme.breakpoints.down('md')]: {
+      [theme.breakpoints.down('sm')]: {
         height: '250px'
       }
     }
