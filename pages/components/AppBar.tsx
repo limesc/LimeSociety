@@ -15,21 +15,20 @@ import {
 import MenuIcon from '@material-ui/icons/Menu'
 import classNames from 'classnames'
 import React from 'react'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
-import { appbarHeight } from 'consts/layout'
+import { appBarHeight } from 'consts/layout'
 
 const styles = theme =>
   createStyles({
     root: {
       flexGrow: 1
     },
-    icon: {
-      margin: theme.spacing.unit * 2
-    },
     invisible: {
-      background: 'black',
+      background: 'transparent',
       boxShadow: 'none',
       [theme.breakpoints.up('md')]: {
+        // transform: 'translateY(5%)',
         transition: 'all .5s'
       }
     },
@@ -43,11 +42,7 @@ const styles = theme =>
       fontSize: 25
     },
     toolbar: {
-      width: 'auto',
-      height: appbarHeight
-    },
-    toolbarTitle: {
-      flex: 1
+      height: appBarHeight
     },
     left: {
       flex: 1,
@@ -58,11 +53,6 @@ const styles = theme =>
       verticalAlign: 'middle'
     },
     right: {
-      flex: 1,
-      display: 'flex',
-      justifyContent: 'flex-end'
-    },
-    rightButton: {
       flex: 1,
       display: 'flex',
       justifyContent: 'flex-end'
@@ -90,40 +80,51 @@ const styles = theme =>
     }
   })
 
-type AppBarProps = WithStyles<typeof styles>
+interface AppBarOwnProps {
+  main?: boolean
+}
+
+type AppBarProps = AppBarOwnProps & WithStyles<typeof styles>
 
 interface AppBarState {
   drawer: boolean
   shouldShow: boolean
 }
 
-class BlogAppBar extends React.PureComponent<AppBarProps, AppBarState> {
+class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
   state: AppBarState = {
     drawer: false,
-    shouldShow: false
+    shouldShow: true
   }
 
   componentDidMount () {
-    window.addEventListener('scroll', this.handleScroll)
+    if (this.props.main) {
+      window.addEventListener('scroll', this.handleScroll)
+      this.handleScroll()
+    }
   }
 
   componentWillUnmount () {
-    window.removeEventListener('scroll', this.handleScroll)
+    if (this.props.main) {
+      window.removeEventListener('scroll', this.handleScroll)
+    }
   }
 
   handleScroll = () => {
-    const shouldShow = window.scrollY >= 80
+    if (this.props.main) {
+      const shouldShow = window.scrollY >= 80
 
-    if (shouldShow !== this.state.shouldShow) {
-      this.setState(prevState => ({
-        ...prevState,
-        shouldShow
-      }))
+      if (shouldShow !== this.state.shouldShow) {
+        this.setState(prevState => ({
+          ...prevState,
+          shouldShow
+        }))
+      }
     }
   }
 
   getScrollClassName () {
-    return this.state.shouldShow
+    return !this.props.main || this.state.shouldShow
       ? this.props.classes.show
       : this.props.classes.invisible
   }
@@ -135,7 +136,8 @@ class BlogAppBar extends React.PureComponent<AppBarProps, AppBarState> {
   }
 
   render () {
-    const { classes } = this.props
+    const { classes, main } = this.props
+
     return (
       <MuiAppBar
         className={`${classes.root} ${this.getScrollClassName()}`}
@@ -144,11 +146,21 @@ class BlogAppBar extends React.PureComponent<AppBarProps, AppBarState> {
         position='fixed'
       >
         <Toolbar className={classes.toolbar}>
-          <div className={classes.toolbarTitle}>
-            <Link href='/'>
+          <div className={classes.left}>
+            <Link
+              {...(main
+                ? {
+                    component: linkProps => (
+                      <AnchorLink {...linkProps} href='#top' variant='button' />
+                    )
+                  }
+                : {
+                    href: '/'
+                  })}
+            >
               <img
                 className={classes.leftLinkImg}
-                src='/static/img/index/appbar-logo.png'
+                src='/static/components/appbar-logo.png'
               />
             </Link>
           </div>
@@ -164,15 +176,41 @@ class BlogAppBar extends React.PureComponent<AppBarProps, AppBarState> {
           <div className={classNames(classes.right, classes.rightExpanded)}>
             <Link
               className={classes.rightLink}
-              href='/#products'
               underline='none'
+              {...(main
+                ? {
+                    component: linkProps => (
+                      <AnchorLink
+                        {...linkProps}
+                        offset={appBarHeight}
+                        href='#products'
+                        variant='button'
+                      />
+                    )
+                  }
+                : {
+                    href: '/#products'
+                  })}
             >
               <Typography variant='body2'>PRODUCTS</Typography>
             </Link>
             <Link
               className={classes.rightLink}
-              href='/#company'
               underline='none'
+              {...(main
+                ? {
+                    component: linkProps => (
+                      <AnchorLink
+                        {...linkProps}
+                        offset={appBarHeight}
+                        href='#company'
+                        variant='button'
+                      />
+                    )
+                  }
+                : {
+                    href: '/#company'
+                  })}
             >
               <Typography variant='body2'>COMPANY</Typography>
             </Link>
@@ -194,24 +232,65 @@ class BlogAppBar extends React.PureComponent<AppBarProps, AppBarState> {
           >
             <div className={classes.drawerList}>
               <List>
-                <Link href='/' underline='none'>
+                <Link
+                  underline='none'
+                  {...(main
+                    ? {
+                        component: linkProps => (
+                          <AnchorLink {...linkProps} href='#top' />
+                        )
+                      }
+                    : {
+                        href: '/'
+                      })}
+                >
                   <ListItem button>
-                    <ListItemText primary={'Home'} />
+                    <ListItemText primary='Home' />
                   </ListItem>
                 </Link>
-                <Link href='/#products' underline='none'>
+                <Link
+                  underline='none'
+                  {...(main
+                    ? {
+                        component: linkProps => (
+                          <AnchorLink
+                            {...linkProps}
+                            offset={appBarHeight}
+                            href='#products'
+                          />
+                        )
+                      }
+                    : {
+                        href: '/#products'
+                      })}
+                >
                   <ListItem button>
-                    <ListItemText primary={'Products'} />
+                    <ListItemText primary='Products' />
                   </ListItem>
                 </Link>
-                <Link href='/#company' underline='none'>
+                <Link
+                  underline='none'
+                  {...(main
+                    ? {
+                        component: linkProps => (
+                          <AnchorLink
+                            {...linkProps}
+                            offset={appBarHeight}
+                            href='#company'
+                          />
+                        )
+                      }
+                    : {
+                        href: '/#company'
+                      })}
+                >
                   <ListItem button>
-                    <ListItemText primary={'Company'} />
+                    <ListItemText primary='Company' />
                   </ListItem>
                 </Link>
                 <Link href='/blog' underline='none'>
                   <ListItem button>
-                    <ListItemText primary={'Blog'} />
+                    <ListItemText primary='Blog' />
                   </ListItem>
                 </Link>
               </List>
@@ -223,4 +302,4 @@ class BlogAppBar extends React.PureComponent<AppBarProps, AppBarState> {
   }
 }
 
-export default withStyles(styles)(BlogAppBar)
+export default withStyles(styles)(AppBar)

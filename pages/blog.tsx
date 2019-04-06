@@ -1,12 +1,12 @@
 import NextSeo from 'next-seo'
 import React from 'react'
 
-import AppBar from './blog/components/AppBar'
-import GoToTop from './blog/components/GoToTop'
+import ContainerGoTo from 'pages/components/ContainerGoTo'
 // import BlogFooter from './index/components/BlogFooter'
 import Main from './blog/components/Main'
+import AppBar from './components/AppBar'
 
-const pageTitle = 'Lime Society Blog'
+const pageTitle = 'Blog - Lime Society'
 
 function Page () {
   return (
@@ -18,7 +18,7 @@ function Page () {
       />
       <AppBar />
       <Main />
-      <GoToTop />
+      <ContainerGoTo href='#top'>Back to top</ContainerGoTo>
     </>
   )
 }

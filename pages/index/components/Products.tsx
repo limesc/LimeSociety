@@ -11,7 +11,7 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 
-import Container from './Container'
+import Container from '../../components/Container'
 
 const styles = theme =>
   createStyles({
@@ -68,7 +68,7 @@ class Products extends React.Component<ProductsProps> {
                   <CardMedia
                     className={classes.mobileImage}
                     component={'img' as any}
-                    image='/static/img/index/products-medical-db.jpg'
+                    image='/static/index/components/products-medical-db.jpg'
                     title='Medical DB'
                     {...{ alt: 'Medical DB', height: 400 }}
                   />
@@ -95,7 +95,7 @@ class Products extends React.Component<ProductsProps> {
                   <CardMedia
                     className={classes.mobileImage}
                     component={'img' as any}
-                    image='/static/img/index/products-vital-db.png'
+                    image='/static/index/components/products-vital-db.png'
                     title='Vital DB'
                     {...{ alt: 'Vital DB', height: 400 }}
                   />
@@ -122,7 +122,7 @@ class Products extends React.Component<ProductsProps> {
                   <CardMedia
                     className={classes.mobileImage}
                     component={'img' as any}
-                    image='/static/img/index/products-next-medicine.jpg'
+                    image='/static/index/components/products-next-medicine.jpg'
                     title='Next Medicine'
                     {...{ alt: 'Next Medicine', height: 400 }}
                   />
@@ -145,7 +145,7 @@ class Products extends React.Component<ProductsProps> {
                   <CardMedia
                     className={classes.mobileImage}
                     component={'img' as any}
-                    image='/static/img/index/products-cpmtb.jpg'
+                    image='/static/index/components/products-cpmtb.jpg'
                     title='cPMTb'
                     {...{ alt: 'cPMTb', height: 400 }}
                   />

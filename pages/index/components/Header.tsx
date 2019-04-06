@@ -7,14 +7,14 @@ import {
 import React from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
-import { appbarHeight } from 'consts/layout'
+import { appBarHeight } from 'consts/layout'
 import HeaderButton from './HeaderButton'
 import HeaderLayout from './HeaderLayout'
 
 const styles = theme =>
   createStyles({
     background: {
-      backgroundImage: 'url("/static/img/index/header-bg.jpg")',
+      backgroundImage: 'url("/static/index/components/header-bg.jpg")',
       backgroundColor: '#7fc7d9',
       backgroundPosition: 'center'
     },
@@ -77,7 +77,7 @@ class Header extends React.Component<HeaderProps> {
           component={linkProps => (
             <AnchorLink
               {...linkProps}
-              offset={appbarHeight}
+              offset={appBarHeight}
               href='#products'
               variant='button'
             />

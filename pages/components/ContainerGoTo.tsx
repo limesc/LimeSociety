@@ -6,6 +6,7 @@ import {
   withStyles
 } from '@material-ui/core'
 import React from 'react'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import Container from './Container'
 
@@ -49,18 +50,37 @@ const styles = theme =>
     }
   })
 
-type BlogProps = WithStyles<typeof styles>
+interface ContainerGoToOwnProps {
+  href?: string
+}
 
-class Blog extends React.Component<BlogProps> {
+type ContainerGoToProps = ContainerGoToOwnProps & WithStyles<typeof styles>
+
+class ContainerGoTo extends React.Component<ContainerGoToProps> {
   render () {
-    const { classes } = this.props
+    const { children, classes, href } = this.props
+
+    let buttonProps: any = {}
+    if (href.startsWith('#')) {
+      buttonProps = {
+        ...buttonProps,
+        component: linkProps => (
+          <AnchorLink {...linkProps} href={href} variant='button' />
+        )
+      }
+    } else {
+      buttonProps = {
+        ...buttonProps,
+        href
+      }
+    }
 
     return (
       <Container className={classes.background} width='full'>
         <Container className={classes.root} component='section'>
-          <Button className={classes.button} href='/blog'>
+          <Button className={classes.button} {...buttonProps}>
             <Typography variant='h6' component='span'>
-              go to blog
+              {children}
             </Typography>
           </Button>
         </Container>
@@ -69,4 +89,4 @@ class Blog extends React.Component<BlogProps> {
   }
 }
 
-export default withStyles(styles)(Blog)
+export default withStyles(styles)(ContainerGoTo)

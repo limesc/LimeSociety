@@ -2,7 +2,7 @@ import { createStyles, WithStyles, withStyles } from '@material-ui/core'
 import classNames from 'classnames'
 import React from 'react'
 
-import Container from './Container'
+import Container from '../../components/Container'
 
 const styles = theme =>
   createStyles({

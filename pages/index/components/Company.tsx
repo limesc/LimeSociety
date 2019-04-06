@@ -12,7 +12,7 @@ import { mail } from 'react-icons-kit/entypo/mail'
 import { iosPaperplane } from 'react-icons-kit/ionicons/iosPaperplane'
 import { personStalker } from 'react-icons-kit/ionicons/personStalker'
 
-import Container from './Container'
+import Container from '../../components/Container'
 
 const styles = theme =>
   createStyles({

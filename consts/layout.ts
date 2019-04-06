@@ -1,1 +1,1 @@
-export const appbarHeight = 80
+export const appBarHeight = 80

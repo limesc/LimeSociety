@@ -13,9 +13,10 @@ import {
   withStyles
 } from '@material-ui/core'
 import PropTypes from 'prop-types'
-import Markdown from './markdown'
+import React from 'react'
 
-import Container from '../../index/components/Container'
+import Container from '../../components/Container'
+import Markdown from './markdown'
 
 // post1 ~ 3 까지는 별도의 md파일이 있어 import 하는 것이였습니다. 찬일님께 질문한 결과 당장 고치긴 어려우니 임시방편으로 const post1 ~ 3을 사용하여 글을 넣어라 하여 밑에와 같이 했습니다.
 
@@ -91,15 +92,13 @@ Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a p
 
 //
 
-import React from 'react'
-
 const styles = theme => ({
   background: {
     backgroundColor: '#EFFBEF',
     overflow: 'hidden'
   },
   layout: {
-    backgroundImage: 'url("/static/img/index/header-bg.jpg")',
+    backgroundImage: 'url("/static/index/components/header-bg.jpg")',
     // backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
     width: 'auto',
@@ -122,13 +121,15 @@ const styles = theme => ({
   mainGrid: {
     width: 'auto',
     marginTop: theme.spacing.unit * 5,
-    marginLeft: '16px',
-    marginRight: '16px',
+    marginLeft: 16,
+    marginRight: 16,
+    marginBottom: theme.spacing.unit * 4,
     [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
       width: 1100,
       marginTop: theme.spacing.unit * 10,
       marginLeft: 'auto',
-      marginRight: 'auto'
+      marginRight: 'auto',
+      marginBottom: theme.spacing.unit * 20
     },
     lineHeight: 1.6
   },
