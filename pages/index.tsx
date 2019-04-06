@@ -17,7 +17,7 @@ function Page () {
           title: pageTitle
         }}
       />
-      <AppBar main />
+      <AppBar home />
       <Header />
       <Products />
       <Company />

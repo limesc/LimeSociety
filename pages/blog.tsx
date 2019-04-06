@@ -2,7 +2,6 @@ import NextSeo from 'next-seo'
 import React from 'react'
 
 import ContainerGoTo from 'pages/components/ContainerGoTo'
-// import BlogFooter from './index/components/BlogFooter'
 import Main from './blog/components/Main'
 import AppBar from './components/AppBar'
 

@@ -50,6 +50,7 @@ type ProductsProps = WithStyles<typeof styles>
 class Products extends React.Component<ProductsProps> {
   render () {
     const { classes } = this.props
+
     return (
       <Container className={classes.background} id='products' width='full'>
         <Container className={classes.root} component='section'>

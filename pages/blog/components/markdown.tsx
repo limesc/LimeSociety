@@ -1,12 +1,34 @@
-import { Typography, withStyles } from '@material-ui/core'
+import {
+  createStyles,
+  Typography,
+  WithStyles,
+  withStyles
+} from '@material-ui/core'
 import ReactMarkdown from 'markdown-to-jsx'
 import React from 'react'
 
-const styles = theme => ({
-  listItem: {
-    marginTop: theme.spacing.unit
+const markdownListItemStyles = theme =>
+  createStyles({
+    listItem: {
+      marginTop: theme.spacing.unit
+    }
+  })
+
+type MarkdownListItemProps = WithStyles<typeof markdownListItemStyles>
+
+const MarkdownListItem = withStyles(markdownListItemStyles)(
+  class extends React.Component<MarkdownListItemProps> {
+    render () {
+      const { classes, ...props } = this.props
+
+      return (
+        <li className={classes.listItem}>
+          <Typography component='span' {...props} />
+        </li>
+      )
+    }
   }
-})
+)
 
 const options = {
   overrides: {
@@ -28,17 +50,15 @@ const options = {
     },
     p: { component: props => <Typography paragraph {...props} /> },
     li: {
-      component: withStyles(styles)(({ classes, ...props }) => (
-        <li className={classes.listItem}>
-          <Typography component='span' {...props} />
-        </li>
-      ))
+      component: props => <MarkdownListItem {...props} />
     }
   }
 }
 
-function Markdown (props) {
-  return <ReactMarkdown options={options} {...props} />
+class Markdown extends React.Component {
+  render () {
+    return <ReactMarkdown options={options} {...this.props} />
+  }
 }
 
 export default Markdown

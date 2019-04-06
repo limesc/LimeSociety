@@ -81,7 +81,7 @@ const styles = theme =>
   })
 
 interface AppBarOwnProps {
-  main?: boolean
+  home?: boolean
 }
 
 type AppBarProps = AppBarOwnProps & WithStyles<typeof styles>
@@ -98,20 +98,20 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
   }
 
   componentDidMount () {
-    if (this.props.main) {
+    if (this.props.home) {
       window.addEventListener('scroll', this.handleScroll)
       this.handleScroll()
     }
   }
 
   componentWillUnmount () {
-    if (this.props.main) {
+    if (this.props.home) {
       window.removeEventListener('scroll', this.handleScroll)
     }
   }
 
   handleScroll = () => {
-    if (this.props.main) {
+    if (this.props.home) {
       const shouldShow = window.scrollY >= 80
 
       if (shouldShow !== this.state.shouldShow) {
@@ -124,7 +124,7 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
   }
 
   getScrollClassName () {
-    return !this.props.main || this.state.shouldShow
+    return !this.props.home || this.state.shouldShow
       ? this.props.classes.show
       : this.props.classes.invisible
   }
@@ -136,7 +136,7 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
   }
 
   render () {
-    const { classes, main } = this.props
+    const { classes, home } = this.props
 
     return (
       <MuiAppBar
@@ -148,7 +148,7 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
         <Toolbar className={classes.toolbar}>
           <div className={classes.left}>
             <Link
-              {...(main
+              {...(home
                 ? {
                     component: linkProps => (
                       <AnchorLink {...linkProps} href='#top' variant='button' />
@@ -177,7 +177,7 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
             <Link
               className={classes.rightLink}
               underline='none'
-              {...(main
+              {...(home
                 ? {
                     component: linkProps => (
                       <AnchorLink
@@ -197,7 +197,7 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
             <Link
               className={classes.rightLink}
               underline='none'
-              {...(main
+              {...(home
                 ? {
                     component: linkProps => (
                       <AnchorLink
@@ -234,7 +234,7 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
               <List>
                 <Link
                   underline='none'
-                  {...(main
+                  {...(home
                     ? {
                         component: linkProps => (
                           <AnchorLink {...linkProps} href='#top' />
@@ -250,7 +250,7 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
                 </Link>
                 <Link
                   underline='none'
-                  {...(main
+                  {...(home
                     ? {
                         component: linkProps => (
                           <AnchorLink
@@ -270,7 +270,7 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
                 </Link>
                 <Link
                   underline='none'
-                  {...(main
+                  {...(home
                     ? {
                         component: linkProps => (
                           <AnchorLink
