@@ -19,8 +19,10 @@ function Page () {
       />
       <AppBar home />
       <Header />
-      <Products />
-      <Company />
+      <main>
+        <Products />
+        <Company />
+      </main>
       <ContainerGoTo href='/blog'>Go to blog</ContainerGoTo>
     </>
   )
