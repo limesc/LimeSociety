@@ -20,7 +20,7 @@ const styles = theme =>
       overflow: 'hidden'
     },
     root: {
-      marginTop: theme.spacing.unit * 10 + 80,
+      marginTop: theme.spacing.unit * 10,
       marginBottom: theme.spacing.unit * 10,
       [theme.breakpoints.down('sm')]: {
         marginTop: theme.spacing.unit * 4,
@@ -157,7 +157,6 @@ class Products extends React.Component<ProductsProps> {
                       align='center'
                     >
                       cPMTb
-                      <div id='company2' />
                     </Typography>
                   </CardContent>
                 </CardActionArea>

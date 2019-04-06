@@ -21,7 +21,7 @@ const styles = theme =>
       overflow: 'hidden'
     },
     root: {
-      marginTop: theme.spacing.unit * 10 + 100,
+      marginTop: theme.spacing.unit * 10,
       [theme.breakpoints.down('sm')]: {
         marginTop: theme.spacing.unit * 4,
         marginBottom: theme.spacing.unit * 2

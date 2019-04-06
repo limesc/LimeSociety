@@ -16,6 +16,8 @@ import MenuIcon from '@material-ui/icons/Menu'
 import classNames from 'classnames'
 import React from 'react'
 
+import { appbarHeight } from 'consts/layout'
+
 const styles = theme =>
   createStyles({
     root: {
@@ -42,10 +44,7 @@ const styles = theme =>
     },
     toolbar: {
       width: 'auto',
-      height: '80px',
-      [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
-        height: 100
-      }
+      height: appbarHeight
     },
     toolbarTitle: {
       flex: 1
@@ -200,12 +199,12 @@ class BlogAppBar extends React.PureComponent<AppBarProps, AppBarState> {
                     <ListItemText primary={'Home'} />
                   </ListItem>
                 </Link>
-                <Link href='/#products2' underline='none'>
+                <Link href='/#products' underline='none'>
                   <ListItem button>
                     <ListItemText primary={'Products'} />
                   </ListItem>
                 </Link>
-                <Link href='/#company2' underline='none'>
+                <Link href='/#company' underline='none'>
                   <ListItem button>
                     <ListItemText primary={'Company'} />
                   </ListItem>

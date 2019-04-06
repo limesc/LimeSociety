@@ -17,6 +17,8 @@ import classNames from 'classnames'
 import React from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
+import { appbarHeight } from 'consts/layout'
+
 const styles = theme =>
   createStyles({
     root: {
@@ -26,7 +28,7 @@ const styles = theme =>
       background: 'transparent',
       boxShadow: 'none',
       [theme.breakpoints.up('md')]: {
-        transform: 'translateY(5%)',
+        // transform: 'translateY(5%)',
         transition: 'all .5s'
       }
     },
@@ -41,10 +43,7 @@ const styles = theme =>
     },
     toolbar: {
       justifyContent: 'space-between',
-      height: 80,
-      [theme.breakpoints.up('sm')]: {
-        height: 100
-      }
+      height: appbarHeight
     },
     left: {
       flex: 1,
@@ -161,7 +160,12 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
             <Link
               className={classes.rightLink}
               component={linkProps => (
-                <AnchorLink {...linkProps} href='#products' variant='button' />
+                <AnchorLink
+                  {...linkProps}
+                  offset={appbarHeight}
+                  href='#products'
+                  variant='button'
+                />
               )}
               underline='none'
             >
@@ -170,7 +174,12 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
             <Link
               className={classes.rightLink}
               component={linkProps => (
-                <AnchorLink {...linkProps} href='#company' variant='button' />
+                <AnchorLink
+                  {...linkProps}
+                  offset={appbarHeight}
+                  href='#company'
+                  variant='button'
+                />
               )}
               underline='none'
             >
@@ -206,7 +215,11 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
                 </Link>
                 <Link
                   component={linkProps => (
-                    <AnchorLink {...linkProps} href='#products2' />
+                    <AnchorLink
+                      {...linkProps}
+                      offset={appbarHeight}
+                      href='#products'
+                    />
                   )}
                   underline='none'
                 >
@@ -216,7 +229,11 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
                 </Link>
                 <Link
                   component={linkProps => (
-                    <AnchorLink {...linkProps} href='#company2' />
+                    <AnchorLink
+                      {...linkProps}
+                      offset={appbarHeight}
+                      href='#company'
+                    />
                   )}
                   underline='none'
                 >

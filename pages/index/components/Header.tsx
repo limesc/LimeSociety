@@ -7,6 +7,7 @@ import {
 import React from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
+import { appbarHeight } from 'consts/layout'
 import HeaderButton from './HeaderButton'
 import HeaderLayout from './HeaderLayout'
 
@@ -74,14 +75,18 @@ class Header extends React.Component<HeaderProps> {
           className={classes.button}
           color='primary'
           component={linkProps => (
-            <AnchorLink {...linkProps} href='#products' variant='button' />
+            <AnchorLink
+              {...linkProps}
+              offset={appbarHeight}
+              href='#products'
+              variant='button'
+            />
           )}
           size='large'
           variant='contained'
         >
           Tell Me More
         </HeaderButton>
-        <div id='products2' />
       </HeaderLayout>
     )
   }
