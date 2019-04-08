@@ -40,7 +40,6 @@ const styles = theme =>
     },
     layout: {
       backgroundImage: 'url("/static/index/components/header-bg.jpg")',
-      // backgroundColor: theme.palette.grey[800],
       color: theme.palette.common.white,
       width: 'auto',
       marginTop: theme.spacing.unit * 10,

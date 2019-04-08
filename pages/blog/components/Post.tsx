@@ -6,7 +6,7 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 
-import Markdown from './Markdown'
+import Markdown from './markdown'
 
 const styles = theme =>
   createStyles({
