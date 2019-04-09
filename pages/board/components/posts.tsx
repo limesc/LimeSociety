@@ -8,6 +8,11 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 
+import CPMTBBoardList from './BoardList/cpmtbBoardList'
+import MedicalDBBoardList from './BoardList/madicaldbBoardList'
+import NextMedicineBoardList from './BoardList/nextmedicineBoardList'
+import VitalDBBoardList from './BoardList/vitaldbBoardList'
+
 function TabContainer (props) {
   return (
     <Typography
@@ -61,10 +66,34 @@ class Posts extends React.Component<PostsProps> {
             <Tab label='cPMTb 게시판' />
           </Tabs>
         </AppBar>
-        {value === 0 && <TabContainer>Medical DB 게시글 목록</TabContainer>}
-        {value === 1 && <TabContainer>Vital DB 게시글 목록</TabContainer>}
-        {value === 2 && <TabContainer>Next Medicine 게시글 목록</TabContainer>}
-        {value === 3 && <TabContainer>cPMTb 게시글 목록</TabContainer>}
+        {value === 0 && (
+          <TabContainer>
+            <>
+              <MedicalDBBoardList />
+            </>
+          </TabContainer>
+        )}
+        {value === 1 && (
+          <TabContainer>
+            <>
+              <VitalDBBoardList />
+            </>
+          </TabContainer>
+        )}
+        {value === 2 && (
+          <TabContainer>
+            <>
+              <NextMedicineBoardList />
+            </>
+          </TabContainer>
+        )}
+        {value === 3 && (
+          <TabContainer>
+            <>
+              <CPMTBBoardList />
+            </>
+          </TabContainer>
+        )}
       </div>
     )
   }

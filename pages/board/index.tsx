@@ -5,7 +5,7 @@ import AppBar from '../components/AppBar'
 import ContainerGoTo from '../components/ContainerGoTo'
 import Header from './components/Header'
 import MainPosts from './components/MainPosts'
-import Posts from './components/posts'
+import Posts from './components/Posts'
 
 const pageTitle = 'Board - Lime Society'
 
