@@ -1,7 +1,7 @@
 import {
   createStyles,
-  Grid,
   Link,
+  List,
   ListItem,
   Paper,
   Typography,
@@ -29,15 +29,26 @@ const social = ['GitHub', 'Twitter', 'Facebook']
 
 const styles = theme =>
   createStyles({
-    sidebarAboutBox: {
+    about: {
       padding: theme.spacing.unit * 2,
       marginBottom: theme.spacing.unit * 4,
       backgroundColor: theme.palette.grey[200],
       lineHeight: 1.6
     },
-    sidebarSection: {
-      padding: theme.spacing.unit * 2,
-      lineHeight: 1.6
+    sticky: {
+      position: 'sticky',
+      top: 80 + theme.spacing.unit * 2
+    },
+    section: {
+      marginBottom: theme.spacing.unit * 2
+    },
+    sectionTitle: {
+      paddingLeft: theme.spacing.unit * 2,
+      paddingRight: theme.spacing.unit * 2
+    },
+    sectionListItem: {
+      paddingTop: theme.spacing.unit * 0.75,
+      paddingBottom: theme.spacing.unit * 0.75
     }
   })
 
@@ -49,7 +60,7 @@ class Sidebar extends React.Component<SidebarProps> {
 
     return (
       <>
-        <Paper elevation={0} className={classes.sidebarAboutBox}>
+        <Paper elevation={0} className={classes.about}>
           <Typography variant='h6' gutterBottom>
             About
           </Typography>
@@ -59,31 +70,43 @@ class Sidebar extends React.Component<SidebarProps> {
             sed consectetur.
           </Typography>
         </Paper>
-        <div style={{ position: 'sticky', top: '100px' }}>
-          <Grid className={classes.sidebarSection}>
-            <Typography variant='h6' gutterBottom>
+        <div className={classes.sticky}>
+          <div className={classes.section}>
+            <Typography
+              variant='h6'
+              gutterBottom
+              className={classes.sectionTitle}
+            >
               Archives
             </Typography>
-            {archives.map((archive, i) => (
-              <Link underline='none' key={i}>
-                <ListItem button>
-                  <Typography key={archive}>{archive}</Typography>
-                </ListItem>
-              </Link>
-            ))}
-          </Grid>
-          <Grid className={classes.sidebarSection}>
-            <Typography variant='h6' gutterBottom>
+            <List component='nav'>
+              {archives.map((archive, i) => (
+                <Link underline='none' key={i}>
+                  <ListItem button className={classes.sectionListItem}>
+                    <Typography key={archive}>{archive}</Typography>
+                  </ListItem>
+                </Link>
+              ))}
+            </List>
+          </div>
+          <div className={classes.section}>
+            <Typography
+              variant='h6'
+              gutterBottom
+              className={classes.sectionTitle}
+            >
               Social
             </Typography>
-            {social.map((network, i) => (
-              <Link underline='none' key={i}>
-                <ListItem button>
-                  <Typography key={network}>{network}</Typography>
-                </ListItem>
-              </Link>
-            ))}
-          </Grid>
+            <List component='nav'>
+              {social.map((network, i) => (
+                <Link underline='none' key={i}>
+                  <ListItem button className={classes.sectionListItem}>
+                    <Typography key={network}>{network}</Typography>
+                  </ListItem>
+                </Link>
+              ))}
+            </List>
+          </div>
         </div>
       </>
     )
