@@ -1,10 +1,10 @@
 import NextSeo from 'next-seo'
 import React from 'react'
 
+import AppBar from 'pages/components/AppBar'
 import ContainerGoTo from 'pages/components/ContainerGoTo'
-import Header from './blog/components/Header'
-import Main from './blog/components/Main'
-import AppBar from './components/AppBar'
+import Header from './components/Header'
+import Main from './components/Main'
 
 const pageTitle = 'Blog - Lime Society'
 
