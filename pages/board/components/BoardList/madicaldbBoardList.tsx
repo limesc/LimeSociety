@@ -11,6 +11,7 @@ import {
   TableHead,
   TablePagination,
   TableRow,
+  Typography,
   WithStyles,
   withStyles
 } from '@material-ui/core'
@@ -23,73 +24,12 @@ import {
 
 import React from 'react'
 
-// const styles = theme =>
-//   createStyles({
-//     root: {
-//       width: '100%',
-//       marginTop: theme.spacing.unit * 3,
-//       overflowX: 'auto'
-//     },
-//     table: {
-//       minWidth: 700
-//     }
-//   })
-
-// type MedicalDBBoardListProps = WithStyles<typeof styles>
-
-// let id = 0
-// function createData (name, uploader, date) {
-//   id += 1
-//   return { id, name, uploader, date }
-// }
-
-// const rows = [
-//   createData('MedicalDB 게시판 입니다.', '작성자1', '19.04.09'),
-//   createData('게시글 1', '작성자2', '19.04.09'),
-//   createData('게시글 2', '작성자3', '19.04.09'),
-//   createData('게시글 3', '작성자4', '19.04.08'),
-//   createData('게시글 4', '작성자5', '19.04.06')
-// ]
-
-// class MedicalDBBoardList extends React.Component<MedicalDBBoardListProps> {
-//   render () {
-//     const { classes } = this.props
-
-//     return (
-//       <Paper className={classes.root}>
-//         <Table className={classes.table}>
-//           <TableHead>
-//             <TableRow>
-//               <TableCell>제목</TableCell>
-//               <TableCell align='right'>작성자</TableCell>
-//               <TableCell align='right'>작성일</TableCell>
-//             </TableRow>
-//           </TableHead>
-//           <TableBody>
-//             {rows.map(row => (
-//               <TableRow key={row.id}>
-//                 <TableCell component='th' scope='row'>
-//                   {row.name}
-//                 </TableCell>
-//                 <TableCell align='right'>{row.uploader}</TableCell>
-//                 <TableCell align='right'>{row.date}</TableCell>
-//               </TableRow>
-//             ))}
-//           </TableBody>
-//         </Table>
-//       </Paper>
-//     )
-//   }
-// }
-
-// export default withStyles(styles)(MedicalDBBoardList)
-
 const actionsStyles = theme =>
   createStyles({
-    buttonClick: {
+    root: {
       flexShrink: 0,
       color: theme.palette.text.secondary,
-      marginLeft: theme.spacing.unit * 1
+      marginLeft: theme.spacing.unit * 2.5
     }
   })
 
@@ -164,33 +104,33 @@ const ActionTableListWrapped = withStyles(actionsStyles, { withTheme: true })(
 )
 
 let counter = 0
-function createData (name, calories, fat) {
+function createData (name, uploader, date) {
   counter += 1
-  return { id: counter, name, calories, fat }
+  return { id: counter, name, uploader, date }
 }
 
 const styles = theme =>
   createStyles({
     root: {
       width: '100%',
-      marginTop: theme.spacing.unit * 3
+      marginTop: theme.spacing.unit * 3,
+      overflowx: 'auto'
     },
     table: {
-      minWidth: 500
+      minWidth: 700
     },
     tableWrapper: {
       overflowX: 'auto'
-    },
-    buttonClick: {
-      flexShrink: 0,
-      color: theme.palette.text.secondary,
-      marginLeft: theme.spacing.unit * 2.5
     }
+    // buttonClick: {
+    //   flexShrink: 0,
+    //   color: theme.palette.text.secondary
+    // }
   })
 
-type TableListProps = WithStyles<typeof styles>
+type MedicalDBBoardListProps = WithStyles<typeof styles>
 
-class TableList extends React.Component<TableListProps> {
+class MedicalDBBoardList extends React.Component<MedicalDBBoardListProps> {
   state = {
     rows: [
       createData('Medical DB 게시판 입니다.', '작성자1', '19.04.09'),
@@ -207,7 +147,7 @@ class TableList extends React.Component<TableListProps> {
       createData('게시글 11', '작성자12', '19.04.01'),
       createData('게시글 12', '작성자13', '19.04.01'),
       createData('게시글 13', '작성자14', '19.04.01')
-    ].sort((a, b) => (a.calories < b.calories ? -1 : 1)),
+    ].sort((a, b) => (a.date > b.date ? -1 : 1)),
     page: 0,
     rowsPerPage: 10
   }
@@ -216,9 +156,9 @@ class TableList extends React.Component<TableListProps> {
     this.setState({ page })
   }
 
-  handleChangeRowsPerPage = event => {
-    this.setState({ page: 0, rowsPerPage: event.target.value })
-  }
+  // handleChangeRowsPerPage = event => {
+  //   this.setState({ page: 0, rowsPerPage: event.target.value })
+  // }
 
   render () {
     const { classes } = this.props
@@ -232,9 +172,15 @@ class TableList extends React.Component<TableListProps> {
           <Table className={classes.table}>
             <TableHead>
               <TableRow>
-                <TableCell>제목</TableCell>
-                <TableCell align='right'>작성자</TableCell>
-                <TableCell align='right'>작성일</TableCell>
+                <TableCell>
+                  <Typography variant='subtitle2'>제목</Typography>
+                </TableCell>
+                <TableCell align='right'>
+                  <Typography variant='subtitle2'>작성자</Typography>
+                </TableCell>
+                <TableCell align='right'>
+                  <Typography variant='subtitle2'>작성일</Typography>
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -245,8 +191,8 @@ class TableList extends React.Component<TableListProps> {
                     <TableCell component='th' scope='row'>
                       {row.name}
                     </TableCell>
-                    <TableCell align='right'>{row.calories}</TableCell>
-                    <TableCell align='right'>{row.fat}</TableCell>
+                    <TableCell align='right'>{row.uploader}</TableCell>
+                    <TableCell align='right'>{row.date}</TableCell>
                   </TableRow>
                 ))}
               {emptyRows > 0 && (
@@ -265,8 +211,8 @@ class TableList extends React.Component<TableListProps> {
                     native: true
                   }}
                   onChangePage={this.handleChangePage}
-                  onChangeRowsPerPage={this.handleChangeRowsPerPage}
-                  ActionsComponent={ActionTableListWrapped}
+                  // onChangeRowsPerPage={this.handleChangeRowsPerPage}
+                  // ActionsComponent={ActionTableListWrapped}
                 />
               </TableRow>
             </TableFooter>
@@ -277,4 +223,4 @@ class TableList extends React.Component<TableListProps> {
   }
 }
 
-export default withStyles(styles)(TableList)
+export default withStyles(styles)(MedicalDBBoardList)

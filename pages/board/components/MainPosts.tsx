@@ -18,23 +18,19 @@ import Container from '../../components/Container'
 const featuredPosts = [
   {
     id: 1,
-    title: 'Medical DB 게시판',
-    image: '../../../static/compoments/products-medical-db.jpg'
+    title: 'Medical DB 게시판'
   },
   {
     id: 2,
-    title: 'Vital DB 게시판',
-    image: '../../../static/compoments/products-vital-db.jpg'
+    title: 'Vital DB 게시판'
   },
   {
     id: 3,
-    title: 'Next Medicine 게시판',
-    image: '../../../static/compoments/products-next-medicine-db.jpg'
+    title: 'Next Medicine 게시판'
   },
   {
     id: 4,
-    title: 'cPMTb 게시판',
-    image: '../../../static/compoments/products-cpmtb.jpg'
+    title: 'cPMTb 게시판'
   }
 ]
 
@@ -43,6 +39,11 @@ const styles = theme =>
     background: {
       backgroundColor: '#EFFBEF',
       overflow: 'hidden'
+    },
+    root: {
+      width: 1270,
+      marginLeft: 'auto',
+      marginRight: 'auto'
     },
     mainBoard: {
       width: 'auto',
@@ -86,45 +87,47 @@ class MainPosts extends React.Component<MainPostsProps> {
 
     return (
       <Container className={classes.background} width='full'>
-        <Typography
-          align='center'
-          className={classes.title}
-          component={'h2' as any}
-          variant='h4'
-        >
-          최신 업데이트
-        </Typography>
-        <Grid container spacing={40} className={classes.mainBoard}>
-          {featuredPosts.map(post => (
-            <Grid item key={post.id} xs={12} md={6}>
-              <Card className={classes.card}>
-                <div className={classes.cardDetails}>
-                  <CardContent>
-                    <Typography component={'h2' as any} variant='subtitle1'>
-                      {post.title}
-                    </Typography>
-                    <Grid className={classes.cardposts}>
-                      <Link underline='none'>
-                        <ListItem button>
-                          <li>1</li>
-                        </ListItem>
-                        <ListItem button>
-                          <li>2</li>
-                        </ListItem>
-                        <ListItem button>
-                          <li>3</li>
-                        </ListItem>
-                      </Link>
-                    </Grid>
-                  </CardContent>
-                </div>
-                <Hidden xsDown>
-                  <CardMedia className={classes.cardMedia} image={post.image} />
-                </Hidden>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
+        <Container className={classes.root}>
+          <Typography
+            align='center'
+            className={classes.title}
+            component={'h2' as any}
+            variant='h4'
+          >
+            최신 업데이트
+          </Typography>
+          <Grid container spacing={40} className={classes.mainBoard}>
+            {featuredPosts.map(post => (
+              <Grid item key={post.id} xs={12} md={6}>
+                <Card className={classes.card}>
+                  <div className={classes.cardDetails}>
+                    <CardContent>
+                      <Typography component={'h2' as any} variant='subtitle1'>
+                        {post.title}
+                      </Typography>
+                      <Grid className={classes.cardposts}>
+                        <Link underline='none'>
+                          <ListItem button>
+                            <li>1</li>
+                          </ListItem>
+                          <ListItem button>
+                            <li>2</li>
+                          </ListItem>
+                          <ListItem button>
+                            <li>3</li>
+                          </ListItem>
+                        </Link>
+                      </Grid>
+                    </CardContent>
+                  </div>
+                  <Hidden xsDown>
+                    <CardMedia className={classes.cardMedia} />
+                  </Hidden>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
       </Container>
     )
   }
