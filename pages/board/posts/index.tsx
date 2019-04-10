@@ -4,7 +4,7 @@ import React from 'react'
 import AppBar from '../../components/AppBar'
 import ContainerGoTo from '../../components/ContainerGoTo'
 import Header from '../components/Header'
-import Posts from './Posts'
+import Posts from './posts'
 
 const pageTitle = 'Board/Posts - Lime Society'
 
