@@ -1,14 +1,8 @@
-import {
-  createStyles,
-  Divider,
-  Grid,
-  WithStyles,
-  withStyles
-} from '@material-ui/core'
+import { createStyles, Grid, WithStyles, withStyles } from '@material-ui/core'
 import React from 'react'
 
 import { posts } from 'consts/posts'
-import Post from './Post'
+import Posts from './Posts'
 import Sidebar from './Sidebar'
 
 const styles = theme =>
@@ -39,12 +33,7 @@ class Main extends React.Component<MainProps> {
     return (
       <Grid container spacing={40} className={classes.mainGrid}>
         <Grid item xs={12} md={8}>
-          {posts.map(post => (
-            <React.Fragment key={post.id}>
-              <Post post={post} />
-              <Divider />
-            </React.Fragment>
-          ))}
+          <Posts posts={posts} />
         </Grid>
         <Grid item xs={12} md={4}>
           <Sidebar />
