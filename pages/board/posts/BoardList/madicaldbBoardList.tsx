@@ -1,8 +1,6 @@
 import {
   createStyles,
   IconButton,
-  // Link,
-  // ListItem,
   Paper,
   Table,
   TableBody,
@@ -16,27 +14,28 @@ import {
   withStyles
 } from '@material-ui/core'
 import {
-  FirstPage,
+  // FirstPage,
   KeyboardArrowLeft,
-  KeyboardArrowRight,
-  LastPage
+  KeyboardArrowRight
+  // LastPage
 } from '@material-ui/icons'
 
 import React from 'react'
+
+import Container from '../../../components/Container'
 
 const actionsStyles = theme =>
   createStyles({
     root: {
       flexShrink: 0,
-      color: theme.palette.text.secondary,
       marginLeft: theme.spacing.unit * 2.5
     }
   })
 
 class ActionTableList extends React.Component<any> {
-  handleFirstPageButtonClick = event => {
-    this.props.onChangePage(event, 0)
-  }
+  // handleFirstPageButtonClick = event => {
+  //   this.props.onChangePage(event, 0)
+  // }
 
   handleBackButtonClick = event => {
     this.props.onChangePage(event, this.props.page - 1)
@@ -46,25 +45,18 @@ class ActionTableList extends React.Component<any> {
     this.props.onChangePage(event, this.props.page + 1)
   }
 
-  handleLastPageButtonClick = event => {
-    this.props.onChangePage(
-      event,
-      Math.max(0, Math.ceil(this.props.count / this.props.rowsPerPage) - 1)
-    )
-  }
+  // handleLastPageButtonClick = event => {
+  //   this.props.onChangePage(
+  //     event,
+  //     Math.max(0, Math.ceil(this.props.count / this.props.rowsPerPage) - 1)
+  //   )
+  // }
 
   render () {
     const { classes, count, page, rowsPerPage, theme } = this.props
 
     return (
       <div className={classes.root}>
-        <IconButton
-          onClick={this.handleFirstPageButtonClick}
-          disabled={page === 0}
-          aria-label='First Page'
-        >
-          {theme.direction === 'rtl' ? <LastPage /> : <FirstPage />}
-        </IconButton>
         <IconButton
           onClick={this.handleBackButtonClick}
           disabled={page === 0}
@@ -87,13 +79,13 @@ class ActionTableList extends React.Component<any> {
             <KeyboardArrowRight />
           )}
         </IconButton>
-        <IconButton
+        {/* <IconButton
           onClick={this.handleLastPageButtonClick}
           disabled={page >= Math.ceil(count / rowsPerPage) - 1}
           aria-label='Last Page'
         >
           {theme.direction === 'rtl' ? <FirstPage /> : <LastPage />}
-        </IconButton>
+        </IconButton> */}
       </div>
     )
   }
@@ -111,8 +103,19 @@ function createData (name, uploader, date) {
 
 const styles = theme =>
   createStyles({
+    background: {
+      overflow: 'hidden'
+    },
+    containerRoot: {
+      marginTop: theme.spacing.unit * 10,
+      marginBottom: theme.spacing.unit * 10,
+      [theme.breakpoints.down('sm')]: {
+        marginTop: theme.spacing.unit * 4,
+        marginBottom: theme.spacing.unit * 4
+      }
+    },
     root: {
-      width: '100%',
+      width: 'full',
       marginTop: theme.spacing.unit * 3,
       overflowx: 'auto'
     },
@@ -121,6 +124,15 @@ const styles = theme =>
     },
     tableWrapper: {
       overflowX: 'auto'
+    },
+    tableCursor: {
+      cursor: 'pointer'
+    },
+    title: {
+      marginBottom: theme.spacing.unit * 10,
+      [theme.breakpoints.down('md')]: {
+        marginBottom: theme.spacing.unit * 4
+      }
     }
     // buttonClick: {
     //   flexShrink: 0,
@@ -147,7 +159,7 @@ class MedicalDBBoardList extends React.Component<MedicalDBBoardListProps> {
       createData('게시글 11', '작성자12', '19.04.01'),
       createData('게시글 12', '작성자13', '19.04.01'),
       createData('게시글 13', '작성자14', '19.04.01')
-    ].sort((a, b) => (a.date > b.date ? -1 : 1)),
+    ].sort((a, b) => (a.date > b.date ? 1 : 1)),
     page: 0,
     rowsPerPage: 10
   }
@@ -167,60 +179,80 @@ class MedicalDBBoardList extends React.Component<MedicalDBBoardListProps> {
       rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage)
 
     return (
-      <Paper className={classes.root}>
-        <div className={classes.tableWrapper}>
-          <Table className={classes.table}>
-            <TableHead>
-              <TableRow>
-                <TableCell>
-                  <Typography variant='subtitle2'>제목</Typography>
-                </TableCell>
-                <TableCell align='right'>
-                  <Typography variant='subtitle2'>작성자</Typography>
-                </TableCell>
-                <TableCell align='right'>
-                  <Typography variant='subtitle2'>작성일</Typography>
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows
-                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map(row => (
-                  <TableRow key={row.id}>
-                    <TableCell component='th' scope='row'>
-                      {row.name}
+      <Container className={classes.background} width='full'>
+        <Container className={classes.containerRoot} component='section'>
+          <Typography
+            align='left'
+            className={classes.title}
+            component={'h2' as any}
+            variant='h4'
+          >
+            Medical DB 게시판
+          </Typography>
+
+          <Paper className={classes.root}>
+            <div className={classes.tableWrapper}>
+              <Table className={classes.table}>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>
+                      <Typography variant='subtitle2'>제목</Typography>
                     </TableCell>
-                    <TableCell align='right'>{row.uploader}</TableCell>
-                    <TableCell align='right'>{row.date}</TableCell>
+                    <TableCell align='right'>
+                      <Typography variant='subtitle2'>작성자</Typography>
+                    </TableCell>
+                    <TableCell align='right'>
+                      <Typography variant='subtitle2'>작성일</Typography>
+                    </TableCell>
                   </TableRow>
-                ))}
-              {emptyRows > 0 && (
-                <TableRow style={{ height: 48 * emptyRows }}>
-                  <TableCell colSpan={6} />
-                </TableRow>
-              )}
-            </TableBody>
-            <TableFooter>
-              <TableRow>
-                <TablePagination
-                  count={rows.length}
-                  rowsPerPage={rowsPerPage}
-                  page={page}
-                  SelectProps={{
-                    native: true
-                  }}
-                  onChangePage={this.handleChangePage}
-                  // onChangeRowsPerPage={this.handleChangeRowsPerPage}
-                  // ActionsComponent={ActionTableListWrapped}
-                />
-              </TableRow>
-            </TableFooter>
-          </Table>
-        </div>
-      </Paper>
+                </TableHead>
+                <TableBody>
+                  {rows
+                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                    .map(row => (
+                      <TableRow key={row.id}>
+                        <TableCell component='th' scope='row'>
+                          <Typography variant='body2'>{row.name}</Typography>
+                        </TableCell>
+                        <TableCell align='right'>
+                          <Typography variant='body2'>
+                            {row.uploader}
+                          </Typography>
+                        </TableCell>
+                        <TableCell align='right'>
+                          <Typography variant='body2'>{row.date}</Typography>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  {emptyRows > 0 && (
+                    <TableRow style={{ height: 48 * emptyRows }}>
+                      <TableCell colSpan={6} />
+                    </TableRow>
+                  )}
+                </TableBody>
+                <TableFooter>
+                  <TableRow>
+                    <TablePagination
+                      count={rows.length}
+                      rowsPerPage={rowsPerPage}
+                      page={page}
+                      // SelectProps={{
+                      //   native: true
+                      // }}
+                      onChangePage={this.handleChangePage}
+                      // onChangeRowsPerPage={this.handleChangeRowsPerPage}
+                      // ActionsComponent={ActionTableListWrapped}
+                    />
+                  </TableRow>
+                </TableFooter>
+              </Table>
+            </div>
+          </Paper>
+        </Container>
+      </Container>
     )
   }
 }
+console.log('rows')
 
 export default withStyles(styles)(MedicalDBBoardList)

@@ -1,10 +1,8 @@
 import {
   Card,
   CardContent,
-  CardMedia,
   createStyles,
   Grid,
-  Hidden,
   Link,
   ListItem,
   Typography,
@@ -36,10 +34,6 @@ const featuredPosts = [
 
 const styles = theme =>
   createStyles({
-    background: {
-      backgroundColor: '#EFFBEF',
-      overflow: 'hidden'
-    },
     root: {
       width: 1270,
       marginLeft: 'auto',
@@ -72,10 +66,6 @@ const styles = theme =>
       [theme.breakpoints.down('md')]: {
         marginBottom: theme.spacing.unit * 1
       }
-    },
-    cardMedia: {
-      width: 300,
-      [theme.breakpoints.down('lg')]: {}
     }
   })
 
@@ -84,50 +74,46 @@ type MainPostsProps = WithStyles<typeof styles>
 class MainPosts extends React.Component<MainPostsProps> {
   render () {
     const { classes } = this.props
+    console.log()
 
     return (
-      <Container className={classes.background} width='full'>
-        <Container className={classes.root}>
-          <Typography
-            align='center'
-            className={classes.title}
-            component={'h2' as any}
-            variant='h4'
-          >
-            최신 업데이트
-          </Typography>
-          <Grid container spacing={40} className={classes.mainBoard}>
-            {featuredPosts.map(post => (
-              <Grid item key={post.id} xs={12} md={6}>
-                <Card className={classes.card}>
-                  <div className={classes.cardDetails}>
-                    <CardContent>
-                      <Typography component={'h2' as any} variant='subtitle1'>
-                        {post.title}
-                      </Typography>
-                      <Grid className={classes.cardposts}>
-                        <Link underline='none'>
-                          <ListItem button>
-                            <li>1</li>
-                          </ListItem>
-                          <ListItem button>
-                            <li>2</li>
-                          </ListItem>
-                          <ListItem button>
-                            <li>3</li>
-                          </ListItem>
-                        </Link>
-                      </Grid>
-                    </CardContent>
-                  </div>
-                  <Hidden xsDown>
-                    <CardMedia className={classes.cardMedia} />
-                  </Hidden>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
+      <Container className={classes.root}>
+        <Typography
+          align='center'
+          className={classes.title}
+          component={'h2' as any}
+          variant='h4'
+        >
+          최신 업데이트
+        </Typography>
+        <Grid container spacing={40} className={classes.mainBoard}>
+          {featuredPosts.map(post => (
+            <Grid item key={post.id} xs={12} md={6}>
+              <Card className={classes.card}>
+                <div className={classes.cardDetails}>
+                  <CardContent>
+                    <Typography component={'h2' as any} variant='subtitle1'>
+                      {post.title}
+                    </Typography>
+                    <Grid className={classes.cardposts}>
+                      <Link underline='none'>
+                        <ListItem button>
+                          <li>1</li>
+                        </ListItem>
+                        <ListItem button>
+                          <li>2</li>
+                        </ListItem>
+                        <ListItem button>
+                          <li>3</li>
+                        </ListItem>
+                      </Link>
+                    </Grid>
+                  </CardContent>
+                </div>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
       </Container>
     )
   }

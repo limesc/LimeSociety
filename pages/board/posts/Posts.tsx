@@ -34,7 +34,6 @@ const styles = theme => ({
     marginLeft: 'auto',
     marginRight: 'auto',
     [theme.breakpoints.up('md')]: {
-      marginTop: theme.spacing.unit * 17,
       marginLeft: '10%',
       marginRight: '10%',
       marginBottom: theme.spacing.unit * 17
