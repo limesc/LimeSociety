@@ -38,7 +38,7 @@ const styles = theme =>
       margin: theme.spacing.unit,
       maxWidth: 'auto'
     },
-    mobileImage: {
+    cardImage: {
       [theme.breakpoints.down('sm')]: {
         height: '250px'
       }
@@ -67,7 +67,7 @@ class Products extends React.Component<ProductsProps> {
               <Card className={classes.card}>
                 <CardActionArea>
                   <CardMedia
-                    className={classes.mobileImage}
+                    className={classes.cardImage}
                     component={'img' as any}
                     image='/static/index/components/products-medical-db.jpg'
                     title='Medical DB'
@@ -94,7 +94,7 @@ class Products extends React.Component<ProductsProps> {
                   rel='noopener'
                 >
                   <CardMedia
-                    className={classes.mobileImage}
+                    className={classes.cardImage}
                     component={'img' as any}
                     image='/static/index/components/products-vital-db.png'
                     title='Vital DB'
@@ -121,7 +121,7 @@ class Products extends React.Component<ProductsProps> {
                   rel='noopener'
                 >
                   <CardMedia
-                    className={classes.mobileImage}
+                    className={classes.cardImage}
                     component={'img' as any}
                     image='/static/index/components/products-next-medicine.jpg'
                     title='Next Medicine'
@@ -144,7 +144,7 @@ class Products extends React.Component<ProductsProps> {
               <Card className={classes.card}>
                 <CardActionArea>
                   <CardMedia
-                    className={classes.mobileImage}
+                    className={classes.cardImage}
                     component={'img' as any}
                     image='/static/index/components/products-cpmtb.jpg'
                     title='cPMTb'
