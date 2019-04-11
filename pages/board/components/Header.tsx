@@ -54,7 +54,7 @@ class Header extends React.Component<HeaderProps> {
                 color='inherit'
                 gutterBottom
               >
-                Lime's 게시판
+                라임 게시판
               </Typography>
               <Typography variant='body1' color='inherit' paragraph>
                 Multiple lines of text that form the lede, informing new readers

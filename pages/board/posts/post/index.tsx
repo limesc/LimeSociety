@@ -5,6 +5,8 @@ import AppBar from '../../../components/AppBar'
 import ContainerGoTo from '../../../components/ContainerGoTo'
 import Header from '../../components/Header'
 
+import Post from './components/post'
+
 const pageTitle = 'Board/Post - Lime Society'
 
 function Page () {
@@ -17,6 +19,7 @@ function Page () {
       />
       <AppBar />
       <Header />
+      <Post />
       <ContainerGoTo href='/board/posts'>Go to Posts</ContainerGoTo>
     </>
   )

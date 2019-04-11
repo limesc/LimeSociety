@@ -1,5 +1,6 @@
 import {
   createStyles,
+  Grid,
   IconButton,
   Paper,
   Table,
@@ -14,10 +15,10 @@ import {
   withStyles
 } from '@material-ui/core'
 import {
-  // FirstPage,
+  FirstPage,
   KeyboardArrowLeft,
-  KeyboardArrowRight
-  // LastPage
+  KeyboardArrowRight,
+  LastPage
 } from '@material-ui/icons'
 
 import React from 'react'
@@ -27,15 +28,20 @@ import Container from '../../components/Container'
 const actionsStyles = theme =>
   createStyles({
     root: {
-      flexShrink: 0,
-      marginLeft: theme.spacing.unit * 2.5
+      flexShrink: 0
+      // marginLeft: theme.spacing.unit * 2.5
+    },
+    buttonhide: {
+      [theme.breakpoints.down('sm')]: {
+        display: 'none'
+      }
     }
   })
 
 class ActionTableList extends React.Component<any> {
-  // handleFirstPageButtonClick = event => {
-  //   this.props.onChangePage(event, 0)
-  // }
+  handleFirstPageButtonClick = event => {
+    this.props.onChangePage(event, 0)
+  }
 
   handleBackButtonClick = event => {
     this.props.onChangePage(event, this.props.page - 1)
@@ -45,18 +51,26 @@ class ActionTableList extends React.Component<any> {
     this.props.onChangePage(event, this.props.page + 1)
   }
 
-  // handleLastPageButtonClick = event => {
-  //   this.props.onChangePage(
-  //     event,
-  //     Math.max(0, Math.ceil(this.props.count / this.props.rowsPerPage) - 1)
-  //   )
-  // }
+  handleLastPageButtonClick = event => {
+    this.props.onChangePage(
+      event,
+      Math.max(0, Math.ceil(this.props.count / this.props.rowsPerPage) - 1)
+    )
+  }
 
   render () {
     const { classes, count, page, rowsPerPage, theme } = this.props
 
     return (
       <div className={classes.root}>
+        <IconButton
+          className={classes.buttonhide}
+          onClick={this.handleFirstPageButtonClick}
+          disabled={page === 0}
+          aria-label='first Page'
+        >
+          {theme.direction === 'rtl' ? <LastPage /> : <FirstPage />}
+        </IconButton>
         <IconButton
           onClick={this.handleBackButtonClick}
           disabled={page === 0}
@@ -79,13 +93,14 @@ class ActionTableList extends React.Component<any> {
             <KeyboardArrowRight />
           )}
         </IconButton>
-        {/* <IconButton
+        <IconButton
+          className={classes.buttonhide}
           onClick={this.handleLastPageButtonClick}
           disabled={page >= Math.ceil(count / rowsPerPage) - 1}
           aria-label='Last Page'
         >
           {theme.direction === 'rtl' ? <FirstPage /> : <LastPage />}
-        </IconButton> */}
+        </IconButton>
       </div>
     )
   }
@@ -103,10 +118,7 @@ function createData (name, uploader, date) {
 
 const styles = theme =>
   createStyles({
-    background: {
-      overflow: 'hidden'
-    },
-    containerRoot: {
+    root: {
       marginTop: theme.spacing.unit * 10,
       marginBottom: theme.spacing.unit * 10,
       [theme.breakpoints.down('sm')]: {
@@ -114,13 +126,13 @@ const styles = theme =>
         marginBottom: theme.spacing.unit * 4
       }
     },
-    root: {
+    boardstyle: {
       width: 'full',
       marginTop: theme.spacing.unit * 3,
       overflowx: 'auto'
     },
     table: {
-      minWidth: 700
+      minWidth: 350
     },
     tableWrapper: {
       overflowX: 'auto'
@@ -129,10 +141,23 @@ const styles = theme =>
       cursor: 'pointer'
     },
     title: {
-      marginBottom: theme.spacing.unit * 10,
+      marginTop: theme.spacing.unit * 8,
+      marginLeft: theme.spacing.unit * 3,
+      marginRight: theme.spacing.unit * 3,
+      marginBottom: theme.spacing.unit * 8,
       [theme.breakpoints.down('md')]: {
+        marginTop: theme.spacing.unit,
         marginBottom: theme.spacing.unit * 4
       }
+    },
+
+    hide: {
+      [theme.breakpoints.down('sm')]: {
+        display: 'none'
+      }
+    },
+    tablefooter: {
+      marginRight: theme.spacin
     }
     // buttonClick: {
     //   flexShrink: 0,
@@ -168,9 +193,9 @@ class Posts extends React.Component<PostsProps> {
     this.setState({ page })
   }
 
-  // handleChangeRowsPerPage = event => {
-  //   this.setState({ page: 0, rowsPerPage: event.target.value })
-  // }
+  handleChangeRowsPerPage = event => {
+    this.setState({ page: 0, rowsPerPage: event.target.value })
+  }
 
   render () {
     const { classes } = this.props
@@ -179,7 +204,7 @@ class Posts extends React.Component<PostsProps> {
       rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage)
 
     return (
-      <Container className={classes.containerRoot} component='section'>
+      <Container className={classes.root}>
         <Typography
           align='left'
           className={classes.title}
@@ -188,67 +213,73 @@ class Posts extends React.Component<PostsProps> {
         >
           Lime Society 게시판
         </Typography>
-
-        <Paper className={classes.root}>
+        <Paper className={classes.boardstyle}>
           <div className={classes.tableWrapper}>
-            <Table className={classes.table}>
-              <TableHead>
-                <TableRow>
-                  <TableCell>
-                    <Typography variant='subtitle2'>제목</Typography>
-                  </TableCell>
-                  <TableCell align='right'>
-                    <Typography variant='subtitle2'>작성자</Typography>
-                  </TableCell>
-                  <TableCell align='right'>
-                    <Typography variant='subtitle2'>작성일</Typography>
-                  </TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {rows
-                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                  .map(row => (
-                    <TableRow key={row.id}>
-                      <TableCell component='th' scope='row'>
-                        <Typography variant='body2'>{row.name}</Typography>
-                      </TableCell>
-                      <TableCell align='right'>
-                        <Typography variant='body2'>{row.uploader}</Typography>
-                      </TableCell>
-                      <TableCell align='right'>
-                        <Typography variant='body2'>{row.date}</Typography>
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                {emptyRows > 0 && (
-                  <TableRow style={{ height: 48 * emptyRows }}>
-                    <TableCell colSpan={6} />
+            <Grid>
+              <Table className={classes.table}>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>
+                      <Typography variant='subtitle2'>제목</Typography>
+                    </TableCell>
+                    <TableCell className={classes.hide} align='right'>
+                      <Typography variant='subtitle2'>작성자</Typography>
+                    </TableCell>
+                    <TableCell className={classes.hide} align='right'>
+                      <Typography variant='subtitle2'>작성일</Typography>
+                    </TableCell>
                   </TableRow>
-                )}
-              </TableBody>
-              <TableFooter>
-                <TableRow>
-                  <TablePagination
-                    count={rows.length}
-                    rowsPerPage={rowsPerPage}
-                    page={page}
-                    // SelectProps={{
-                    //   native: true
-                    // }}
-                    onChangePage={this.handleChangePage}
-                    // onChangeRowsPerPage={this.handleChangeRowsPerPage}
-                    // ActionsComponent={ActionTableListWrapped}
-                  />
-                </TableRow>
-              </TableFooter>
-            </Table>
+                </TableHead>
+                <TableBody>
+                  {rows
+                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                    .map(row => (
+                      <TableRow key={row.id}>
+                        <TableCell padding='none' component='th' scope='row'>
+                          <Typography variant='body2'>{row.name}</Typography>
+                        </TableCell>
+                        <TableCell className={classes.hide} align='right'>
+                          <Typography variant='body2'>
+                            {row.uploader}
+                          </Typography>
+                        </TableCell>
+                        <TableCell className={classes.hide} align='right'>
+                          <Typography variant='body2'>{row.date}</Typography>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  {emptyRows > 0 && (
+                    <TableRow style={{ height: 48 * emptyRows }}>
+                      <TableCell colSpan={6} />
+                    </TableRow>
+                  )}
+                </TableBody>
+                <TableFooter>
+                  <TableRow>
+                    <TablePagination
+                      className={classes.tablefooter}
+                      labelDisplayedRows={({}) => ``}
+                      labelRowsPerPage=''
+                      rowsPerPageOptions={[]}
+                      count={rows.length}
+                      rowsPerPage={rowsPerPage}
+                      page={page}
+                      SelectProps={{
+                        native: true
+                      }}
+                      onChangePage={this.handleChangePage}
+                      onChangeRowsPerPage={this.handleChangeRowsPerPage}
+                      ActionsComponent={ActionTableListWrapped}
+                    />
+                  </TableRow>
+                </TableFooter>
+              </Table>
+            </Grid>
           </div>
         </Paper>
       </Container>
     )
   }
 }
-console.log('rows')
 
 export default withStyles(styles)(Posts)
