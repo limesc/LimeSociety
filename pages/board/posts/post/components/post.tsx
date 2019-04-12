@@ -2,13 +2,6 @@ import {
   createStyles,
   Divider,
   Grid,
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableRow,
   Typography,
   WithStyles,
   withStyles
@@ -34,17 +27,25 @@ const styles = theme =>
       }
     },
     mainGrid: {
+      width: 1400,
+      marginTop: theme.spacing.unit,
+      marginLeft: theme.spacing.unit * 3,
+      marginRight: theme.spacing.unit * 3,
+      marginBottom: theme.spacing.unit * 10,
+      lineHeight: 1.6
+    },
+    commentGrid: {
       width: 'auto',
       marginTop: theme.spacing.unit * 5,
       marginLeft: 16,
       marginRight: 16,
       marginBottom: theme.spacing.unit * 4,
-      [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
-        width: 1100,
-        marginTop: theme.spacing.unit * 10,
+      [theme.breakpoints.up('sm')]: {
+        width: 1400,
+        marginTop: theme.spacing.unit * 2,
         marginLeft: theme.spacing.unit * 3,
         marginRight: theme.spacing.unit * 3,
-        marginBottom: theme.spacing.unit * 20
+        marginBottom: theme.spacing.unit * 10
       },
       lineHeight: 1.6
     },
@@ -59,10 +60,12 @@ const styles = theme =>
       paddingBottom: theme.spacing.unit * 5
     },
     textArea: {
+      padding: '10px',
       display: 'flex',
       margin: theme.spacing.unit
     },
     DividerBottom: {
+      width: 'full',
       marginBottom: theme.spacing.unit * 3
     }
   })
@@ -82,37 +85,26 @@ class Post extends React.Component<PostProps> {
 
     return (
       <Container className={classes.root}>
-        <Paper>
-          <Grid>
-            {rows.map(row => (
-              <Grid key={row.id} className={classes.mainGrid}>
-                <Grid className={classes.boardTitle}>
-                  <Typography className={classes.boardTitle} variant='h4'>
-                    {row.title}
-                  </Typography>
-                </Grid>
-                <Grid className={classes.uploaderText}>
-                  <Typography variant='subtitle1'>{row.uploader}</Typography>
-                </Grid>
-                <Grid className={classes.dateText}>
-                  <Typography variant='subtitle2'>{row.date}</Typography>
-                </Grid>
-                <Divider className={classes.DividerBottom} />
-                <Grid className={classes.textArea}>
-                  <Typography variant='h5'>{row.text}</Typography>
-                </Grid>
-              </Grid>
-            ))}
-            <Divider className={classes.DividerBottom} />
-            <Table>
-              <TableRow>
-                <TableHead>
-                  <TableCell>댓글</TableCell>
-                </TableHead>
-              </TableRow>
-            </Table>
-          </Grid>
-        </Paper>
+        <Grid container spacing={40}>
+          {rows.map(row => (
+            <div key={row.id} className={classes.mainGrid}>
+              <div className={classes.boardTitle}>
+                <Typography variant='h4'>{row.title}</Typography>
+              </div>
+              <div className={classes.uploaderText}>
+                <Typography variant='subtitle1'>{row.uploader}</Typography>
+              </div>
+              <div className={classes.dateText}>
+                <Typography variant='subtitle2'>{row.date}</Typography>
+              </div>
+              <Divider className={classes.DividerBottom} />
+              <div className={classes.textArea}>
+                <Typography variant='h5'>{row.text}</Typography>
+              </div>
+            </div>
+          ))}
+        </Grid>
+        <Divider className={classes.DividerBottom} />
       </Container>
     )
   }
