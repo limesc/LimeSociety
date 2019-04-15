@@ -39,7 +39,6 @@ const styles = theme =>
     },
     commentGrid: {
       width: 1400,
-      marginTop: theme.spacing.unit * 2,
       marginLeft: theme.spacing.unit * 3,
       marginRight: theme.spacing.unit * 3,
       marginBottom: theme.spacing.unit * 8,
@@ -47,23 +46,22 @@ const styles = theme =>
       lineHeight: 1.6
     },
     userName: {
-      marginBottom: theme.spacing.unit
+      marginBottom: theme.spacing.unit,
+      paddingLeft: theme.spacing.unit * 2
     },
     dateText: {
-      marginBottom: theme.spacing.unit
+      marginBottom: theme.spacing.unit,
+      paddingLeft: theme.spacing.unit * 3
     },
     comment: {
-      paddingBottom: theme.spacing.unit * 3
+      paddingBottom: theme.spacing.unit * 3,
+      paddingLeft: theme.spacing.unit * 3
     },
     DividerBottom: {
-      marginBottom: theme.spacing.unit * 3
+      marginBottom: theme.spacing.unit * 2
     },
     textField: {
-      width: 1170,
-      marginLeft: theme.spacing.unit,
-      marginRight: theme.spacing.unit
-    },
-    dense: {
+      width: '100%',
       marginTop: 16
     }
   })
@@ -110,13 +108,17 @@ class Comments extends React.Component<CommentsProps> {
             <Divider className={classes.DividerBottom} />
           </Grid>
         ))}
-        <TextField
-          id='outlined-dense'
-          label='댓글달기'
-          className={classNames(classes.textField, classes.dense)}
-          margin='dense'
-          variant='outlined'
-        />
+        <Grid container spacing={40}>
+          <Grid item xs={12}>
+            <TextField
+              className={classes.textField}
+              id='outlined-dense'
+              label='댓글달기'
+              margin='dense'
+              variant='outlined'
+            />
+          </Grid>
+        </Grid>
       </Container>
     )
   }

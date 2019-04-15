@@ -2,6 +2,7 @@ import {
   createStyles,
   Grid,
   IconButton,
+  Link,
   Paper,
   Table,
   TableBody,
@@ -29,7 +30,6 @@ const actionsStyles = theme =>
   createStyles({
     root: {
       flexShrink: 0
-      // marginLeft: theme.spacing.unit * 2.5
     },
     buttonhide: {
       [theme.breakpoints.down('sm')]: {
@@ -123,6 +123,8 @@ const styles = theme =>
       marginBottom: theme.spacing.unit * 10,
       [theme.breakpoints.down('sm')]: {
         marginTop: theme.spacing.unit * 4,
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
         marginBottom: theme.spacing.unit * 4
       }
     },
@@ -131,14 +133,8 @@ const styles = theme =>
       marginTop: theme.spacing.unit * 3,
       overflowx: 'auto'
     },
-    table: {
-      minWidth: 350
-    },
     tableWrapper: {
       overflowX: 'auto'
-    },
-    tableCursor: {
-      cursor: 'pointer'
     },
     title: {
       marginTop: theme.spacing.unit * 8,
@@ -150,19 +146,18 @@ const styles = theme =>
         marginBottom: theme.spacing.unit * 4
       }
     },
-
     hide: {
       [theme.breakpoints.down('sm')]: {
         display: 'none'
       }
     },
     tablefooter: {
-      marginRight: theme.spacin
+      marginRight: theme.spacing.unit
+    },
+    boardTitle: {
+      width: '75%',
+      paddingRight: '24px'
     }
-    // buttonClick: {
-    //   flexShrink: 0,
-    //   color: theme.palette.text.secondary
-    // }
   })
 
 type PostsProps = WithStyles<typeof styles>
@@ -211,71 +206,73 @@ class Posts extends React.Component<PostsProps> {
           component={'h2' as any}
           variant='h4'
         >
-          Lime Society 게시판
+          게시글 목록
         </Typography>
         <Paper className={classes.boardstyle}>
-          <div className={classes.tableWrapper}>
-            <Grid>
-              <Table className={classes.table}>
-                <TableHead>
-                  <TableRow>
-                    <TableCell>
-                      <Typography variant='subtitle2'>제목</Typography>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>
+                  <Typography variant='subtitle2'>제목</Typography>
+                </TableCell>
+                <TableCell className={classes.hide} align='right'>
+                  <Typography variant='subtitle2'>작성자</Typography>
+                </TableCell>
+                <TableCell className={classes.hide} align='right'>
+                  <Typography variant='subtitle2'>작성일</Typography>
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows
+                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                .map(row => (
+                  <TableRow key={row.id}>
+                    <TableCell
+                      className={classes.boardTitle}
+                      component='th'
+                      scope='row'
+                    >
+                      <Typography variant='body2'>
+                        <Link color='inherit' href='/'>
+                          {row.name}
+                        </Link>
+                      </Typography>
                     </TableCell>
                     <TableCell className={classes.hide} align='right'>
-                      <Typography variant='subtitle2'>작성자</Typography>
+                      <Typography variant='body2'>{row.uploader}</Typography>
                     </TableCell>
                     <TableCell className={classes.hide} align='right'>
-                      <Typography variant='subtitle2'>작성일</Typography>
+                      <Typography variant='body2'>{row.date}</Typography>
                     </TableCell>
                   </TableRow>
-                </TableHead>
-                <TableBody>
-                  {rows
-                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                    .map(row => (
-                      <TableRow key={row.id}>
-                        <TableCell padding='none' component='th' scope='row'>
-                          <Typography variant='body2'>{row.name}</Typography>
-                        </TableCell>
-                        <TableCell className={classes.hide} align='right'>
-                          <Typography variant='body2'>
-                            {row.uploader}
-                          </Typography>
-                        </TableCell>
-                        <TableCell className={classes.hide} align='right'>
-                          <Typography variant='body2'>{row.date}</Typography>
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  {emptyRows > 0 && (
-                    <TableRow style={{ height: 48 * emptyRows }}>
-                      <TableCell colSpan={6} />
-                    </TableRow>
-                  )}
-                </TableBody>
-                <TableFooter>
-                  <TableRow>
-                    <TablePagination
-                      className={classes.tablefooter}
-                      labelDisplayedRows={({}) => ``}
-                      labelRowsPerPage=''
-                      rowsPerPageOptions={[]}
-                      count={rows.length}
-                      rowsPerPage={rowsPerPage}
-                      page={page}
-                      SelectProps={{
-                        native: true
-                      }}
-                      onChangePage={this.handleChangePage}
-                      onChangeRowsPerPage={this.handleChangeRowsPerPage}
-                      ActionsComponent={ActionTableListWrapped}
-                    />
-                  </TableRow>
-                </TableFooter>
-              </Table>
-            </Grid>
-          </div>
+                ))}
+              {emptyRows > 0 && (
+                <TableRow style={{ height: 48 * emptyRows }}>
+                  <TableCell colSpan={6} />
+                </TableRow>
+              )}
+            </TableBody>
+            <TableFooter>
+              <TableRow>
+                <TablePagination
+                  className={classes.tablefooter}
+                  labelDisplayedRows={({}) => ``}
+                  labelRowsPerPage=''
+                  rowsPerPageOptions={[]}
+                  count={rows.length}
+                  rowsPerPage={rowsPerPage}
+                  page={page}
+                  SelectProps={{
+                    native: true
+                  }}
+                  onChangePage={this.handleChangePage}
+                  onChangeRowsPerPage={this.handleChangeRowsPerPage}
+                  ActionsComponent={ActionTableListWrapped}
+                />
+              </TableRow>
+            </TableFooter>
+          </Table>
         </Paper>
       </Container>
     )
