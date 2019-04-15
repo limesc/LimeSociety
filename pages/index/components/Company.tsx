@@ -33,8 +33,9 @@ const styles = theme =>
       alignItems: 'center'
     },
     title: {
+      fontWeight: 700,
       marginBottom: theme.spacing.unit * 10,
-      [theme.breakpoints.down('md')]: {
+      [theme.breakpoints.down('sm')]: {
         marginBottom: theme.spacing.unit * 4
       }
     },
@@ -43,24 +44,20 @@ const styles = theme =>
       flexDirection: 'column',
       alignItems: 'center',
       marginBottom: theme.spacing.unit * 5,
-      [theme.breakpoints.down('md')]: {
+      [theme.breakpoints.down('sm')]: {
         marginBottom: theme.spacing.unit * 3
       }
     },
     itemIcon: {
-      marginBottom: 30,
-      [theme.breakpoints.down('md')]: {
-        marginBottom: 10
-      },
+      marginBottom: theme.spacing.unit * 2,
       padding: '18px',
-      backgroundColor: '#a2cb0f',
+      backgroundColor: theme.palette.primary.main,
       borderRadius: '50%',
       textAlign: 'center',
       color: '#ffffff'
     },
-    itemDesc: {
-      marginTop: 15,
-      lineHeight: 1.6
+    itemTitle: {
+      fontWeight: 700
     }
   })
 
@@ -87,14 +84,16 @@ class Company extends React.Component<CompanyProps> {
                 <div className={classes.itemIcon}>
                   <Icon size={48} icon={personStalker} />
                 </div>
-                <Typography variant='subtitle1' align='center'>
+                <Typography
+                  align='center'
+                  className={classes.itemTitle}
+                  component={'h3' as any}
+                  gutterBottom
+                  variant='h6'
+                >
                   Team
                 </Typography>
-                <Typography
-                  className={classes.itemDesc}
-                  variant='h5'
-                  align='center'
-                >
+                <Typography align='center' variant='body1'>
                   Founded in 2012,
                   <br />
                   by passionate and experienced developers
@@ -106,14 +105,16 @@ class Company extends React.Component<CompanyProps> {
                 <div className={classes.itemIcon}>
                   <Icon size={48} icon={iosPaperplane} />
                 </div>
-                <Typography variant='subtitle1' align='center'>
+                <Typography
+                  align='center'
+                  className={classes.itemTitle}
+                  component={'h3' as any}
+                  gutterBottom
+                  variant='h6'
+                >
                   Location
                 </Typography>
-                <Typography
-                  className={classes.itemDesc}
-                  variant='h5'
-                  align='center'
-                >
+                <Typography align='center' variant='body1'>
                   Room 803, 311 Teheran-ro,
                   <br />
                   Gangnam-gu, Seoul
@@ -127,14 +128,16 @@ class Company extends React.Component<CompanyProps> {
                 <div className={classes.itemIcon}>
                   <Icon size={48} icon={mail} />
                 </div>
-                <Typography variant='subtitle1' align='center'>
+                <Typography
+                  align='center'
+                  className={classes.itemTitle}
+                  component={'h3' as any}
+                  gutterBottom
+                  variant='h6'
+                >
                   Contact
                 </Typography>
-                <Typography
-                  className={classes.itemDesc}
-                  variant='h5'
-                  align='center'
-                >
+                <Typography align='center' variant='body1'>
                   <Link href='mailto:contact@limesociety.com'>
                     contact@limesociety.com
                   </Link>

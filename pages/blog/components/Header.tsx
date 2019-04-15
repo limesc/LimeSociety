@@ -78,9 +78,8 @@ const styles = theme =>
     cardMedia: {
       width: 160
     },
-    cardposts: {
-      marginTop: theme.spacing.unit * 2,
-      lineHeight: 1.6
+    featuredPostTitle: {
+      fontSize: theme.typography.h6.fontSize
     }
   })
 
@@ -121,24 +120,24 @@ class Header extends React.Component<HeaderProps> {
                   <Card className={classes.card}>
                     <div className={classes.cardDetails}>
                       <CardContent>
-                        <Typography component={'h2' as any} variant='subtitle1'>
+                        <Typography
+                          className={classes.featuredPostTitle}
+                          component={'h2' as any}
+                          variant='subtitle1'
+                        >
                           {post.title}
                         </Typography>
                         <Typography
-                          variant='subtitle2'
                           color='textSecondary'
-                          className={classes.cardposts}
+                          paragraph
+                          variant='subtitle2'
                         >
                           {post.date}
                         </Typography>
-                        <Typography
-                          variant='h5'
-                          paragraph
-                          className={classes.cardposts}
-                        >
+                        <Typography paragraph variant='body1'>
                           {post.description}
                         </Typography>
-                        <Typography variant='h6' color='primary'>
+                        <Typography color='primary' variant='body2'>
                           Continue reading...
                         </Typography>
                       </CardContent>

@@ -28,17 +28,21 @@ const styles = theme =>
       }
     },
     title: {
+      fontWeight: 700,
       marginBottom: theme.spacing.unit * 10,
-      [theme.breakpoints.down('md')]: {
+      [theme.breakpoints.down('sm')]: {
         marginBottom: theme.spacing.unit * 4
       }
     },
-    card: {
+    product: {
       position: 'relative',
       margin: theme.spacing.unit,
       maxWidth: 'auto'
     },
-    cardImage: {
+    productTitle: {
+      fontWeight: 700
+    },
+    productImage: {
       [theme.breakpoints.down('sm')]: {
         height: '250px'
       }
@@ -64,10 +68,10 @@ class Products extends React.Component<ProductsProps> {
           </Typography>
           <Grid container spacing={0}>
             <Grid item xs={12} md={5}>
-              <Card className={classes.card}>
+              <Card className={classes.product}>
                 <CardActionArea>
                   <CardMedia
-                    className={classes.cardImage}
+                    className={classes.productImage}
                     component={'img' as any}
                     image='/static/index/components/products-medical-db.jpg'
                     title='Medical DB'
@@ -75,6 +79,7 @@ class Products extends React.Component<ProductsProps> {
                   />
                   <CardContent>
                     <Typography
+                      className={classes.productTitle}
                       gutterBottom
                       variant='h6'
                       component={'h3' as any}
@@ -87,14 +92,14 @@ class Products extends React.Component<ProductsProps> {
               </Card>
             </Grid>
             <Grid item xs={12} md={7}>
-              <Card className={classes.card}>
+              <Card className={classes.product}>
                 <CardActionArea
                   href='https://vitaldb.net/'
                   target='_blank'
                   rel='noopener'
                 >
                   <CardMedia
-                    className={classes.cardImage}
+                    className={classes.productImage}
                     component={'img' as any}
                     image='/static/index/components/products-vital-db.png'
                     title='Vital DB'
@@ -102,6 +107,7 @@ class Products extends React.Component<ProductsProps> {
                   />
                   <CardContent>
                     <Typography
+                      className={classes.productTitle}
                       gutterBottom
                       variant='h6'
                       component={'h3' as any}
@@ -114,14 +120,14 @@ class Products extends React.Component<ProductsProps> {
               </Card>
             </Grid>
             <Grid item xs={12} md={7}>
-              <Card className={classes.card}>
+              <Card className={classes.product}>
                 <CardActionArea
                   href='http://nextmedicine.com/'
                   target='_blank'
                   rel='noopener'
                 >
                   <CardMedia
-                    className={classes.cardImage}
+                    className={classes.productImage}
                     component={'img' as any}
                     image='/static/index/components/products-next-medicine.jpg'
                     title='Next Medicine'
@@ -129,6 +135,7 @@ class Products extends React.Component<ProductsProps> {
                   />
                   <CardContent>
                     <Typography
+                      className={classes.productTitle}
                       gutterBottom
                       variant='h6'
                       component={'h3' as any}
@@ -141,10 +148,10 @@ class Products extends React.Component<ProductsProps> {
               </Card>
             </Grid>
             <Grid item xs={12} md={5}>
-              <Card className={classes.card}>
+              <Card className={classes.product}>
                 <CardActionArea>
                   <CardMedia
-                    className={classes.cardImage}
+                    className={classes.productImage}
                     component={'img' as any}
                     image='/static/index/components/products-cpmtb.jpg'
                     title='cPMTb'
@@ -152,6 +159,7 @@ class Products extends React.Component<ProductsProps> {
                   />
                   <CardContent>
                     <Typography
+                      className={classes.productTitle}
                       gutterBottom
                       variant='h6'
                       component={'h3' as any}

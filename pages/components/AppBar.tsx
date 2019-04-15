@@ -71,9 +71,11 @@ const styles = theme =>
       color: theme.palette.common.white
     },
     rightLink: {
-      fontSize: 23,
-      color: theme.palette.common.white,
       marginLeft: theme.spacing.unit * 3
+    },
+    rightLinkTypo: {
+      fontSize: 14,
+      color: theme.palette.common.white
     },
     drawerList: {
       width: 250
@@ -192,7 +194,9 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
                     href: '/#products'
                   })}
             >
-              <Typography variant='body2'>PRODUCTS</Typography>
+              <Typography className={classes.rightLinkTypo} variant='body1'>
+                PRODUCTS
+              </Typography>
             </Link>
             <Link
               className={classes.rightLink}
@@ -212,10 +216,14 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
                     href: '/#company'
                   })}
             >
-              <Typography variant='body2'>COMPANY</Typography>
+              <Typography className={classes.rightLinkTypo} variant='body1'>
+                COMPANY
+              </Typography>
             </Link>
             <Link className={classes.rightLink} href='/blog' underline='none'>
-              <Typography variant='body2'>BLOG</Typography>
+              <Typography className={classes.rightLinkTypo} variant='body1'>
+                BLOG
+              </Typography>
             </Link>
           </div>
         </Toolbar>

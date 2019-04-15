@@ -27,6 +27,8 @@ const styles = theme =>
     motto1: {
       marginTop: 75,
       marginBottom: 25,
+      fontSize: 60,
+      fontWeight: 700,
       [theme.breakpoints.down('sm')]: {
         fontSize: 45
       },
@@ -36,6 +38,8 @@ const styles = theme =>
     },
     motto2: {
       marginBottom: 75,
+      fontSize: 42,
+      fontWeight: 700,
       [theme.breakpoints.down('sm')]: {
         fontSize: 31
       },

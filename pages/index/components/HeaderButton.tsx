@@ -26,6 +26,7 @@ const styles = theme =>
     sizeLarge: {
       padding: `${theme.spacing.unit * 3 - 3}px ${theme.spacing.unit * 6}px`,
       fontSize: theme.typography.pxToRem(20),
+      fontWeight: 700,
       [theme.breakpoints.down('sm')]: {
         padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px`,
         fontSize: theme.typography.pxToRem(15)
