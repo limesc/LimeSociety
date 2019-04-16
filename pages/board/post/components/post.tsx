@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 
-import Container from '../../../../components/Container'
+import Container from '../../../components/Container'
 
 let counter = 0
 function createData (title, uploader, date, text) {

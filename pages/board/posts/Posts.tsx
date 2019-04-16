@@ -155,7 +155,7 @@ const styles = theme =>
       marginRight: theme.spacing.unit
     },
     boardTitle: {
-      width: '75%',
+      width: '70%',
       paddingRight: '24px'
     }
   })
@@ -206,7 +206,7 @@ class Posts extends React.Component<PostsProps> {
           component={'h2' as any}
           variant='h4'
         >
-          게시글 목록
+          Medical DB 게시판
         </Typography>
         <Paper className={classes.boardstyle}>
           <Table>
@@ -234,7 +234,7 @@ class Posts extends React.Component<PostsProps> {
                       scope='row'
                     >
                       <Typography variant='body2'>
-                        <Link color='inherit' href='/'>
+                        <Link color='inherit' href='/board/post'>
                           {row.name}
                         </Link>
                       </Typography>

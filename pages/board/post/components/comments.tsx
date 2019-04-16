@@ -11,7 +11,7 @@ import React from 'react'
 
 import classNames from 'classnames'
 
-import Container from '../../../../components/Container'
+import Container from '../../../components/Container'
 
 let comments = 0
 function commentsData (username, date, comment) {
@@ -30,7 +30,7 @@ const styles = theme =>
       }
     },
     mainGrid: {
-      width: 1400,
+      width: 1100,
       marginTop: theme.spacing.unit * 5,
       marginLeft: theme.spacing.unit * 3,
       marginRight: theme.spacing.unit * 3,
@@ -38,11 +38,13 @@ const styles = theme =>
       lineHeight: 1.6
     },
     commentGrid: {
-      width: 1400,
+      width: 1100,
       marginLeft: theme.spacing.unit * 3,
       marginRight: theme.spacing.unit * 3,
       marginBottom: theme.spacing.unit * 8,
-
+      [theme.breakpoints.down('sm')]: {
+        marginTop: theme.spacing.unit * 5
+      },
       lineHeight: 1.6
     },
     userName: {

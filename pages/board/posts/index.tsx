@@ -2,7 +2,6 @@ import NextSeo from 'next-seo'
 import React from 'react'
 
 import AppBar from '../../components/AppBar'
-import ContainerGoTo from '../../components/ContainerGoTo'
 import Header from '../components/Header'
 import Posts from './posts'
 
@@ -19,7 +18,6 @@ function Page () {
       <AppBar />
       <Header />
       <Posts />
-      <ContainerGoTo href='#top'>Go To Top</ContainerGoTo>
     </>
   )
 }
