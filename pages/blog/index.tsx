@@ -3,6 +3,7 @@ import React from 'react'
 
 import AppBar from 'pages/components/AppBar'
 import ContainerGoTo from 'pages/components/ContainerGoTo'
+import FeaturedPosts from './components/FeaturedPosts'
 import Header from './components/Header'
 import Main from './components/Main'
 
@@ -18,6 +19,7 @@ function Page () {
       />
       <AppBar />
       <Header />
+      <FeaturedPosts />
       <main>
         <Main />
       </main>

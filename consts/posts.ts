@@ -86,3 +86,5 @@ yarn serve
 `
   }
 ]
+
+export const featuredPosts = posts.slice(0, 2)

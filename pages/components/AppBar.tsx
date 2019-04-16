@@ -2,7 +2,6 @@ import {
   AppBar as MuiAppBar,
   createStyles,
   Drawer,
-  Hidden,
   IconButton,
   Link,
   List,

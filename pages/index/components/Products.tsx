@@ -11,12 +11,13 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 
+import { lightLimeColor } from 'consts/layout'
 import Container from '../../components/Container'
 
 const styles = theme =>
   createStyles({
     background: {
-      backgroundColor: '#EFFBEF',
+      backgroundColor: lightLimeColor,
       overflow: 'hidden'
     },
     root: {
