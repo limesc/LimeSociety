@@ -6,12 +6,12 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 
-import Markdown from './Markdown'
+import Markdown from '../../components/Markdown'
 
 const styles = theme =>
   createStyles({
-    mainpoststitle: {
-      marginBottom: theme.spacing.unit * 5
+    title: {
+      marginBottom: theme.spacing.unit * 3
     }
   })
 
@@ -28,9 +28,9 @@ class Post extends React.Component<PostProps> {
     return (
       <div style={{ marginTop: '40px' }}>
         <Typography
+          className={classes.title}
           component={'h2' as any}
-          variant='h3'
-          className={classes.mainpoststitle}
+          variant='h4'
         >
           {post.title}
         </Typography>
