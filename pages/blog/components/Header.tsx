@@ -56,9 +56,7 @@ class Header extends React.Component<HeaderProps> {
                 Lime's Blog
               </Typography>
               <Typography color='inherit' paragraph variant='body1'>
-                Multiple lines of text that form the lede, informing new readers
-                quickly and efficiently about what&apos;s most interesting in
-                this post&apos;s contents…
+                News about us.
               </Typography>
             </Grid>
           </Grid>

@@ -10,20 +10,7 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 
-const archives = [
-  'March 2020',
-  'February 2020',
-  'January 2020',
-  'December 2019',
-  'November 2019',
-  'October 2019',
-  'September 2019',
-  'August 2019',
-  'July 2019',
-  'June 2019',
-  'May 2019',
-  'April 2019'
-]
+const categories = ['All', 'Medical DB', 'Vital DB', 'Next Medicine', 'cPMTb']
 
 const social = ['GitHub', 'Twitter', 'Facebook']
 
@@ -65,9 +52,7 @@ class Sidebar extends React.Component<SidebarProps> {
             About
           </Typography>
           <Typography>
-            Etiam porta sem malesuada magna mollis euismod. Cras mattis
-            consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla
-            sed consectetur.
+            Challenge the Future with Commitment and Passion
           </Typography>
         </Paper>
         <div className={classes.sticky}>
@@ -77,13 +62,13 @@ class Sidebar extends React.Component<SidebarProps> {
               gutterBottom
               className={classes.sectionTitle}
             >
-              Archives
+              Categories
             </Typography>
             <List component='nav'>
-              {archives.map((archive, i) => (
+              {categories.map((category, i) => (
                 <Link underline='none' key={i}>
                   <ListItem button className={classes.sectionListItem}>
-                    <Typography key={archive}>{archive}</Typography>
+                    <Typography key={category}>{category}</Typography>
                   </ListItem>
                 </Link>
               ))}
