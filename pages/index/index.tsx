@@ -17,6 +17,7 @@ function Page () {
           title: pageTitle
         }}
       />
+      <a id='top' />
       <AppBar home />
       <Header />
       <main>

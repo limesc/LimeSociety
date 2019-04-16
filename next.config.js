@@ -36,6 +36,14 @@ let config = {
       const page = pages[i]
       pathMap[page] = { page }
     }
+
+    for (let postId = 1; postId <= 4; postId++) {
+      pathMap[`/blog/${postId}`] = {
+        page: '/blog',
+        query: { postId }
+      }
+    }
+
     return pathMap
   },
   pageExtensions: ['js', 'jsx', 'ts', 'tsx'],

@@ -8,12 +8,13 @@ import {
 import React from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
+import { lightLimeColor } from 'consts/layout'
 import Container from './Container'
 
 const styles = theme =>
   createStyles({
     background: {
-      backgroundColor: '#EFFBEF',
+      backgroundColor: lightLimeColor,
       overflow: 'hidden'
     },
     root: {
