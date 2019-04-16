@@ -18,6 +18,7 @@ import React from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import { appBarHeight } from 'consts/layout'
+import { round } from 'lib'
 
 const styles = theme =>
   createStyles({
@@ -42,7 +43,21 @@ const styles = theme =>
       fontSize: 25
     },
     toolbar: {
-      height: appBarHeight
+      height: appBarHeight,
+      width: 'auto',
+      [theme.breakpoints.up('md')]: {
+        width: 880,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        paddingLeft: theme.spacing.unit,
+        paddingRight: theme.spacing.unit
+      },
+      [theme.breakpoints.up(round(880 / 0.7777))]: {
+        width: '77.7777%'
+      },
+      [theme.breakpoints.up(round(1400 / 0.7777))]: {
+        width: 1400
+      }
     },
     left: {
       flex: 1,

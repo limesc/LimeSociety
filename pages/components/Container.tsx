@@ -3,9 +3,7 @@ import { capitalize } from '@material-ui/core/utils/helpers'
 import classNames from 'classnames'
 import React from 'react'
 
-function round (value) {
-  return Math.round(value * 1e4) / 1e4
-}
+import { round } from 'lib'
 
 const styles = theme =>
   createStyles({

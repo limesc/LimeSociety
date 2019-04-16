@@ -28,6 +28,7 @@ const styles = theme =>
       }
     },
     title: {
+      fontSize: 30,
       fontWeight: 700,
       marginBottom: theme.spacing.unit * 10,
       [theme.breakpoints.down('sm')]: {
@@ -40,6 +41,7 @@ const styles = theme =>
       maxWidth: 'auto'
     },
     productTitle: {
+      fontSize: 18,
       fontWeight: 700
     },
     productImage: {

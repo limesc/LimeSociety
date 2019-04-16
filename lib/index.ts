@@ -11,3 +11,7 @@ export function nextReplace (ctx, url: string) {
     Router.replace(url).catch()
   }
 }
+
+export function round (value) {
+  return Math.round(value * 1e4) / 1e4
+}
