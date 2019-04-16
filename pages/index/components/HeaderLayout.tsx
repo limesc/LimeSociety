@@ -57,7 +57,7 @@ class HeaderLayout extends React.Component<HeaderLayoutProps> {
     const { backgroundClassName, children, classes } = this.props
 
     return (
-      <section className={classes.root} id='top'>
+      <section className={classes.root}>
         <Container className={classes.container} width='full'>
           {children}
           <div className={classes.backdrop} />

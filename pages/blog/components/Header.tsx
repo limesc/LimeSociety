@@ -7,15 +7,14 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 
-import { appBarHeight, lightLimeColor } from 'consts/layout'
+import { lightLimeColor } from 'consts/layout'
 import Container from '../../components/Container'
 
 const styles = theme =>
   createStyles({
     background: {
       backgroundColor: lightLimeColor,
-      overflow: 'hidden',
-      paddingTop: appBarHeight
+      overflow: 'hidden'
     },
     root: {
       marginTop: theme.spacing.unit * 4,
@@ -44,7 +43,7 @@ class Header extends React.Component<HeaderProps> {
     const { classes } = this.props
 
     return (
-      <Container className={classes.background} id='top' width='full'>
+      <Container className={classes.background} width='full'>
         <Container className={classes.root} component='section'>
           <Grid container className={classes.container}>
             <Grid item md={6} className={classes.content}>

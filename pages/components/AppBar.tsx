@@ -25,6 +25,9 @@ const styles = theme =>
     root: {
       flexGrow: 1
     },
+    withoutHome: {
+      height: appBarHeight
+    },
     invisible: {
       background: 'transparent',
       boxShadow: 'none',
@@ -159,172 +162,179 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
     const { classes, home } = this.props
 
     return (
-      <MuiAppBar
-        className={`${classes.root} ${this.getScrollClassName()}`}
-        color='inherit'
-        elevation={0}
-        position='fixed'
-      >
-        <Toolbar className={classes.toolbar}>
-          <div className={classes.left}>
-            <Link
-              {...(home
-                ? {
-                    component: linkProps => (
-                      <AnchorLink {...linkProps} href='#top' variant='button' />
-                    )
-                  }
-                : {
-                    href: '/'
-                  })}
-            >
-              <h1 className={classes.leftLinkTypo}>Lime Society</h1>
-              <img
-                className={classes.leftLinkImg}
-                src='/static/components/appbar-logo.png'
-              />
-            </Link>
-          </div>
-          <div className={classNames(classes.right, classes.rightFolded)}>
-            <IconButton
-              className={classes.rightMenu}
-              aria-label='Menu'
-              onClick={this.toggleDrawer(true)}
-            >
-              <MenuIcon />
-            </IconButton>
-          </div>
-          <div className={classNames(classes.right, classes.rightExpanded)}>
-            <Link
-              className={classes.rightLink}
-              underline='none'
-              {...(home
-                ? {
-                    component: linkProps => (
-                      <AnchorLink
-                        {...linkProps}
-                        offset={appBarHeight}
-                        href='#products'
-                        variant='button'
-                      />
-                    )
-                  }
-                : {
-                    href: '/#products'
-                  })}
-            >
-              <Typography className={classes.rightLinkTypo} variant='body1'>
-                PRODUCTS
-              </Typography>
-            </Link>
-            <Link
-              className={classes.rightLink}
-              underline='none'
-              {...(home
-                ? {
-                    component: linkProps => (
-                      <AnchorLink
-                        {...linkProps}
-                        offset={appBarHeight}
-                        href='#company'
-                        variant='button'
-                      />
-                    )
-                  }
-                : {
-                    href: '/#company'
-                  })}
-            >
-              <Typography className={classes.rightLinkTypo} variant='body1'>
-                COMPANY
-              </Typography>
-            </Link>
-            <Link className={classes.rightLink} href='/blog' underline='none'>
-              <Typography className={classes.rightLinkTypo} variant='body1'>
-                BLOG
-              </Typography>
-            </Link>
-          </div>
-        </Toolbar>
-        <Drawer
-          anchor='right'
-          open={this.state.drawer}
-          onClose={this.toggleDrawer(false)}
+      <>
+        <MuiAppBar
+          className={classNames(classes.root, this.getScrollClassName())}
+          color='inherit'
+          elevation={0}
+          position='fixed'
         >
-          <div
-            tabIndex={0}
-            role='button'
-            onClick={this.toggleDrawer(false)}
-            onKeyDown={this.toggleDrawer(false)}
-          >
-            <div className={classes.drawerList}>
-              <List>
-                <Link
-                  underline='none'
-                  {...(home
-                    ? {
-                        component: linkProps => (
-                          <AnchorLink {...linkProps} href='#top' />
-                        )
-                      }
-                    : {
-                        href: '/'
-                      })}
-                >
-                  <ListItem button>
-                    <ListItemText primary='Home' />
-                  </ListItem>
-                </Link>
-                <Link
-                  underline='none'
-                  {...(home
-                    ? {
-                        component: linkProps => (
-                          <AnchorLink
-                            {...linkProps}
-                            offset={appBarHeight}
-                            href='#products'
-                          />
-                        )
-                      }
-                    : {
-                        href: '/#products'
-                      })}
-                >
-                  <ListItem button>
-                    <ListItemText primary='Products' />
-                  </ListItem>
-                </Link>
-                <Link
-                  underline='none'
-                  {...(home
-                    ? {
-                        component: linkProps => (
-                          <AnchorLink
-                            {...linkProps}
-                            offset={appBarHeight}
-                            href='#company'
-                          />
-                        )
-                      }
-                    : {
-                        href: '/#company'
-                      })}
-                >
-                  <ListItem button>
-                    <ListItemText primary='Company' />
-                  </ListItem>
-                </Link>
-                <Link href='/blog' underline='none'>
-                  <ListItem button>
-                    <ListItemText primary='Blog' />
-                  </ListItem>
-                </Link>
-              </List>
+          <Toolbar className={classes.toolbar}>
+            <div className={classes.left}>
+              <Link
+                {...(home
+                  ? {
+                      component: linkProps => (
+                        <AnchorLink
+                          {...linkProps}
+                          href='#top'
+                          variant='button'
+                        />
+                      )
+                    }
+                  : {
+                      href: '/'
+                    })}
+              >
+                <h1 className={classes.leftLinkTypo}>Lime Society</h1>
+                <img
+                  className={classes.leftLinkImg}
+                  src='/static/components/appbar-logo.png'
+                />
+              </Link>
             </div>
-          </div>
-        </Drawer>
-      </MuiAppBar>
+            <div className={classNames(classes.right, classes.rightFolded)}>
+              <IconButton
+                className={classes.rightMenu}
+                aria-label='Menu'
+                onClick={this.toggleDrawer(true)}
+              >
+                <MenuIcon />
+              </IconButton>
+            </div>
+            <div className={classNames(classes.right, classes.rightExpanded)}>
+              <Link
+                className={classes.rightLink}
+                underline='none'
+                {...(home
+                  ? {
+                      component: linkProps => (
+                        <AnchorLink
+                          {...linkProps}
+                          offset={appBarHeight}
+                          href='#products'
+                          variant='button'
+                        />
+                      )
+                    }
+                  : {
+                      href: '/#products'
+                    })}
+              >
+                <Typography className={classes.rightLinkTypo} variant='body1'>
+                  PRODUCTS
+                </Typography>
+              </Link>
+              <Link
+                className={classes.rightLink}
+                underline='none'
+                {...(home
+                  ? {
+                      component: linkProps => (
+                        <AnchorLink
+                          {...linkProps}
+                          offset={appBarHeight}
+                          href='#company'
+                          variant='button'
+                        />
+                      )
+                    }
+                  : {
+                      href: '/#company'
+                    })}
+              >
+                <Typography className={classes.rightLinkTypo} variant='body1'>
+                  COMPANY
+                </Typography>
+              </Link>
+              <Link className={classes.rightLink} href='/blog' underline='none'>
+                <Typography className={classes.rightLinkTypo} variant='body1'>
+                  BLOG
+                </Typography>
+              </Link>
+            </div>
+          </Toolbar>
+          <Drawer
+            anchor='right'
+            open={this.state.drawer}
+            onClose={this.toggleDrawer(false)}
+          >
+            <div
+              tabIndex={0}
+              role='button'
+              onClick={this.toggleDrawer(false)}
+              onKeyDown={this.toggleDrawer(false)}
+            >
+              <div className={classes.drawerList}>
+                <List>
+                  <Link
+                    underline='none'
+                    {...(home
+                      ? {
+                          component: linkProps => (
+                            <AnchorLink {...linkProps} href='#top' />
+                          )
+                        }
+                      : {
+                          href: '/'
+                        })}
+                  >
+                    <ListItem button>
+                      <ListItemText primary='Home' />
+                    </ListItem>
+                  </Link>
+                  <Link
+                    underline='none'
+                    {...(home
+                      ? {
+                          component: linkProps => (
+                            <AnchorLink
+                              {...linkProps}
+                              offset={appBarHeight}
+                              href='#products'
+                            />
+                          )
+                        }
+                      : {
+                          href: '/#products'
+                        })}
+                  >
+                    <ListItem button>
+                      <ListItemText primary='Products' />
+                    </ListItem>
+                  </Link>
+                  <Link
+                    underline='none'
+                    {...(home
+                      ? {
+                          component: linkProps => (
+                            <AnchorLink
+                              {...linkProps}
+                              offset={appBarHeight}
+                              href='#company'
+                            />
+                          )
+                        }
+                      : {
+                          href: '/#company'
+                        })}
+                  >
+                    <ListItem button>
+                      <ListItemText primary='Company' />
+                    </ListItem>
+                  </Link>
+                  <Link href='/blog' underline='none'>
+                    <ListItem button>
+                      <ListItemText primary='Blog' />
+                    </ListItem>
+                  </Link>
+                </List>
+              </div>
+            </div>
+          </Drawer>
+        </MuiAppBar>
+        {!home && <div className={classes.withoutHome} />}
+      </>
     )
   }
 }

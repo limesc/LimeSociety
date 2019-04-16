@@ -45,7 +45,7 @@ class FeaturedPost extends React.Component<FeaturedPostProps> {
     const { classes, post } = this.props
 
     return (
-      <Link underline='none'>
+      <Link underline='none' href={`/blog?postId=${post.id}`}>
         <CardActionArea>
           <Card className={classes.root}>
             <CardContent className={classes.container}>
