@@ -2,7 +2,7 @@ import { createStyles, Grid, WithStyles, withStyles } from '@material-ui/core'
 import React from 'react'
 
 import { posts } from 'consts/posts'
-import Posts from './Posts'
+import Post from './Post'
 import Sidebar from './Sidebar'
 
 const styles = theme =>
@@ -33,7 +33,7 @@ class Main extends React.Component<MainProps> {
     return (
       <Grid container spacing={40} className={classes.mainGrid}>
         <Grid item xs={12} md={8}>
-          <Posts posts={posts} />
+          <Post post={posts.filter(x => x.id === 1)[0]} />
         </Grid>
         <Grid item xs={12} md={4}>
           <Sidebar />

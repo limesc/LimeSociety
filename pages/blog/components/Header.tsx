@@ -13,24 +13,10 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 
+import { posts } from 'consts/posts'
 import Container from '../../components/Container'
 
-const featuredPosts = [
-  {
-    id: 1,
-    title: 'Featured post',
-    date: 'Nov 12',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.'
-  },
-  {
-    id: 2,
-    title: 'Post title',
-    date: 'Nov 11',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.'
-  }
-]
+const featuredPosts = posts.slice(0, 2)
 
 const styles = theme =>
   createStyles({
@@ -79,7 +65,13 @@ const styles = theme =>
       width: 160
     },
     featuredPostTitle: {
-      fontSize: theme.typography.h6.fontSize
+      fontSize: theme.typography.h6.fontSize,
+      fontWeight: 700
+    },
+    featuredPostContent: {
+      fontSize: theme.typography.fontSize,
+      height: theme.typography.fontSize * 1.5 * 3,
+      overflow: 'hidden'
     }
   })
 
@@ -132,10 +124,14 @@ class Header extends React.Component<HeaderProps> {
                           paragraph
                           variant='subtitle2'
                         >
-                          {post.date}
+                          {post.createdAt} by {post.writer}
                         </Typography>
-                        <Typography paragraph variant='body1'>
-                          {post.description}
+                        <Typography
+                          className={classes.featuredPostContent}
+                          paragraph
+                          variant='body1'
+                        >
+                          {post.content}
                         </Typography>
                         <Typography color='primary' variant='body2'>
                           Continue reading...

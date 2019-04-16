@@ -3,7 +3,6 @@
   "extends": ["tslint-config-standard", "tslint-config-prettier"],
   "rules": {
     "await-promise": false,
-    // "member-ordering": [true, { "order": "fields-first", "alphabetize": true }],
     "ordered-imports": true,
     "prefer-const": true,
     "space-before-function-paren": true,

@@ -11,7 +11,8 @@ import Markdown from '../../components/Markdown'
 const styles = theme =>
   createStyles({
     title: {
-      marginBottom: theme.spacing.unit * 3
+      fontSize: theme.typography.h6.fontSize,
+      fontWeight: 700
     }
   })
 
@@ -26,16 +27,18 @@ class Post extends React.Component<PostProps> {
     const { classes, post } = this.props
 
     return (
-      <div style={{ marginTop: '40px' }}>
+      <div>
         <Typography
           className={classes.title}
           component={'h2' as any}
-          variant='h4'
+          variant='subtitle1'
         >
           {post.title}
         </Typography>
-
-        <Markdown>{post.description}</Markdown>
+        <Typography color='textSecondary' paragraph variant='subtitle2'>
+          {post.createdAt} by {post.writer}
+        </Typography>
+        <Markdown>{post.content || ''}</Markdown>
       </div>
     )
   }
