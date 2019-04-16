@@ -2,6 +2,7 @@ import {
   AppBar as MuiAppBar,
   createStyles,
   Drawer,
+  Hidden,
   IconButton,
   Link,
   List,
@@ -63,6 +64,9 @@ const styles = theme =>
       flex: 1,
       display: 'flex',
       justifyContent: 'flex-start'
+    },
+    leftLinkTypo: {
+      display: 'none'
     },
     leftLinkImg: {
       verticalAlign: 'middle'
@@ -175,6 +179,7 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
                     href: '/'
                   })}
             >
+              <h1 className={classes.leftLinkTypo}>Lime Society</h1>
               <img
                 className={classes.leftLinkImg}
                 src='/static/components/appbar-logo.png'
