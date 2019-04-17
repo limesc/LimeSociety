@@ -1,6 +1,5 @@
 import {
   createStyles,
-  Grid,
   IconButton,
   Link,
   Paper,
@@ -24,7 +23,9 @@ import {
 
 import React from 'react'
 
+import { boardCategory } from '../../../consts/boardCategory'
 import Container from '../../components/Container'
+import post from '../post/components/post'
 
 const actionsStyles = theme =>
   createStyles({
@@ -116,6 +117,8 @@ function createData (name, uploader, date) {
   return { id: counter, name, uploader, date }
 }
 
+const featuredboard = boardCategory
+
 const styles = theme =>
   createStyles({
     root: {
@@ -200,14 +203,17 @@ class Posts extends React.Component<PostsProps> {
 
     return (
       <Container className={classes.root}>
-        <Typography
-          align='left'
-          className={classes.title}
-          component={'h2' as any}
-          variant='h4'
-        >
-          Medical DB 게시판
-        </Typography>
+        {featuredboard.slice(0, 1).map(posts => (
+          <Typography
+            key={posts.id}
+            align='left'
+            className={classes.title}
+            component={'h2' as any}
+            variant='h4'
+          >
+            {posts.category}
+          </Typography>
+        ))}
         <Paper className={classes.boardstyle}>
           <Table>
             <TableHead>

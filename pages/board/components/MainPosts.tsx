@@ -14,7 +14,7 @@ import React from 'react'
 import { boardCategory } from '.../../../consts/boardCategory'
 import Container from '../../components/Container'
 
-const featuredboard = boardCategory.slice(0, 4)
+const featuredboard = boardCategory
 
 const styles = theme =>
   createStyles({
@@ -29,6 +29,7 @@ const styles = theme =>
       marginRight: 16,
       [theme.breakpoints.up('md')]: {
         width: 'auto',
+        marginTop: theme.spacing.unit * 7,
         marginLeft: 'auto',
         marginRight: 'auto',
         marginBottom: theme.spacing.unit * 10
@@ -38,7 +39,8 @@ const styles = theme =>
       display: 'flex'
     },
     cardDetails: {
-      flex: 1
+      flex: 1,
+      padding: theme.spacing.unit * 2
     },
     cardposts: {
       marginTop: theme.spacing.unit * 2,
@@ -59,6 +61,7 @@ class MainPosts extends React.Component<MainPostsProps> {
   render () {
     const { classes } = this.props
 
+    // console.log(ListItem)
     return (
       <Container className={classes.root}>
         <Typography
@@ -75,7 +78,7 @@ class MainPosts extends React.Component<MainPostsProps> {
               <Card className={classes.card}>
                 <div className={classes.cardDetails}>
                   <CardContent>
-                    <Typography component={'h2' as any} variant='subtitle1'>
+                    <Typography component={'h2' as any} variant='h6'>
                       <Link
                         href='/board/posts'
                         color='inherit'
@@ -85,23 +88,16 @@ class MainPosts extends React.Component<MainPostsProps> {
                       </Link>
                     </Typography>
                     <Grid className={classes.cardposts}>
-                      <Link href='/board/post' color='inherit' underline='none'>
-                        <ListItem button>
-                          <li>1</li>
-                        </ListItem>
-                      </Link>
-                      {/* */}
-                      <Link href='/board/post' color='inherit' underline='none'>
-                        <ListItem button>
-                          <li>2</li>
-                        </ListItem>
-                      </Link>
-                      <Link href='/board/post' color='inherit' underline='none'>
-                        <ListItem button>
-                          <li>3</li>
-                        </ListItem>
-                      </Link>
-                      {/* note : 후에 map으로 처리할 예정 */}
+                      {board.contents.slice(0, 3).map(post => (
+                        <Link
+                          key={post.id}
+                          href='/board/post'
+                          color='inherit'
+                          underline='none'
+                        >
+                          <ListItem button>{post.title}</ListItem>
+                        </Link>
+                      ))}
                     </Grid>
                   </CardContent>
                 </div>
