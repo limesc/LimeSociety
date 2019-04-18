@@ -57,11 +57,17 @@ class FeaturedPost extends React.Component<FeaturedPostProps> {
                 <Typography
                   className={classes.title}
                   component={'h2' as any}
+                  noWrap
                   variant='subtitle1'
                 >
                   {post.title}
                 </Typography>
-                <Typography color='textSecondary' paragraph variant='subtitle2'>
+                <Typography
+                  color='textSecondary'
+                  noWrap
+                  paragraph
+                  variant='subtitle2'
+                >
                   {post.createdAt} by {post.writer}
                 </Typography>
                 <Typography

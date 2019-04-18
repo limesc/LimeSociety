@@ -37,12 +37,16 @@ let config = {
       pathMap[page] = { page }
     }
 
-    for (let postId = 1; postId <= 4; postId++) {
-      pathMap[`/blog/${postId}`] = {
-        page: '/blog',
-        query: { postId }
-      }
-    }
+    fs.readdirSync(path.join(__dirname, 'consts', 'posts'))
+      .filter(file => /\d+\.ts/.test(file))
+      .forEach(file => {
+        const postId = Number(file.slice(0, -3))
+
+        pathMap[`/blog/${postId}`] = {
+          page: '/blog',
+          query: { postId }
+        }
+      })
 
     return pathMap
   },
