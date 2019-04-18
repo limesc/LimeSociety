@@ -12,8 +12,8 @@ import { posts } from 'consts/posts'
 import AppBar from 'pages/components/AppBar'
 import ContainerGoTo from 'pages/components/ContainerGoTo'
 import Container from '../components/Container'
+import Header from '../components/Header'
 import FeaturedPosts from './components/FeaturedPosts'
-import Header from './components/Header'
 import Post from './components/Post'
 import Sidebar from './components/Sidebar'
 
@@ -24,6 +24,9 @@ const styles = theme =>
       marginBottom: theme.spacing.unit * 4
     }
   })
+
+const headerName = "Lime's Blog"
+const sub = 'News about us.'
 
 interface PageOwnProps {
   pageTitle?: string
@@ -78,7 +81,7 @@ class Page extends React.Component<PageProps> {
         <AppBar />
         {!postId && (
           <>
-            <Header />
+            <Header name={headerName} subname={sub} />
             <FeaturedPosts />
           </>
         )}

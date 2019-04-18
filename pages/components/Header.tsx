@@ -8,7 +8,7 @@ import {
 import React from 'react'
 
 import { lightLimeColor } from 'consts/layout'
-import Container from '../../components/Container'
+import Container from './Container'
 
 const styles = theme =>
   createStyles({
@@ -18,12 +18,10 @@ const styles = theme =>
     },
     root: {
       marginTop: theme.spacing.unit * 4,
-      marginBottom: theme.spacing.unit * 4,
       [theme.breakpoints.down('sm')]: {
         marginTop: 0,
         marginLeft: 0,
-        marginRight: 0,
-        marginBottom: 0
+        marginRight: 0
       }
     },
     container: {
@@ -38,11 +36,16 @@ const styles = theme =>
     }
   })
 
-type HeaderProps = WithStyles<typeof styles>
+interface HeaderOwnProps {
+  name?: any
+  subname?: any
+}
+
+type HeaderProps = HeaderOwnProps & WithStyles<typeof styles>
 
 class Header extends React.Component<HeaderProps> {
   render () {
-    const { classes } = this.props
+    const { classes, name, subname } = this.props
 
     return (
       <Container className={classes.background} width='full'>
@@ -55,10 +58,10 @@ class Header extends React.Component<HeaderProps> {
                 gutterBottom
                 variant='h3'
               >
-                라임 게시판
+                {name}
               </Typography>
               <Typography color='inherit' paragraph variant='body1'>
-                News about us.
+                {subname}
               </Typography>
             </Grid>
           </Grid>
