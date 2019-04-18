@@ -37,7 +37,7 @@ let config = {
       pathMap[page] = { page }
     }
 
-    for (let postId = 1; postId <= 4; postId++) {
+    for (let postId = 1; postId <= 100; postId++) {
       pathMap[`/blog/${postId}`] = {
         page: '/blog',
         query: { postId }
