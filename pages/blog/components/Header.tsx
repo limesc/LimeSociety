@@ -18,7 +18,7 @@ const styles = theme =>
     },
     root: {
       marginTop: theme.spacing.unit * 4,
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down('xs')]: {
         marginTop: 0,
         marginLeft: 0,
         marginRight: 0
