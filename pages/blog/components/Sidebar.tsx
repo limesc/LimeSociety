@@ -10,7 +10,7 @@ import {
 } from '@material-ui/core'
 import React from 'react'
 
-const categories = ['All', 'Medical DB', 'Vital DB', 'Next Medicine', 'cPMTb']
+const tags = ['All', 'Medical DB', 'Vital DB', 'Next Medicine', 'cPMTb']
 
 const social = ['GitHub', 'Twitter', 'Facebook']
 
@@ -62,13 +62,13 @@ class Sidebar extends React.Component<SidebarProps> {
               gutterBottom
               className={classes.sectionTitle}
             >
-              Categories
+              Tags
             </Typography>
             <List component='nav'>
-              {categories.map((category, i) => (
+              {tags.map((tag, i) => (
                 <Link underline='none' key={i}>
                   <ListItem button className={classes.sectionListItem}>
-                    <Typography key={category}>{category}</Typography>
+                    <Typography key={tag}>{tag}</Typography>
                   </ListItem>
                 </Link>
               ))}
