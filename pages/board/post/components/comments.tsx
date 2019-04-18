@@ -2,7 +2,6 @@ import {
   createStyles,
   Divider,
   Grid,
-  TextField,
   Typography,
   WithStyles,
   withStyles
@@ -11,6 +10,7 @@ import React from 'react'
 
 import { contentComments } from '../../../../consts/contentComments'
 import Container from '../../../components/Container'
+import Comment from './comment'
 
 // let comments = 0
 // function commentsData (username, date, comment) {
@@ -34,7 +34,11 @@ const styles = theme =>
       marginLeft: theme.spacing.unit * 3,
       marginRight: theme.spacing.unit * 3,
       marginBottom: theme.spacing.unit * 5,
-      lineHeight: 1.6
+      lineHeight: 1.6,
+      [theme.breakpoints.down('sm')]: {
+        marginLeft: 0,
+        marginRight: 0
+      }
     },
     commentGrid: {
       marginLeft: theme.spacing.unit * 3,
@@ -59,31 +63,14 @@ const styles = theme =>
     },
     DividerBottom: {
       marginBottom: theme.spacing.unit * 2
-    },
-    textField: {
-      width: '100%',
-      marginTop: 16
     }
   })
 
 type CommentsProps = WithStyles<typeof styles>
 
 class Comments extends React.Component<CommentsProps> {
-  // state = {
-  //   comments: [
-  //     commentsData('유저1', '19.04.09', '게시글 확인 했습니다.'),
-  //     commentsData('유저2', '19.04.09', '게시판 본문 댓글 달았습니다.'),
-  //     commentsData('유저3', '19.04.09', '안녕하세요.'),
-  //     commentsData('유저4', '19.04.10', 'material ui로 작업 하는건가요?.'),
-  //     commentsData('유저5', '19.04.10', 'Vital DB 관련 글 없습니까?.'),
-  //     commentsData('유저6', '19.04.11', '질문해도 될까요?'),
-  //     commentsData('유저7', '19.04.11', '하지 마세요.')
-  //   ]
-  // }
-
   render () {
     const { classes } = this.props
-    // const { comments } = this.state
 
     return (
       <Container className={classes.root}>
@@ -108,17 +95,7 @@ class Comments extends React.Component<CommentsProps> {
             <Divider className={classes.DividerBottom} />
           </Grid>
         ))}
-        <Grid container spacing={40}>
-          <Grid item xs={12}>
-            <TextField
-              className={classes.textField}
-              id='outlined-dense'
-              label='댓글달기'
-              margin='dense'
-              variant='outlined'
-            />
-          </Grid>
-        </Grid>
+        <Comment />
       </Container>
     )
   }

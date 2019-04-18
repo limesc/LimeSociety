@@ -72,7 +72,7 @@ class MainPosts extends React.Component<MainPostsProps> {
         >
           최신 업데이트
         </Typography>
-        <Grid container spacing={40} className={classes.mainBoard}>
+        <Grid container spacing={16} className={classes.mainBoard}>
           {featuredboard.map(board => (
             <Grid item key={board.id} xs={12} md={6}>
               <Card className={classes.card}>
