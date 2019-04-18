@@ -126,8 +126,8 @@ const styles = theme =>
       marginBottom: theme.spacing.unit * 10,
       [theme.breakpoints.down('sm')]: {
         marginTop: theme.spacing.unit * 4,
-        marginLeft: theme.spacing.unit,
-        marginRight: theme.spacing.unit,
+        marginLeft: 0,
+        marginRight: 0,
         marginBottom: theme.spacing.unit * 4
       }
     },
