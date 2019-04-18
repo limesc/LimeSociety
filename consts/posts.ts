@@ -10,7 +10,8 @@ for (let postId = 1; ; postId++) {
     break
   }
 }
+posts.reverse()
 
-const featuredPosts = posts.slice(-2).reverse()
+const featuredPosts = posts.slice(0, 2)
 
 export { posts, featuredPosts }

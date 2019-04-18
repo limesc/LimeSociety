@@ -14,7 +14,10 @@ const styles = theme =>
     },
     root: {
       marginTop: theme.spacing.unit * 2,
-      marginBottom: theme.spacing.unit * 4
+      marginBottom: theme.spacing.unit * 4,
+      [theme.breakpoints.down('sm')]: {
+        marginBottom: theme.spacing.unit * 2
+      }
     }
   })
 

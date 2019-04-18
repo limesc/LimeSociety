@@ -48,18 +48,14 @@ const styles = theme =>
     toolbar: {
       height: appBarHeight,
       width: 'auto',
-      [theme.breakpoints.up('md')]: {
-        width: 880,
+      marginLeft: theme.spacing.unit * 3,
+      marginRight: theme.spacing.unit * 3,
+      [theme.breakpoints.up(850 + theme.spacing.unit * 6)]: {
+        width: 850,
         marginLeft: 'auto',
         marginRight: 'auto',
         paddingLeft: theme.spacing.unit,
         paddingRight: theme.spacing.unit
-      },
-      [theme.breakpoints.up(round(880 / 0.7777))]: {
-        width: '77.7777%'
-      },
-      [theme.breakpoints.up(round(1400 / 0.7777))]: {
-        width: 1400
       }
     },
     left: {
