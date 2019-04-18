@@ -4,7 +4,6 @@ for (let postId = 1; ; postId++) {
     const post = require(`./posts/${postId}`).default
 
     post.id = postId
-    post.writer = 'Lime Society'
 
     posts.push(post)
   } catch (err) {

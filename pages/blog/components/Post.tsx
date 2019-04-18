@@ -36,7 +36,7 @@ class Post extends React.Component<PostProps> {
           {post.title}
         </Typography>
         <Typography color='textSecondary' paragraph variant='subtitle2'>
-          {post.createdAt} by {post.writer}
+          {post.createdAt}
         </Typography>
         <Markdown>{post.content || ''}</Markdown>
       </div>

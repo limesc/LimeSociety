@@ -68,7 +68,7 @@ class FeaturedPost extends React.Component<FeaturedPostProps> {
                   paragraph
                   variant='subtitle2'
                 >
-                  {post.createdAt} by {post.writer}
+                  {post.createdAt}
                 </Typography>
                 <Typography
                   className={classes.content}
