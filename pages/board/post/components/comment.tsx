@@ -14,7 +14,13 @@ const styles = theme =>
   createStyles({
     root: {
       width: 'auto',
-      display: 'flex'
+      display: 'flex',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      [theme.breakpoints.down('sm')]: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit
+      }
     },
     container: {
       flex: 1
@@ -31,7 +37,10 @@ const styles = theme =>
       paddingTop: theme.spacing.unit,
       paddingLeft: theme.spacing.unit * 2,
       paddingRight: theme.spacing.unit * 2,
-      paddingBottom: theme.spacing.unit
+      paddingBottom: theme.spacing.unit,
+      [theme.breakpoints.down('sm')]: {
+        width: '10%'
+      }
     }
   })
 

@@ -124,20 +124,19 @@ const styles = theme =>
     root: {
       marginTop: theme.spacing.unit * 10,
       marginBottom: theme.spacing.unit * 10,
+      padding: `${theme.spacing.unit * 2}px`,
       [theme.breakpoints.down('sm')]: {
-        marginTop: theme.spacing.unit * 4,
+        marginTop: theme.spacing.unit,
         marginLeft: 0,
         marginRight: 0,
-        marginBottom: theme.spacing.unit * 4
+        marginBottom: theme.spacing.unit,
+        padding: 0
       }
     },
-    boardstyle: {
-      width: 'full',
-      marginTop: theme.spacing.unit * 3,
-      overflowx: 'auto'
-    },
-    tableWrapper: {
-      overflowX: 'auto'
+    mainGrid: {
+      widht: 1400,
+      marginLeft: 'auto',
+      marginRight: 'auto'
     },
     title: {
       marginTop: theme.spacing.unit * 8,
@@ -214,7 +213,7 @@ class Posts extends React.Component<PostsProps> {
             {posts.category}
           </Typography>
         ))}
-        <Paper className={classes.boardstyle}>
+        <Paper>
           <Table>
             <TableHead>
               <TableRow>

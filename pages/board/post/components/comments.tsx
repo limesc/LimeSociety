@@ -21,24 +21,21 @@ import Comment from './comment'
 const styles = theme =>
   createStyles({
     root: {
-      marginTop: theme.spacing.unit,
+      marginTop: theme.spacing.unit * 10,
       marginBottom: theme.spacing.unit * 10,
+      padding: `${theme.spacing.unit * 2}px`,
       [theme.breakpoints.down('sm')]: {
-        marginTop: theme.spacing.unit * 4,
-        marginBottom: theme.spacing.unit * 4,
+        marginTop: theme.spacing.unit,
+        marginLeft: 0,
+        marginRight: 0,
+        marginBottom: theme.spacing.unit,
         padding: 0
       }
     },
     mainGrid: {
-      marginTop: theme.spacing.unit * 5,
-      marginLeft: theme.spacing.unit * 3,
-      marginRight: theme.spacing.unit * 3,
-      marginBottom: theme.spacing.unit * 5,
-      lineHeight: 1.6,
-      [theme.breakpoints.down('sm')]: {
-        marginLeft: 0,
-        marginRight: 0
-      }
+      widht: 1400,
+      marginLeft: 'auto',
+      marginRight: 'auto'
     },
     commentGrid: {
       marginLeft: theme.spacing.unit * 3,
@@ -74,7 +71,7 @@ class Comments extends React.Component<CommentsProps> {
 
     return (
       <Container className={classes.root}>
-        <Grid container spacing={40}>
+        <Grid container spacing={40} className={classes.mainGrid}>
           <div className={classes.commentGrid}>
             <div>
               <Typography variant='h6'>댓글</Typography>
