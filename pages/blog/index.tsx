@@ -53,8 +53,8 @@ class Page extends React.Component<PageProps> {
           postId
         }
       }
-    } else {
-      const post = posts[posts.length - 1]
+    } else if (posts.length) {
+      const post = posts[0]
       props = {
         ...props,
         post
@@ -84,11 +84,8 @@ class Page extends React.Component<PageProps> {
         )}
         <Container className={classes.main} component='main'>
           <Grid container spacing={16}>
-            <Grid item xs={12} md={8}>
+            <Grid item xs={12}>
               {post ? <Post post={post} /> : <Typography>No post</Typography>}
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Sidebar />
             </Grid>
           </Grid>
         </Container>

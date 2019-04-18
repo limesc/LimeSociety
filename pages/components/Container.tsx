@@ -84,7 +84,7 @@ class Container extends React.Component<ContainerProps> {
     component: 'div',
     fullHeight: false,
     fullWidth: false,
-    width: 'large'
+    width: 'medium'
   }
 
   render () {
