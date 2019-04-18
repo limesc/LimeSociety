@@ -12,7 +12,10 @@ import React from 'react'
 
 const tags = ['All', 'Medical DB', 'Vital DB', 'Next Medicine', 'cPMTb']
 
-const social = ['GitHub', 'Twitter', 'Facebook']
+const social = [
+  ['Facebook', 'https://www.facebook.com/limesociety'],
+  ['Twitter', 'https://twitter.com/limesociety']
+]
 
 const styles = theme =>
   createStyles({
@@ -68,7 +71,7 @@ class Sidebar extends React.Component<SidebarProps> {
               {tags.map((tag, i) => (
                 <Link underline='none' key={i}>
                   <ListItem button className={classes.sectionListItem}>
-                    <Typography key={tag}>{tag}</Typography>
+                    <Typography>{tag}</Typography>
                   </ListItem>
                 </Link>
               ))}
@@ -83,10 +86,10 @@ class Sidebar extends React.Component<SidebarProps> {
               Social
             </Typography>
             <List component='nav'>
-              {social.map((network, i) => (
-                <Link underline='none' key={i}>
+              {social.map(([name, url]) => (
+                <Link underline='none' key={name} href={url} target='_blank'>
                   <ListItem button className={classes.sectionListItem}>
-                    <Typography key={network}>{network}</Typography>
+                    <Typography>{name}</Typography>
                   </ListItem>
                 </Link>
               ))}
