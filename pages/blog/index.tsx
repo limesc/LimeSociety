@@ -13,9 +13,7 @@ import AppBar from 'pages/components/AppBar'
 import ContainerGoTo from 'pages/components/ContainerGoTo'
 import Container from '../components/Container'
 import Header from '../components/Header'
-import FeaturedPosts from './components/FeaturedPosts'
 import Post from './components/Post'
-import Sidebar from './components/Sidebar'
 
 const styles = theme =>
   createStyles({
@@ -24,9 +22,6 @@ const styles = theme =>
       marginBottom: theme.spacing.unit * 4
     }
   })
-
-const headerName = "Lime's Blog"
-const sub = 'News about us.'
 
 interface PageOwnProps {
   pageTitle?: string
@@ -79,12 +74,7 @@ class Page extends React.Component<PageProps> {
         />
         <a id='top' />
         <AppBar />
-        {!postId && (
-          <>
-            <Header name={headerName} subname={sub} />
-            <FeaturedPosts />
-          </>
-        )}
+        <Header title={"Lime's Blog"} content='News about us.' />
         <Container className={classes.main} component='main'>
           <Grid container spacing={16}>
             <Grid item xs={12}>

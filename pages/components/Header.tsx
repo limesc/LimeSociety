@@ -36,15 +36,15 @@ const styles = theme =>
   })
 
 interface HeaderOwnProps {
-  name?: any
-  subname?: any
+  title?: any
+  content?: any
 }
 
 type HeaderProps = HeaderOwnProps & WithStyles<typeof styles>
 
 class Header extends React.Component<HeaderProps> {
   render () {
-    const { classes, name, subname } = this.props
+    const { classes, title, content } = this.props
 
     return (
       <Container className={classes.background} width='full'>
@@ -57,10 +57,10 @@ class Header extends React.Component<HeaderProps> {
                 gutterBottom
                 variant='h3'
               >
-                {name}
+                {title}
               </Typography>
               <Typography color='inherit' paragraph variant='body1'>
-                {subname}
+                {content}
               </Typography>
             </Grid>
           </Grid>

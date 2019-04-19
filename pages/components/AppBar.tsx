@@ -18,7 +18,6 @@ import React from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import { appBarHeight } from 'consts/layout'
-import { round } from 'lib'
 
 const styles = theme =>
   createStyles({
@@ -64,10 +63,18 @@ const styles = theme =>
       justifyContent: 'flex-start'
     },
     leftLinkTypo: {
-      display: 'none'
+      display: 'none',
+      fontSize: 24,
+      fontWeight: 700,
+      color: theme.palette.primary.main, // theme.palette.common.white,
+      '&:hover': {
+        opacity: 0.8
+      }
     },
     leftLinkImg: {
-      verticalAlign: 'middle'
+      // display: 'none',
+      verticalAlign: 'middle',
+      width: '75%'
     },
     right: {
       flex: 1,
@@ -92,7 +99,10 @@ const styles = theme =>
     },
     rightLinkTypo: {
       fontSize: 14,
-      color: theme.palette.common.white
+      color: theme.palette.common.white,
+      '&:hover': {
+        opacity: 0.8
+      }
     },
     drawerList: {
       width: 250
@@ -168,6 +178,7 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
           <Toolbar className={classes.toolbar}>
             <div className={classes.left}>
               <Link
+                underline='none'
                 {...(home
                   ? {
                       component: linkProps => (

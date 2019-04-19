@@ -20,7 +20,7 @@ function Page () {
         }}
       />
       <AppBar />
-      <Header name={headerName} subname={sub} />
+      <Header title={headerName} content={sub} />
       <Post />
       <Comments />
     </>
