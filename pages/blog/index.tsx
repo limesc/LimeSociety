@@ -82,7 +82,6 @@ class Page extends React.Component<PageProps> {
         {!postId && (
           <>
             <Header name={headerName} subname={sub} />
-            <FeaturedPosts />
           </>
         )}
         <Container className={classes.main} component='main'>
