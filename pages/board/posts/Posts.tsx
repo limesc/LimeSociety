@@ -130,7 +130,8 @@ const styles = theme =>
         marginLeft: 0,
         marginRight: 0,
         marginBottom: theme.spacing.unit,
-        padding: 0
+        paddingLeft: 0,
+        paddingRight: 0
       }
     },
     mainGrid: {
@@ -214,70 +215,72 @@ class Posts extends React.Component<PostsProps> {
           </Typography>
         ))}
         <Paper>
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableCell>
-                  <Typography variant='subtitle2'>제목</Typography>
-                </TableCell>
-                <TableCell className={classes.hide} align='right'>
-                  <Typography variant='subtitle2'>작성자</Typography>
-                </TableCell>
-                <TableCell className={classes.hide} align='right'>
-                  <Typography variant='subtitle2'>작성일</Typography>
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows
-                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map(row => (
-                  <TableRow key={row.id}>
-                    <TableCell
-                      className={classes.boardTitle}
-                      component='th'
-                      scope='row'
-                    >
-                      <Typography variant='body2'>
-                        <Link color='inherit' href='/board/post'>
-                          {row.name}
-                        </Link>
-                      </Typography>
-                    </TableCell>
-                    <TableCell className={classes.hide} align='right'>
-                      <Typography variant='body2'>{row.uploader}</Typography>
-                    </TableCell>
-                    <TableCell className={classes.hide} align='right'>
-                      <Typography variant='body2'>{row.date}</Typography>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              {emptyRows > 0 && (
-                <TableRow style={{ height: 48 * emptyRows }}>
-                  <TableCell colSpan={6} />
+          {featuredboard.slice(0, 1).map(posts => (
+            <Table key={posts.id}>
+              <TableHead>
+                <TableRow>
+                  <TableCell>
+                    <Typography variant='subtitle2'>제목</Typography>
+                  </TableCell>
+                  <TableCell className={classes.hide} align='right'>
+                    <Typography variant='subtitle2'>작성자</Typography>
+                  </TableCell>
+                  <TableCell className={classes.hide} align='right'>
+                    <Typography variant='subtitle2'>작성일</Typography>
+                  </TableCell>
                 </TableRow>
-              )}
-            </TableBody>
-            <TableFooter>
-              <TableRow>
-                <TablePagination
-                  className={classes.tablefooter}
-                  labelDisplayedRows={({}) => ``}
-                  labelRowsPerPage=''
-                  rowsPerPageOptions={[]}
-                  count={rows.length}
-                  rowsPerPage={rowsPerPage}
-                  page={page}
-                  SelectProps={{
-                    native: true
-                  }}
-                  onChangePage={this.handleChangePage}
-                  onChangeRowsPerPage={this.handleChangeRowsPerPage}
-                  ActionsComponent={ActionTableListWrapped}
-                />
-              </TableRow>
-            </TableFooter>
-          </Table>
+              </TableHead>
+              <TableBody>
+                {posts.contents
+                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                  .map(row => (
+                    <TableRow key={row.id}>
+                      <TableCell
+                        className={classes.boardTitle}
+                        component='th'
+                        scope='row'
+                      >
+                        <Typography variant='body2'>
+                          <Link color='inherit' href='/board/post'>
+                            {row.title}
+                          </Link>
+                        </Typography>
+                      </TableCell>
+                      <TableCell className={classes.hide} align='right'>
+                        <Typography variant='body2'>{row.uploader}</Typography>
+                      </TableCell>
+                      <TableCell className={classes.hide} align='right'>
+                        <Typography variant='body2'>{row.date}</Typography>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                {emptyRows > 0 && (
+                  <TableRow style={{ height: 48 * emptyRows }}>
+                    <TableCell colSpan={6} />
+                  </TableRow>
+                )}
+              </TableBody>
+              <TableFooter>
+                <TableRow>
+                  <TablePagination
+                    className={classes.tablefooter}
+                    labelDisplayedRows={({}) => ``}
+                    labelRowsPerPage=''
+                    rowsPerPageOptions={[]}
+                    count={rows.length}
+                    rowsPerPage={rowsPerPage}
+                    page={page}
+                    SelectProps={{
+                      native: true
+                    }}
+                    onChangePage={this.handleChangePage}
+                    onChangeRowsPerPage={this.handleChangeRowsPerPage}
+                    ActionsComponent={ActionTableListWrapped}
+                  />
+                </TableRow>
+              </TableFooter>
+            </Table>
+          ))}
         </Paper>
       </Container>
     )
