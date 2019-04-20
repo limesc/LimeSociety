@@ -21,8 +21,8 @@ const styles = theme =>
       overflow: 'hidden'
     },
     root: {
-      marginTop: theme.spacing.unit * 10,
-      marginBottom: theme.spacing.unit * 10,
+      marginTop: theme.spacing.unit * 6,
+      marginBottom: theme.spacing.unit * 6,
       [theme.breakpoints.down('sm')]: {
         marginTop: theme.spacing.unit * 4,
         marginBottom: theme.spacing.unit * 4
@@ -31,7 +31,7 @@ const styles = theme =>
     title: {
       fontSize: 30,
       fontWeight: 700,
-      marginBottom: theme.spacing.unit * 10,
+      marginBottom: theme.spacing.unit * 6,
       [theme.breakpoints.down('sm')]: {
         marginBottom: theme.spacing.unit * 4
       }

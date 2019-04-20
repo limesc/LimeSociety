@@ -21,12 +21,12 @@ const styles = theme =>
       overflow: 'hidden'
     },
     root: {
-      marginTop: theme.spacing.unit * 10,
+      marginTop: theme.spacing.unit * 6,
       [theme.breakpoints.down('sm')]: {
         marginTop: theme.spacing.unit * 4,
         marginBottom: theme.spacing.unit * 2
       },
-      marginBottom: theme.spacing.unit * 10,
+      marginBottom: theme.spacing.unit * 6,
       position: 'relative',
       display: 'flex',
       flexDirection: 'column',
@@ -35,7 +35,7 @@ const styles = theme =>
     title: {
       fontSize: 30,
       fontWeight: 700,
-      marginBottom: theme.spacing.unit * 10,
+      marginBottom: theme.spacing.unit * 6,
       [theme.breakpoints.down('sm')]: {
         marginBottom: theme.spacing.unit * 4
       }
@@ -44,9 +44,8 @@ const styles = theme =>
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      marginBottom: theme.spacing.unit * 5,
       [theme.breakpoints.down('sm')]: {
-        marginBottom: theme.spacing.unit * 3
+        marginBottom: theme.spacing.unit * 4
       }
     },
     itemIcon: {

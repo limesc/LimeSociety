@@ -21,8 +21,8 @@ const styles = theme =>
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      marginTop: theme.spacing.unit * 10,
-      marginBottom: theme.spacing.unit * 10,
+      marginTop: theme.spacing.unit * 6,
+      marginBottom: theme.spacing.unit * 6,
       [theme.breakpoints.down('sm')]: {
         marginTop: theme.spacing.unit * 4,
         marginBottom: theme.spacing.unit * 4
