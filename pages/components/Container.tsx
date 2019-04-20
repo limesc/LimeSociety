@@ -3,6 +3,7 @@ import { capitalize } from '@material-ui/core/utils/helpers'
 import classNames from 'classnames'
 import React from 'react'
 
+import { containerBreakpoint } from 'consts/layout'
 import { round } from 'lib'
 
 const styles = theme =>
@@ -21,7 +22,7 @@ const styles = theme =>
       width: 'auto',
       marginLeft: theme.spacing.unit * 3,
       marginRight: theme.spacing.unit * 3,
-      [theme.breakpoints.up(850 + theme.spacing.unit * 6)]: {
+      [theme.breakpoints.up(containerBreakpoint(theme))]: {
         width: 850,
         marginLeft: 'auto',
         marginRight: 'auto'

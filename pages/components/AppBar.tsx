@@ -17,7 +17,7 @@ import classNames from 'classnames'
 import React from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
-import { appBarHeight } from 'consts/layout'
+import { appBarHeight, containerBreakpoint } from 'consts/layout'
 
 const styles = theme =>
   createStyles({
@@ -49,7 +49,7 @@ const styles = theme =>
       width: 'auto',
       marginLeft: 0,
       marginRight: 0,
-      [theme.breakpoints.up(850 + theme.spacing.unit * 6)]: {
+      [theme.breakpoints.up(containerBreakpoint(theme))]: {
         width: 850,
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -82,12 +82,12 @@ const styles = theme =>
       justifyContent: 'flex-end'
     },
     rightFolded: {
-      [theme.breakpoints.up(850 + theme.spacing.unit * 6)]: {
+      [theme.breakpoints.up(containerBreakpoint(theme))]: {
         display: 'none'
       }
     },
     rightExpanded: {
-      [theme.breakpoints.down(850 + theme.spacing.unit * 6)]: {
+      [theme.breakpoints.down(containerBreakpoint(theme))]: {
         display: 'none'
       }
     },
