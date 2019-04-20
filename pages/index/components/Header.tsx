@@ -1,4 +1,5 @@
 import {
+  Button,
   createStyles,
   Typography,
   WithStyles,
@@ -19,8 +20,18 @@ const styles = theme =>
       backgroundPosition: 'center'
     },
     button: {
+      borderRadius: 5,
+      boxShadow: 'none',
+      '&:active, &:focus': {
+        boxShadow: 'none'
+      },
+      fontSize: theme.typography.pxToRem(20),
+      fontWeight: 700,
       minWidth: 250,
+      padding: `${theme.spacing.unit * 3 - 3}px ${theme.spacing.unit * 6}px`,
       [theme.breakpoints.down('sm')]: {
+        padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px`,
+        fontSize: theme.typography.pxToRem(15),
         minWidth: 200
       }
     },
@@ -75,7 +86,7 @@ class Header extends React.Component<HeaderProps> {
         >
           with Commitment and Passion
         </Typography>
-        <HeaderButton
+        <Button
           className={classes.button}
           color='primary'
           component={linkProps => (
@@ -90,7 +101,7 @@ class Header extends React.Component<HeaderProps> {
           variant='contained'
         >
           Tell Me More
-        </HeaderButton>
+        </Button>
       </HeaderLayout>
     )
   }
