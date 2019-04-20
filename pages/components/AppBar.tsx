@@ -47,8 +47,8 @@ const styles = theme =>
     toolbar: {
       height: appBarHeight,
       width: 'auto',
-      marginLeft: theme.spacing.unit * 3,
-      marginRight: theme.spacing.unit * 3,
+      marginLeft: 0,
+      marginRight: 0,
       [theme.breakpoints.up(850 + theme.spacing.unit * 6)]: {
         width: 850,
         marginLeft: 'auto',
@@ -82,12 +82,12 @@ const styles = theme =>
       justifyContent: 'flex-end'
     },
     rightFolded: {
-      [theme.breakpoints.up('md')]: {
+      [theme.breakpoints.up(850 + theme.spacing.unit * 6)]: {
         display: 'none'
       }
     },
     rightExpanded: {
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down(850 + theme.spacing.unit * 6)]: {
         display: 'none'
       }
     },
