@@ -1,11 +1,14 @@
 import {
   createStyles,
   Grid,
+  Icon,
+  Link,
   Typography,
   WithStyles,
   withStyles
 } from '@material-ui/core'
 import NextSeo from 'next-seo'
+import NextLink from 'next/link'
 import React from 'react'
 
 import { posts } from 'consts/posts'
@@ -20,6 +23,12 @@ const styles = theme =>
     main: {
       marginTop: theme.spacing.unit * 4,
       marginBottom: theme.spacing.unit * 4
+    },
+    postAppend: {
+      marginTop: theme.spacing.unit * 4
+    },
+    backToBlogIcon: {
+      verticalAlign: 'middle'
     }
   })
 
@@ -74,7 +83,11 @@ class Page extends React.Component<PageProps> {
         />
         <a id='top' />
         <AppBar />
-        <Header title={"Lime's Blog"} content='News about us.' />
+        <NextLink href='/blog'>
+          <Link href='#' underline='none'>
+            <Header title={"Lime's Blog"} content='News about us.' />
+          </Link>
+        </NextLink>
         <Container className={classes.main} component='main'>
           {!postId ? (
             <Grid container spacing={16}>
@@ -84,10 +97,25 @@ class Page extends React.Component<PageProps> {
                 </Grid>
               ))}
             </Grid>
-          ) : post ? (
-            <Post post={post} />
           ) : (
-            <Typography>No post</Typography>
+            <>
+              {post ? <Post post={post} /> : <Typography>No post</Typography>}
+              <div className={classes.postAppend}>
+                <NextLink href='/blog'>
+                  <Link href='#'>
+                    <Typography color='primary' variant='body2'>
+                      <Icon
+                        fontSize='inherit'
+                        className={classes.backToBlogIcon}
+                      >
+                        arrow_left_alt
+                      </Icon>{' '}
+                      Back to Blog
+                    </Typography>
+                  </Link>
+                </NextLink>
+              </div>
+            </>
           )}
         </Container>
       </>

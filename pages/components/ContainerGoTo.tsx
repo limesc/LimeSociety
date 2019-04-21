@@ -1,14 +1,13 @@
 import {
-  Button,
   createStyles,
   Typography,
   WithStyles,
   withStyles
 } from '@material-ui/core'
 import React from 'react'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import { lightLimeColor } from 'consts/layout'
+import Button from './Button'
 import Container from './Container'
 
 const styles = theme =>
@@ -59,25 +58,10 @@ class ContainerGoTo extends React.Component<ContainerGoToProps> {
   render () {
     const { children, classes, href } = this.props
 
-    let buttonProps: any = {}
-    if (href.startsWith('#')) {
-      buttonProps = {
-        ...buttonProps,
-        component: linkProps => (
-          <AnchorLink {...linkProps} href={href} variant='button' />
-        )
-      }
-    } else {
-      buttonProps = {
-        ...buttonProps,
-        href
-      }
-    }
-
     return (
       <Container className={classes.background} width='full'>
         <Container className={classes.root} component='section'>
-          <Button className={classes.button} {...buttonProps}>
+          <Button className={classes.button} href={href}>
             <Typography className={classes.buttonTypo} component='span'>
               {children}
             </Typography>

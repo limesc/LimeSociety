@@ -3,7 +3,6 @@ import {
   createStyles,
   Drawer,
   IconButton,
-  Link,
   List,
   ListItem,
   ListItemText,
@@ -15,9 +14,9 @@ import {
 import MenuIcon from '@material-ui/icons/Menu'
 import classNames from 'classnames'
 import React from 'react'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import { appBarHeight, containerBreakpoint } from 'consts/layout'
+import Link from './Link'
 
 const styles = theme =>
   createStyles({
@@ -177,22 +176,7 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
         >
           <Toolbar className={classes.toolbar}>
             <div className={classes.left}>
-              <Link
-                underline='none'
-                {...(home
-                  ? {
-                      component: linkProps => (
-                        <AnchorLink
-                          {...linkProps}
-                          href='#top'
-                          variant='button'
-                        />
-                      )
-                    }
-                  : {
-                      href: '/'
-                    })}
-              >
+              <Link underline='none' href={home ? '#top' : '/'}>
                 <h1 className={classes.leftLinkTypo}>Lime Society</h1>
                 <img
                   className={classes.leftLinkImg}
@@ -213,20 +197,8 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
               <Link
                 className={classes.rightLink}
                 underline='none'
-                {...(home
-                  ? {
-                      component: linkProps => (
-                        <AnchorLink
-                          {...linkProps}
-                          offset={appBarHeight}
-                          href='#products'
-                          variant='button'
-                        />
-                      )
-                    }
-                  : {
-                      href: '/#products'
-                    })}
+                href={home ? '#products' : '/#products'}
+                offset={appBarHeight}
               >
                 <Typography className={classes.rightLinkTypo} variant='body1'>
                   PRODUCTS
@@ -235,20 +207,8 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
               <Link
                 className={classes.rightLink}
                 underline='none'
-                {...(home
-                  ? {
-                      component: linkProps => (
-                        <AnchorLink
-                          {...linkProps}
-                          offset={appBarHeight}
-                          href='#company'
-                          variant='button'
-                        />
-                      )
-                    }
-                  : {
-                      href: '/#company'
-                    })}
+                href={home ? '#company' : '/#company'}
+                offset={appBarHeight}
               >
                 <Typography className={classes.rightLinkTypo} variant='body1'>
                   COMPANY
@@ -274,37 +234,15 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
             >
               <div className={classes.drawerList}>
                 <List>
-                  <Link
-                    underline='none'
-                    {...(home
-                      ? {
-                          component: linkProps => (
-                            <AnchorLink {...linkProps} href='#top' />
-                          )
-                        }
-                      : {
-                          href: '/'
-                        })}
-                  >
+                  <Link underline='none' href={home ? '#top' : '/'}>
                     <ListItem button>
                       <ListItemText primary='Home' />
                     </ListItem>
                   </Link>
                   <Link
                     underline='none'
-                    {...(home
-                      ? {
-                          component: linkProps => (
-                            <AnchorLink
-                              {...linkProps}
-                              offset={appBarHeight}
-                              href='#products'
-                            />
-                          )
-                        }
-                      : {
-                          href: '/#products'
-                        })}
+                    href={home ? '#products' : '/#products'}
+                    offset={appBarHeight}
                   >
                     <ListItem button>
                       <ListItemText primary='Products' />
@@ -312,25 +250,14 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
                   </Link>
                   <Link
                     underline='none'
-                    {...(home
-                      ? {
-                          component: linkProps => (
-                            <AnchorLink
-                              {...linkProps}
-                              offset={appBarHeight}
-                              href='#company'
-                            />
-                          )
-                        }
-                      : {
-                          href: '/#company'
-                        })}
+                    href={home ? '#company' : '/#company'}
+                    offset={appBarHeight}
                   >
                     <ListItem button>
                       <ListItemText primary='Company' />
                     </ListItem>
                   </Link>
-                  <Link href='/blog' underline='none'>
+                  <Link underline='none' href='/blog'>
                     <ListItem button>
                       <ListItemText primary='Blog' />
                     </ListItem>
