@@ -9,6 +9,7 @@ import {
   WithStyles,
   withStyles
 } from '@material-ui/core'
+import NextLink from 'next/link'
 import React from 'react'
 
 import { lightLimeColor } from 'consts/layout'
@@ -42,13 +43,11 @@ const styles = theme =>
       maxWidth: 'auto'
     },
     productTitle: {
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: 'bold'
     },
-    productImage: {
-      [theme.breakpoints.down('sm')]: {
-        height: '250px'
-      }
+    productMedia: {
+      height: 250
     }
   })
 
@@ -70,31 +69,34 @@ class Products extends React.Component<ProductsProps> {
             PRODUCTS
           </Typography>
           <Grid container spacing={0}>
-            <Grid item xs={12} md={5}>
-              <Card className={classes.product}>
-                <CardActionArea>
-                  <CardMedia
-                    className={classes.productImage}
-                    component={'img' as any}
-                    image='/static/index/components/products-medical-db.jpg'
-                    title='Medical DB'
-                    {...{ alt: 'Medical DB', height: 400 }}
-                  />
-                  <CardContent>
-                    <Typography
-                      className={classes.productTitle}
-                      gutterBottom
-                      variant='h6'
-                      component={'h3' as any}
-                      align='center'
-                    >
-                      Medical DB
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+            <Grid item xs={12}>
+              <NextLink
+                as='/blog/13'
+                href={{ pathname: '/blog', query: { postId: 13 } }}
+              >
+                <Card className={classes.product}>
+                  <CardActionArea>
+                    <CardMedia
+                      className={classes.productMedia}
+                      image='/static/blog/post-13-1.jpg'
+                      title='Medical DB'
+                    />
+                    <CardContent>
+                      <Typography
+                        className={classes.productTitle}
+                        gutterBottom
+                        variant='h6'
+                        component={'h3' as any}
+                        align='center'
+                      >
+                        Medical DB 2018
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </NextLink>
             </Grid>
-            <Grid item xs={12} md={7}>
+            <Grid item xs={12} md={6}>
               <Card className={classes.product}>
                 <CardActionArea
                   href='https://vitaldb.net/'
@@ -102,11 +104,9 @@ class Products extends React.Component<ProductsProps> {
                   rel='noopener'
                 >
                   <CardMedia
-                    className={classes.productImage}
-                    component={'img' as any}
+                    className={classes.productMedia}
                     image='/static/index/components/products-vital-db.png'
                     title='Vital DB'
-                    {...{ alt: 'Vital DB', height: 400 }}
                   />
                   <CardContent>
                     <Typography
@@ -122,7 +122,7 @@ class Products extends React.Component<ProductsProps> {
                 </CardActionArea>
               </Card>
             </Grid>
-            <Grid item xs={12} md={7}>
+            <Grid item xs={12} md={6}>
               <Card className={classes.product}>
                 <CardActionArea
                   href='http://nextmedicine.com/'
@@ -130,11 +130,9 @@ class Products extends React.Component<ProductsProps> {
                   rel='noopener'
                 >
                   <CardMedia
-                    className={classes.productImage}
-                    component={'img' as any}
+                    className={classes.productMedia}
                     image='/static/index/components/products-next-medicine.jpg'
                     title='Next Medicine'
-                    {...{ alt: 'Next Medicine', height: 400 }}
                   />
                   <CardContent>
                     <Typography
@@ -145,30 +143,6 @@ class Products extends React.Component<ProductsProps> {
                       align='center'
                     >
                       Next Medicine
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={5}>
-              <Card className={classes.product}>
-                <CardActionArea>
-                  <CardMedia
-                    className={classes.productImage}
-                    component={'img' as any}
-                    image='/static/index/components/products-cpmtb.jpg'
-                    title='cPMTb'
-                    {...{ alt: 'cPMTb', height: 400 }}
-                  />
-                  <CardContent>
-                    <Typography
-                      className={classes.productTitle}
-                      gutterBottom
-                      variant='h6'
-                      component={'h3' as any}
-                      align='center'
-                    >
-                      cPMTb
                     </Typography>
                   </CardContent>
                 </CardActionArea>

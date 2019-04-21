@@ -1,7 +1,7 @@
 const post: IPost = {
   title: '홈페이지 리뉴얼',
   createdAt: 'May 11, 2017',
-  thumbnail: '/static/index/components/products-cpmtb.jpg',
+  thumbnail: '/static/index/components/products-etc.jpg',
   content: `
 안녕하세요. 라임소사이어티입니다.
 

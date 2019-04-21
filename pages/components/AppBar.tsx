@@ -72,8 +72,7 @@ const styles = theme =>
     },
     leftLinkImg: {
       // display: 'none',
-      verticalAlign: 'middle',
-      width: '75%'
+      verticalAlign: 'middle'
     },
     right: {
       flex: 1,
