@@ -1,6 +1,7 @@
 const post: IPost = {
   title: '연혁 - 2017',
   createdAt: 'Sep 1, 2017',
+  thumbnail: '/static/index/components/products-next-medicine.jpg',
   content: `
 - 2012.02 법인설립
 - 2013.05 모바일 게임 “프린세스 러시 for Kakao” 한국 출시 (자체 출시)

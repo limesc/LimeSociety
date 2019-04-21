@@ -1,6 +1,7 @@
 const post: IPost = {
   title: 'Privacy Policy - Kick the Prince: Princess Rush',
   createdAt: 'July 31, 2017',
+  thumbnail: '/static/blog/post-9-2.png',
   content: `
 # Privacy Policy
 

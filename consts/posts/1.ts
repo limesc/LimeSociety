@@ -1,6 +1,7 @@
 const post: IPost = {
   title: '라임소사이어티 소개',
   createdAt: 'Feb 14, 2012',
+  thumbnail: '/static/components/appbar-logo.png',
   content: `
 라임 소사이어티는 다양한 사람들이 모여 때 묻지 않은 색다른 재미를 만들어갑니다.
 

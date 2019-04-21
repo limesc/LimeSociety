@@ -1,6 +1,7 @@
 const post: IPost = {
   title: '"킥더프린스: 프린세스러시 2" 공개',
   createdAt: 'Aug 5, 2017',
+  thumbnail: '/static/blog/post-9-2.png',
   content: `
 안녕하세요. 라임소사이어티입니다.
 

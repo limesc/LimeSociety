@@ -1,6 +1,7 @@
 const post: IPost = {
   title: 'Kick the Prince: Princess Rush',
   createdAt: 'Aug 5, 2017',
+  thumbnail: '/static/blog/post-9-2.png',
   content: `
 [English](/blog/6) / [한국어](/blog/7) / [日本語](/blog/8)
 

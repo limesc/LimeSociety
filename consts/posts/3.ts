@@ -1,6 +1,7 @@
 const post: IPost = {
   title: '개인정보 취급 방침 - 프린세스 러시 for Kakao',
   createdAt: 'May 28, 2013',
+  thumbnail: '/static/blog/post-9-1.png',
   content: `
 # 개인정보 취급 방침
 

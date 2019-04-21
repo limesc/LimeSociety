@@ -1,6 +1,7 @@
 const post: IPost = {
   title: '프린세스 러시 for Kakao',
   createdAt: 'May 27, 2013',
+  thumbnail: '/static/blog/post-9-1.png',
   content: `
 # 다운로드
 
