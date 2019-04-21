@@ -1,4 +1,4 @@
-const post: Post = {
+const post: IPost = {
   title: 'Kick the Prince: Princess Rush',
   createdAt: 'Aug 5, 2017',
   content: `

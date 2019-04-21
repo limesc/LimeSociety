@@ -1,4 +1,4 @@
-const post: Post = {
+const post: IPost = {
   title: '홈페이지 리뉴얼',
   createdAt: 'May 11, 2017',
   content: `

@@ -1,4 +1,4 @@
-const post: Post = {
+const post: IPost = {
   title: '연혁 - 2017',
   createdAt: 'Sep 1, 2017',
   content: `

@@ -1,4 +1,4 @@
-const posts: Array<Post> = []
+const posts: Array<IPost> = []
 for (let postId = 1; ; postId++) {
   try {
     const post = require(`./posts/${postId}`).default

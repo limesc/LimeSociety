@@ -5,6 +5,7 @@ import {
   CardMedia,
   createStyles,
   Hidden,
+  Icon,
   Link,
   Typography,
   WithStyles,
@@ -32,11 +33,14 @@ const styles = theme =>
       fontSize: theme.typography.fontSize,
       height: theme.typography.fontSize * 1.5 * 2,
       overflow: 'hidden'
+    },
+    readMoreIcon: {
+      verticalAlign: 'middle'
     }
   })
 
 interface ListedPostOwnProps {
-  post?: any
+  post?: IPost
 }
 
 type ListedPostProps = ListedPostOwnProps & WithStyles<typeof styles>
@@ -78,7 +82,10 @@ class ListedPost extends React.Component<ListedPostProps> {
                   {post.content}
                 </Typography>
                 <Typography color='primary' variant='body2'>
-                  Continue reading...
+                  Read More{' '}
+                  <Icon fontSize='inherit' className={classes.readMoreIcon}>
+                    arrow_right_alt
+                  </Icon>
                 </Typography>
               </CardContent>
               <Hidden xsDown>

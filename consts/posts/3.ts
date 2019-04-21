@@ -1,4 +1,4 @@
-const post: Post = {
+const post: IPost = {
   title: '개인정보 취급 방침 - 프린세스 러시 for Kakao',
   createdAt: 'May 28, 2013',
   content: `
