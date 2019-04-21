@@ -10,9 +10,9 @@ import React from 'react'
 
 import { posts } from 'consts/posts'
 import AppBar from 'pages/components/AppBar'
-import ContainerGoTo from 'pages/components/ContainerGoTo'
 import Container from '../components/Container'
 import Header from '../components/Header'
+import ListedPost from './components/ListedPost'
 import Post from './components/Post'
 
 const styles = theme =>
@@ -76,13 +76,20 @@ class Page extends React.Component<PageProps> {
         <AppBar />
         <Header title={"Lime's Blog"} content='News about us.' />
         <Container className={classes.main} component='main'>
-          <Grid container spacing={16}>
-            <Grid item xs={12}>
-              {post ? <Post post={post} /> : <Typography>No post</Typography>}
+          {!postId ? (
+            <Grid container spacing={16}>
+              {posts.map(post => (
+                <Grid item xs={12} key={post.id}>
+                  <ListedPost post={post} />
+                </Grid>
+              ))}
             </Grid>
-          </Grid>
+          ) : post ? (
+            <Post post={post} />
+          ) : (
+            <Typography>No post</Typography>
+          )}
         </Container>
-        <ContainerGoTo href='#top'>Back to top</ContainerGoTo>
       </>
     )
   }

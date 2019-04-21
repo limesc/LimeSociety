@@ -30,18 +30,18 @@ const styles = theme =>
     },
     content: {
       fontSize: theme.typography.fontSize,
-      height: theme.typography.fontSize * 1.5 * 3,
+      height: theme.typography.fontSize * 1.5 * 2,
       overflow: 'hidden'
     }
   })
 
-interface FeaturedPostOwnProps {
+interface ListedPostOwnProps {
   post?: any
 }
 
-type FeaturedPostProps = FeaturedPostOwnProps & WithStyles<typeof styles>
+type ListedPostProps = ListedPostOwnProps & WithStyles<typeof styles>
 
-class FeaturedPost extends React.Component<FeaturedPostProps> {
+class ListedPost extends React.Component<ListedPostProps> {
   render () {
     const { classes, post } = this.props
 
@@ -96,4 +96,4 @@ class FeaturedPost extends React.Component<FeaturedPostProps> {
   }
 }
 
-export default withStyles(styles)(FeaturedPost)
+export default withStyles(styles)(ListedPost)
