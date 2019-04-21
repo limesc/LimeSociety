@@ -10,9 +10,12 @@ import Markdown from '../../components/Markdown'
 
 const styles = theme =>
   createStyles({
+    header: {
+      marginTop: theme.spacing.unit * 8,
+      marginBottom: theme.spacing.unit * 8
+    },
     title: {
-      fontSize: theme.typography.h6.fontSize,
-      fontWeight: 700
+      fontWeight: 'bold'
     }
   })
 
@@ -27,19 +30,23 @@ class Post extends React.Component<PostProps> {
     const { classes, post } = this.props
 
     return (
-      <div>
-        <Typography
-          className={classes.title}
-          component={'h2' as any}
-          variant='subtitle1'
-        >
-          {post.title}
-        </Typography>
-        <Typography color='textSecondary' paragraph variant='subtitle2'>
-          {post.createdAt}
-        </Typography>
+      <>
+        <div className={classes.header}>
+          <Typography
+            align='center'
+            className={classes.title}
+            component={'h2' as any}
+            paragraph
+            variant='h4'
+          >
+            {post.title}
+          </Typography>
+          <Typography align='center' color='textSecondary' variant='subtitle1'>
+            {post.createdAt}
+          </Typography>
+        </div>
         <Markdown>{post.content || ''}</Markdown>
-      </div>
+      </>
     )
   }
 }

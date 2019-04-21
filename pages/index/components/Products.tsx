@@ -30,7 +30,7 @@ const styles = theme =>
     },
     title: {
       fontSize: 30,
-      fontWeight: 700,
+      fontWeight: 'bold',
       marginBottom: theme.spacing.unit * 6,
       [theme.breakpoints.down('sm')]: {
         marginBottom: theme.spacing.unit * 4
@@ -43,7 +43,7 @@ const styles = theme =>
     },
     productTitle: {
       fontSize: 18,
-      fontWeight: 700
+      fontWeight: 'bold'
     },
     productImage: {
       [theme.breakpoints.down('sm')]: {

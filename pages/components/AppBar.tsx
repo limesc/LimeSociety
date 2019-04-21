@@ -65,7 +65,7 @@ const styles = theme =>
     leftLinkTypo: {
       display: 'none',
       fontSize: 24,
-      fontWeight: 700,
+      fontWeight: 'bold',
       color: theme.palette.primary.main, // theme.palette.common.white,
       '&:hover': {
         opacity: 0.8

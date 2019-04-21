@@ -5,26 +5,52 @@ import React from 'react'
 const options = {
   overrides: {
     h1: {
-      component: props => <Typography gutterBottom variant='h5' {...props} />
+      component: props => (
+        <Typography
+          paragraph
+          style={{ fontWeight: 'bold' }}
+          variant='h5'
+          {...props}
+        />
+      )
     },
     h2: {
-      component: props => <Typography gutterBottom variant='h6' {...props} />
+      component: props => (
+        <Typography
+          paragraph
+          style={{ fontWeight: 'bold' }}
+          variant='h6'
+          {...props}
+        />
+      )
     },
     h3: {
       component: props => (
-        <Typography gutterBottom variant='subtitle1' {...props} />
+        <Typography
+          paragraph
+          style={{ fontWeight: 'bold' }}
+          variant='subtitle1'
+          {...props}
+        />
       )
     },
     h4: {
       component: props => (
-        <Typography gutterBottom variant='caption' paragraph {...props} />
+        <Typography
+          paragraph
+          style={{ fontWeight: 'bold' }}
+          variant='caption'
+          {...props}
+        />
       )
     },
-    p: { component: props => <Typography paragraph {...props} /> },
+    p: {
+      component: props => <Typography paragraph variant='body1' {...props} />
+    },
     li: {
       component: props => (
         <li>
-          <Typography component='span' {...props} />
+          <Typography component='span' variant='body1' {...props} />
         </li>
       )
     }

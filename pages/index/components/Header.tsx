@@ -35,7 +35,7 @@ const styles = theme =>
       marginTop: 75,
       marginBottom: 25,
       fontSize: 60,
-      fontWeight: 700,
+      fontWeight: 'bold',
       [theme.breakpoints.down('sm')]: {
         fontSize: 45
       },
@@ -46,7 +46,7 @@ const styles = theme =>
     motto2: {
       marginBottom: 75,
       fontSize: 42,
-      fontWeight: 700,
+      fontWeight: 'bold',
       [theme.breakpoints.down('sm')]: {
         fontSize: 31
       },
@@ -61,7 +61,7 @@ const styles = theme =>
         boxShadow: 'none'
       },
       fontSize: theme.typography.pxToRem(20),
-      fontWeight: 700,
+      fontWeight: 'bold',
       minWidth: 250,
       padding: `${theme.spacing.unit * 3 - 3}px ${theme.spacing.unit * 6}px`,
       [theme.breakpoints.down('sm')]: {

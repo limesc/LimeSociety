@@ -45,7 +45,7 @@ const styles = theme =>
     },
     buttonTypo: {
       fontSize: 18,
-      fontWeight: 700
+      fontWeight: 'bold'
     }
   })
 

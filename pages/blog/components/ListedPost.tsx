@@ -27,7 +27,7 @@ const styles = theme =>
     },
     title: {
       fontSize: theme.typography.h6.fontSize,
-      fontWeight: 700
+      fontWeight: 'bold'
     },
     content: {
       fontSize: theme.typography.fontSize,
