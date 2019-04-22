@@ -12,7 +12,7 @@ import Container from './Container'
 const styles = theme =>
   createStyles({
     background: {
-      backgroundImage: 'url("/static/index/components/header-bg.jpg")',
+      backgroundImage: 'url("/static/components/header-bg.jpg")',
       color: theme.palette.common.white,
       overflow: 'hidden'
     },
