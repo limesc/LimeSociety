@@ -11,7 +11,7 @@ const config = {
       ]
     }
   },
-  ignore: ['.idea', '.vscode', 'node_modules', 'out'],
+  ignore: ['.idea', '.vscode', 'docs', 'node_modules'],
   presets: ['next/babel', '@zeit/next-typescript/babel'],
   plugins: [
     [

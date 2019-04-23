@@ -16,7 +16,6 @@ coverage
 
 # Next
 .next/
-out
 
 # Node
 node_modules/

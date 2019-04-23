@@ -6,8 +6,8 @@ module.exports = {
   testRegex: TEST_REGEX,
   testPathIgnorePatterns: [
     '<rootDir>/.next/',
+    '<rootDir>/docs/',
     '<rootDir>/node_modules/',
-    '<rootDir>/out/',
     '<rootDir>/static/'
   ],
   transform: {
