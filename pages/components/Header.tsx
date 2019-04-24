@@ -1,6 +1,5 @@
 import {
   createStyles,
-  Grid,
   Typography,
   WithStyles,
   withStyles

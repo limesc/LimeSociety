@@ -12,6 +12,4 @@ for (let postId = 1; ; postId++) {
 }
 posts.reverse()
 
-const featuredPosts = posts.slice(0, 2)
-
-export { posts, featuredPosts }
+export { posts }
