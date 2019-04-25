@@ -87,13 +87,12 @@ webpackContext.id = "./consts/posts sync recursive ^\\.\\/.*$";
 /*!*************************!*\
   !*** ./consts/posts.ts ***!
   \*************************/
-/*! exports provided: posts, featuredPosts */
+/*! exports provided: posts */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "posts", function() { return posts; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "featuredPosts", function() { return featuredPosts; });
 var posts = [];
 
 for (var postId = 1;; postId++) {
@@ -108,7 +107,6 @@ for (var postId = 1;; postId++) {
 }
 
 posts.reverse();
-var featuredPosts = posts.slice(0, 2);
 
 
 /***/ }),
@@ -202,7 +200,7 @@ var post = {
   title: 'Medical DB 2018 소개',
   createdAt: 'Dec 1, 2018',
   thumbnail: '/static/blog/post-13-1.jpg',
-  content: "\n# Medical DB : \uC758\uB8CC \uB370\uC774\uD130 \uAD00\uB9AC \uC2DC\uC2A4\uD15C\n\n## ABOUT Medical DB : BEST OPTION IN INDUSTRY\n\nMedical DB\uB294 2007\uB144 \uC11C\uC6B8\uB300 \uC758\uB300 \uD504\uB85C\uADF8\uB798\uBC0D \uB3D9\uC544\uB9AC PAIM\uC758 GSBR Web DB\uC5D0 \uAE30\uBC18\uC744 \uB454 \uB370\uC774\uD130\uBCA0\uC774\uC2A4\uB85C, \uC774\uD6C4\uB85C \uCD95\uC801\uD574\uC628 \uC758\uB8CC DB\uC5D0 \uB300\uD55C \uB9CE\uC740 \uACBD\uD5D8\uC744 \uD1B5\uD574 Medical DB\uB97C \uC758\uB8CC\uC9C4\uC744 \uC704\uD55C \uCD5C\uACE0\uC758 \uC635\uC158\uC73C\uB85C \uB9CC\uB4E4\uC5C8\uB2E4\uACE0 \uC790\uBD80\uD569\uB2C8\uB2E4.\n\n## OBJECTIVES : ALMIGHTY DATABASE\n\n\uC800\uD76C\uB294 Medical DB\uB97C \uB9CC\uB4E4\uBA70, \uAC1C\uC778\uBD80\uD130 \uC870\uC9C1\uAE4C\uC9C0 \uC758\uB8CC \uD604\uC7A5\uC758 \uBAA8\uB4E0 \uACF3\uC5D0\uC11C \uD544\uC694\uB85C \uD558\uB294 \uAE30\uB2A5\uB4E4\uC744 \uD3EC\uAD04\uD558\uC5EC, \uCD5C\uB300\uD55C \uB9CE\uC740 \uC758\uB8CC\uC778\uB4E4\uC758 \uD3B8\uC758\uB97C \uB3D5\uB294 \uB370\uC774\uD130\uBCA0\uC774\uC2A4\uB97C \uB9CC\uB4E4\uC5B4\uB0B4\uB294 \uAC83\uC744 \uBAA9\uD45C\uB85C \uC0BC\uACE0 \uC788\uC2B5\uB2C8\uB2E4.\n\n&nbsp;  \n<img src=\"/static/blog/post-13-1.jpg\" alt=\"Medical DB (1)\" width=\"100%\" />\n&nbsp;  \n\n## USER SIDE : DATA MANAGEMENT\n\n### 1. \uAC15\uB825\uD55C \uAC80\uC0C9 \uAE30\uB2A5\n\n\uC790\uC8FC \uC4F0\uB294 \uD56D\uBAA9\uB4E4\uC5D0 \uB300\uD55C \uB2E8\uC21C\uD55C \uAC80\uC0C9\uC740 \uBB3C\uB860\uC774\uACE0, \uC6B0\uC120\uC21C\uC704 \uC9C0\uC815\uC5D0 \uB530\uB77C AND\uC640 OR\uC744 \uC870\uD569\uD558\uC5EC \uAC80\uC0C9\uC744 \uD558\uB294 \uAE30\uB2A5\uC744 \uD568\uAED8 \uC81C\uACF5\uD569\uB2C8\uB2E4.\n\n### 2. \uB370\uC774\uD130 \uAD6C\uC870 \uD3B8\uC9D1 \uAE30\uB2A5\n\n\uD504\uB85C\uADF8\uB798\uBA38\uC758 \uB3C4\uC6C0 \uC5C6\uC774\uB3C4 \uC218\uC9D1 \uAD00\uB9AC \uB300\uC0C1 \uB370\uC774\uD130\uB97C \uBCC0\uACBD\uD560 \uC218 \uC788\uB3C4\uB85D \uD558\uB294 \uAE30\uB2A5\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4.\n\n### 3. \uB370\uC774\uD130 \uB0B4\uBCF4\uB0B4\uAE30 \uAE30\uB2A5\n\n\uAC80\uC0C9\uC5D0 \uB530\uB978 \uB300\uC0C1\uC790\uB4E4\uC758 \uB370\uC774\uD130\uAC00 \uC5B4\uB5BB\uAC8C \uB098\uC62C\uC9C0 \uBBF8\uB9AC\uBCF4\uAE30\uB97C \uD1B5\uD574 \uD655\uC778\uD558\uACE0, \uB0B4\uBCF4\uB0BC \uCEEC\uB7FC\uC744 \uC2E4\uC2DC\uAC04\uC73C\uB85C \uBCC0\uACBD\uD574\uAC00\uBA70 \uB2E4\uC591\uD55C \uD3EC\uB9F7\uC73C\uB85C \uB0B4\uBCF4\uB0B4\uB294 \uAE30\uB2A5\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4.\n\n## ADMIN SIDE : MANAGEMENT FEATURE\n\n### 1. \uD2BC\uD2BC\uD55C \uBCF4\uC548 \uAE30\uB2A5\n\n\uC758\uB8CC \uB370\uC774\uD130\uC758 \uD2B9\uC131\uC0C1 \uD658\uC790 \uC790\uB8CC \uBCF4\uC548\uC774 \uAD49\uC7A5\uD788 \uC911\uC694\uD558\uAE30\uC5D0, \uC18C\uD504\uD2B8\uC6E8\uC5B4 \uBC11\uBC14\uB2E5\uBD80\uD130 \uBCF4\uC548\uC744 \uACE0\uB824\uD558\uC5EC \uC124\uACC4\uB418\uC5C8\uC2B5\uB2C8\uB2E4.\n\n### 2. \uD65C\uB3D9 \uB85C\uADF8 \uAE30\uB2A5\n\n\uB204\uAC00 \uC5B4\uB5A4 \uB300\uC0C1\uC790\uC758 \uB370\uC774\uD130\uB97C \uC77D\uC5C8\uB294\uC9C0, \uBB34\uC5C7\uC744 \uD3B8\uC9D1\uD588\uB294\uC9C0, \uD3B8\uC9D1\uB41C \uB300\uC0C1\uC790\uC758 \uACFC\uAC70 \uC815\uBCF4\uB294 \uC5B4\uB5A0\uD588\uB294\uC9C0 \uB4F1\uC744 \uAD00\uB9AC\uC790\uAC00 \uD655\uC778 \uAC00\uB2A5\uD1A0\uB85D \uD558\uB294 \uAE30\uB2A5\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4.\n\n### 3. \uAC15\uB825\uD55C \uAD8C\uD55C \uAD00\uB9AC\n\n\uC5EC\uB7EC \uAE30\uAD00\uB4E4\uACFC \uADF8 \uAD6C\uC131\uC6D0\uB4E4\uC5D0 \uB300\uD55C \uBCF5\uD569\uC801\uC778 \uAD8C\uD55C \uAD00\uB9AC\uAC00 \uAC00\uB2A5\uD558\uBA70, \uD559\uD68C\uC640 \uAC19\uC740 \uCD5C\uC0C1\uC704 \uAD00\uB9AC\uAE30\uAD00\uC744 \uBCC4\uB3C4\uB85C \uC124\uC815\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.\n\n&nbsp;  \n<img src=\"/static/blog/post-13-2.jpg\" alt=\"Medical DB (2)\" width=\"100%\" />\n&nbsp;  \n\n# LIME SOCIETY\n\n## SHORT DESCRIPTION\n\n\"\uC138\uC0C1\uC5D0 \uC624\uB798\uD1A0\uB85D \uAE30\uC5B5\uB420 \uD6CC\uB96D\uD55C \uC18C\uD504\uD2B8\uC6E8\uC5B4\uB97C \uB9CC\uB4E4\uAE30 \uC704\uD574\"\n\nLime Society\uB294 \uC758\uC0AC\uAC00 \uB300\uD45C\uC774\uC790 \uD504\uB85C\uADF8\uB798\uBA38\uB85C \uD65C\uB3D9 \uC911\uC778 \uC758\uB8CC \uB370\uC774\uD130\uBCA0\uC774\uC2A4 \uAC1C\uBC1C \uAE30\uC5C5\uC73C\uB85C, \uC774\uB97C \uBC14\uD0D5\uC73C\uB85C \uC5C5\uACC4\uC5D0\uC11C \uACE0\uAC1D\uC758 \uC694\uAD6C\uB97C \uAC00\uC7A5 \uAE4A\uAC8C \uC774\uD574\uD558\uACE0 \uAC1C\uBC1C\uC744 \uC9C4\uD589\uD574 \uB098\uAC00\uACE0 \uC788\uC2B5\uB2C8\uB2E4.\n\n## CONTACT INFO\n\n- \uC8FC\uC18C : \uC11C\uC6B8\uD2B9\uBCC4\uC2DC \uAC15\uB0A8\uAD6C \uD14C\uD5E4\uB780\uB85C 311 \uC544\uB0A8\uD0C0\uC6CC\uBE4C\uB529 803\uD638\n- \uC6B0\uD3B8\uBC88\uD638 : 06151\n- \uC804\uD654\uBC88\uD638 : 070-4129-0214\n- \uC774\uBA54\uC77C : MedicalDB@limesociety.com\n- \uD648\uD398\uC774\uC9C0 : https://limesociety.com\n"
+  content: "\n# Medical DB : \uC758\uB8CC \uB370\uC774\uD130 \uAD00\uB9AC \uC2DC\uC2A4\uD15C\n<br>\n\n## ABOUT Medical DB : BEST OPTION IN INDUSTRY\n\nMedical DB\uB294 2007\uB144 \uC11C\uC6B8\uB300 \uC758\uB300 \uD504\uB85C\uADF8\uB798\uBC0D \uB3D9\uC544\uB9AC PAIM\uC758 GSBR Web DB\uC5D0 \uAE30\uBC18\uC744 \uB454 \uB370\uC774\uD130\uBCA0\uC774\uC2A4\uB85C, \uADF8\uB54C\uBD80\uD130 \uC2DC\uC791\uB41C \uC758\uB8CC DB\uC5D0 \uB300\uD55C \uB9CE\uC740 \uACBD\uD5D8\uB4E4\uC774 Medical DB\uB97C \uC758\uB8CC\uC9C4\uC744 \uC704\uD55C \uCD5C\uACE0\uC758 \uC635\uC158\uC73C\uB85C \uB9CC\uB4E4\uC5C8\uB2E4 \uC790\uBD80\uD569\uB2C8\uB2E4.\n\n## OBJECTIVES : ALL-PURPOSE DATABASE\n\n\uC800\uD76C\uB294 Medical DB\uB97C \uB9CC\uB4E4\uBA70, \uAC1C\uC778\uBD80\uD130 \uC870\uC9C1\uAE4C\uC9C0 \uC758\uB8CC \uD604\uC7A5\uC758 \uBAA8\uB4E0 \uACF3\uC5D0\uC11C \uD544\uC694\uB85C \uD558\uB294 \uAE30\uB2A5\uB4E4\uC744 \uD3EC\uAD04\uD558\uC5EC, \uCD5C\uB300\uD55C \uB9CE\uC740 \uC758\uB8CC\uC778\uB4E4\uC758 \uD3B8\uC758\uB97C \uB3D5\uB294 \uB370\uC774\uD130\uBCA0\uC774\uC2A4\uB97C \uB9CC\uB4E4\uC5B4\uB0B4\uB294 \uAC83\uC744 \uBAA9\uD45C\uB85C \uC0BC\uACE0 \uC788\uC2B5\uB2C8\uB2E4.\n\n&nbsp;  \n<img src=\"/static/blog/post-13-1.jpg\" alt=\"Medical DB (1)\" width=\"100%\" />\n&nbsp;  \n\n## USER SIDE : DATA MANAGEMENT\n<br>\n\n### 1. \uAC15\uB825\uD55C \uAC80\uC0C9 \uAE30\uB2A5\n\n\uC790\uC8FC \uC4F0\uB294 \uD56D\uBAA9\uB4E4\uC5D0 \uB300\uD55C \uB2E8\uC21C\uD55C \uAC80\uC0C9\uC740 \uBB3C\uB860\uC774\uACE0, \uC6B0\uC120\uC21C\uC704 \uC9C0\uC815\uC5D0 \uB530\uB77C AND\uC640 OR\uC744 \uC870\uD569\uD558\uC5EC \uAC80\uC0C9\uC744 \uD558\uB294 \uAE30\uB2A5\uC744 \uD568\uAED8 \uC81C\uACF5\uD569\uB2C8\uB2E4.\n\n### 2. \uB370\uC774\uD130 \uAD6C\uC870 \uD3B8\uC9D1 \uAE30\uB2A5\n\n\uD504\uB85C\uADF8\uB798\uBA38\uC758 \uB3C4\uC6C0 \uC5C6\uC774\uB3C4 \uC218\uC9D1 \uAD00\uB9AC \uB300\uC0C1 \uB370\uC774\uD130\uB97C \uBCC0\uACBD\uD560 \uC218 \uC788\uB3C4\uB85D \uD558\uB294 \uAE30\uB2A5\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4.\n\n### 3. \uB370\uC774\uD130 \uB0B4\uBCF4\uB0B4\uAE30 \uAE30\uB2A5\n\n\uAC80\uC0C9\uC5D0 \uB530\uB978 \uB300\uC0C1\uC790\uB4E4\uC758 \uB370\uC774\uD130\uAC00 \uC5B4\uB5BB\uAC8C \uB098\uC62C\uC9C0 \uBBF8\uB9AC\uBCF4\uAE30\uB97C \uD1B5\uD574 \uD655\uC778\uD558\uACE0, \uB0B4\uBCF4\uB0BC \uCEEC\uB7FC\uC744 \uC2E4\uC2DC\uAC04\uC73C\uB85C \uBCC0\uACBD\uD574\uAC00\uBA70 \uB2E4\uC591\uD55C \uD3EC\uB9F7\uC73C\uB85C \uB0B4\uBCF4\uB0B4\uB294 \uAE30\uB2A5\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4.\n\n&nbsp;\n\n## ADMIN SIDE : MANAGEMENT FEATURE\n<br>\n\n### 1. \uD2BC\uD2BC\uD55C \uBCF4\uC548 \uAE30\uB2A5\n\n\uC758\uB8CC \uB370\uC774\uD130\uC758 \uD2B9\uC131\uC0C1 \uD658\uC790 \uC790\uB8CC \uBCF4\uC548\uC774 \uAD49\uC7A5\uD788 \uC911\uC694\uD558\uAE30\uC5D0, \uC18C\uD504\uD2B8\uC6E8\uC5B4 \uBC11\uBC14\uB2E5\uBD80\uD130 \uBCF4\uC548\uC744 \uACE0\uB824\uD558\uC5EC \uC124\uACC4\uB418\uC5C8\uC2B5\uB2C8\uB2E4.\n\n### 2. \uD65C\uB3D9 \uB85C\uADF8 \uAE30\uB2A5\n\n\uB204\uAC00 \uC5B4\uB5A4 \uB300\uC0C1\uC790\uC758 \uB370\uC774\uD130\uB97C \uC77D\uC5C8\uB294\uC9C0, \uBB34\uC5C7\uC744 \uD3B8\uC9D1\uD588\uB294\uC9C0, \uD3B8\uC9D1\uB41C \uB300\uC0C1\uC790\uC758 \uACFC\uAC70 \uC815\uBCF4\uB294 \uC5B4\uB5A0\uD588\uB294\uC9C0 \uB4F1\uC744 \uAD00\uB9AC\uC790\uAC00 \uD655\uC778 \uAC00\uB2A5\uD1A0\uB85D \uD558\uB294 \uAE30\uB2A5\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4.\n\n### 3. \uAC15\uB825\uD55C \uAD8C\uD55C \uAD00\uB9AC\n\n\uC5EC\uB7EC \uAE30\uAD00\uB4E4\uACFC \uADF8 \uAD6C\uC131\uC6D0\uB4E4\uC5D0 \uB300\uD55C \uBCF5\uD569\uC801\uC778 \uAD8C\uD55C \uAD00\uB9AC\uAC00 \uAC00\uB2A5\uD558\uBA70, \uD559\uD68C\uC640 \uAC19\uC740 \uCD5C\uC0C1\uC704 \uAD00\uB9AC\uAE30\uAD00\uC744 \uBCC4\uB3C4\uB85C \uC124\uC815\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4.\n\n&nbsp;  \n<img src=\"/static/blog/post-13-2.jpg\" alt=\"Medical DB (2)\" width=\"100%\" />\n&nbsp;  \n\n# LIME SOCIETY\n<br>\n\n\"\uC138\uC0C1\uC5D0 \uC624\uB798\uD1A0\uB85D \uAE30\uC5B5\uB420 \uD6CC\uB96D\uD55C \uC18C\uD504\uD2B8\uC6E8\uC5B4\uB97C \uB9CC\uB4E4\uAE30 \uC704\uD574\"\n\nLime Society\uB294 \uC758\uC0AC\uAC00 \uB300\uD45C\uC774\uC790 \uD504\uB85C\uADF8\uB798\uBA38\uB85C \uD65C\uB3D9 \uC911\uC778 \uC758\uB8CC \uB370\uC774\uD130\uBCA0\uC774\uC2A4 \uAC1C\uBC1C \uAE30\uC5C5\uC73C\uB85C, \uC774\uB97C \uBC14\uD0D5\uC73C\uB85C \uC5C5\uACC4\uC5D0\uC11C \uACE0\uAC1D\uC758 \uC694\uAD6C\uB97C \uAC00\uC7A5 \uAE4A\uAC8C \uC774\uD574\uD558\uACE0 \uAC1C\uBC1C\uC744 \uC9C4\uD589\uD574 \uB098\uAC00\uACE0 \uC788\uC2B5\uB2C8\uB2E4.\n\n## CONTACT INFO\n\n- \uC8FC\uC18C : \uC11C\uC6B8\uD2B9\uBCC4\uC2DC \uAC15\uB0A8\uAD6C \uD14C\uD5E4\uB780\uB85C 311 \uC544\uB0A8\uD0C0\uC6CC\uBE4C\uB529 803\uD638\n- \uC6B0\uD3B8\uBC88\uD638 : 06151\n- \uC804\uD654\uBC88\uD638 : 070-4129-0214\n- \uC774\uBA54\uC77C : MedicalDB@limesociety.com\n- \uD648\uD398\uC774\uC9C0 : https://limesociety.com\n"
 };
 /* harmony default export */ __webpack_exports__["default"] = (post);
 
@@ -218,10 +216,10 @@ var post = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 var post = {
-  title: '대한대장항문학회 제 52차 학술대회 부스 참여',
+  title: '대한대장항문학회 제 52차 학술대회 참여부스 초청',
   createdAt: 'Apr 5, 2019',
   thumbnail: '/static/blog/post-14-2.jpg',
-  content: "\n2019\uB144 4\uC6D4 5\uC77C(\uAE08)\uBD80\uD130 2019\uB144 4\uC6D4 7\uC77C(\uC77C)\uAE4C\uC9C0 \uC81C\uC8FC\uB3C4\uC5D0\uC11C \uC5F4\uB9B0 \uB300\uD55C\uB300\uC7A5\uD56D\uBB38\uD559\uD68C \uC81C 52\uCC28 \uD559\uC220\uB300\uD68C\uC5D0 \uBD80\uC2A4\uB85C \uCC38\uC11D\uD558\uC600\uC2B5\uB2C8\uB2E4.\n\n\uB77C\uC784\uC18C\uC0AC\uC774\uC5B4\uD2F0\uB294 2018\uB144\uBD80\uD130 \uB300\uD55C\uB300\uC7A5\uD56D\uBB38\uD559\uD68C\uC640 Colorectal Cancer Web Database \uAD6C\uCD95 \uC0AC\uC5C5\uC744 \uC9C4\uD589\uD558\uACE0 \uC788\uC2B5\uB2C8\uB2E4.\n\uD604\uC7AC 1\uCC28\uB144\uB3C4 \uC0AC\uC5C5\uC744 \uB9C8\uBB34\uB9AC\uD574\uAC00\uB294 \uACFC\uC815\uC5D0 \uC788\uC2B5\uB2C8\uB2E4.\n\n&nbsp;  \n<img src=\"/static/blog/post-14-1.jpg\" alt=\"\uB300\uD55C\uB300\uC7A5\uD56D\uBB38\uD559\uD68C \uC81C 52\uCC28 \uD559\uC220\uB300\uD68C \uBD80\uC2A4 \uCC38\uC5EC (1)\" width=\"100%\" />\n&nbsp;  \n\n500\uBA85\uC774 \uB118\uB294 \uBD84\uB4E4\uC774 \uC0AC\uC804\uC608\uC57D\uD558\uC168\uC73C\uBA70, \uC131\uACF5\uC801\uC73C\uB85C \uB9C8\uBB34\uB9AC\uB418\uC5C8\uC2B5\uB2C8\uB2E4.\n\n&nbsp;  \n<img src=\"/static/blog/post-14-2.jpg\" alt=\"\uB300\uD55C\uB300\uC7A5\uD56D\uBB38\uD559\uD68C \uC81C 52\uCC28 \uD559\uC220\uB300\uD68C \uBD80\uC2A4 \uCC38\uC5EC (2)\" width=\"100%\" />\n&nbsp;  \n\n\uAC10\uC0AC\uD569\uB2C8\uB2E4.\n"
+  content: "\n2019\uB144 4\uC6D4 5\uC77C(\uAE08)\uBD80\uD130 2019\uB144 4\uC6D4 7\uC77C(\uC77C)\uAE4C\uC9C0 \uC81C\uC8FC\uB3C4\uC5D0\uC11C \uC5F4\uB9B0 \uB300\uD55C\uB300\uC7A5\uD56D\uBB38\uD559\uD68C \uC81C 52\uCC28 \uD559\uC220\uB300\uD68C\uC5D0 \uCC38\uC5EC\uBD80\uC2A4\uB85C \uCD08\uCCAD\uB418\uC5C8\uC2B5\uB2C8\uB2E4.\n\n\uB77C\uC784\uC18C\uC0AC\uC774\uC5B4\uD2F0\uB294 2018\uB144\uBD80\uD130 \uB300\uD55C\uB300\uC7A5\uD56D\uBB38\uD559\uD68C\uC640 Colorectal Cancer Web Database \uAD6C\uCD95 \uC0AC\uC5C5\uC744 \uC9C4\uD589\uD558\uACE0 \uC788\uC2B5\uB2C8\uB2E4.\n\uD604\uC7AC 1\uCC28\uB144\uB3C4 \uC0AC\uC5C5\uC744 \uB9C8\uBB34\uB9AC\uD574\uAC00\uB294 \uACFC\uC815\uC5D0 \uC788\uC2B5\uB2C8\uB2E4.\n\n&nbsp;  \n<img src=\"/static/blog/post-14-1.jpg\" alt=\"\uB300\uD55C\uB300\uC7A5\uD56D\uBB38\uD559\uD68C \uC81C 52\uCC28 \uD559\uC220\uB300\uD68C \uBD80\uC2A4 \uCC38\uC5EC (1)\" width=\"100%\" />\n&nbsp;  \n\n\uADF8 \uB3D9\uC548 \uC9C4\uB8CC\uD604\uC7A5\uC5D0\uC11C \uD568\uAED8 \uC218\uACE0\uD55C \uB3D9\uB8CC, \uC804\uC784\uC758, \uC804\uACF5\uC758 \uB4F1 500\uBA85\uC774 \uB118\uB294 \uBD84\uB4E4\uC774 \uC0AC\uC804\uC608\uC57D \uBC0F \uCC38\uC5EC\uD558\uC168\uC73C\uBA70, \uB9CE\uC740 \uC80A\uC740 \uC5F0\uAD6C\uC790\uB4E4\uC758 \uC218\uC900 \uB192\uC740 \uC5F0\uAD6C\uAC00 \uBC1C\uD45C\uB418\uACE0 \uD1A0\uB860\uB418\uB294 \uB4F1 \uBBF8\uB798\uC758 \uC6B0\uB9AC\uB098\uB77C \uB300\uC7A5\uD56D\uBB38\uD559\uC744 \uC774\uB04C\uC5B4 \uAC08 \uC80A\uC740 \uC8FC\uC5ED\uB4E4\uC758 \uACBD\uC5F0\uC758 \uBB34\uB300\uAC00 \uC131\uACF5\uC801\uC73C\uB85C \uB9C8\uBB34\uB9AC\uB418\uC5C8\uC2B5\uB2C8\uB2E4.\n\n&nbsp;  \n<img src=\"/static/blog/post-14-2.jpg\" alt=\"\uB300\uD55C\uB300\uC7A5\uD56D\uBB38\uD559\uD68C \uC81C 52\uCC28 \uD559\uC220\uB300\uD68C \uBD80\uC2A4 \uCC38\uC5EC (2)\" width=\"100%\" />\n&nbsp;  \n\n\uC138\uC0C1\uC5D0 \uC624\uB798\uD1A0\uB85D \uAE30\uC5B5\uB420 \uD6CC\uB96D\uD55C \uC18C\uD504\uD2B8\uC6E8\uC5B4\uB97C \uB9CC\uB4E4\uAE30 \uC704\uD574 \uB77C\uC784\uC18C\uC0AC\uC774\uC5B4\uD2F0 \uC5ED\uC2DC \uC55E\uC73C\uB85C\uB3C4 \uCD5C\uC120\uC744 \uB2E4\uD558\uB294 \uC88B\uC740 \uAE30\uC5C5\uC774 \uB418\uB3C4\uB85D \uB178\uB825\uD558\uACA0\uC2B5\uB2C8\uB2E4.\n\n\uAC10\uC0AC\uD569\uB2C8\uB2E4.\n"
 };
 /* harmony default export */ __webpack_exports__["default"] = (post);
 
@@ -47682,10 +47680,10 @@ exports.formatWithValidation = formatWithValidation;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fblog&absolutePagePath=C%3A%5CUsers%5CHojong%20Lee%5CDocuments%5Cworkspace%5CLimeSociety%5Cpages%5Cblog%5Cindex.tsx!./":
-/*!*************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fblog&absolutePagePath=C%3A%5CUsers%5CHojong%20Lee%5CDocuments%5Cworkspace%5CLimeSociety%5Cpages%5Cblog%5Cindex.tsx ***!
-  \*************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fblog&absolutePagePath=C%3A%5CUsers%5Cgnosi%5CDocuments%5Cworkspace%5CLimeSociety%5Cpages%5Cblog%5Cindex.tsx!./":
+/*!******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fblog&absolutePagePath=C%3A%5CUsers%5Cgnosi%5CDocuments%5Cworkspace%5CLimeSociety%5Cpages%5Cblog%5Cindex.tsx ***!
+  \******************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -57409,7 +57407,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Hojong Lee\\Documents\\workspace\\LimeSociety\\pages\\blog\\components\\ListedPost.tsx";
+var _jsxFileName = "C:\\Users\\gnosi\\Documents\\workspace\\LimeSociety\\pages\\blog\\components\\ListedPost.tsx";
 
 
 
@@ -57593,7 +57591,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Hojong Lee\\Documents\\workspace\\LimeSociety\\pages\\blog\\components\\Post.tsx";
+var _jsxFileName = "C:\\Users\\gnosi\\Documents\\workspace\\LimeSociety\\pages\\blog\\components\\Post.tsx";
 
 
 
@@ -57713,7 +57711,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Hojong Lee\\Documents\\workspace\\LimeSociety\\pages\\blog\\index.tsx";
+var _jsxFileName = "C:\\Users\\gnosi\\Documents\\workspace\\LimeSociety\\pages\\blog\\index.tsx";
 
 
 
@@ -57983,7 +57981,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Hojong Lee\\Documents\\workspace\\LimeSociety\\pages\\components\\AppBar.tsx";
+var _jsxFileName = "C:\\Users\\gnosi\\Documents\\workspace\\LimeSociety\\pages\\components\\AppBar.tsx";
 
 
 
@@ -58451,7 +58449,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Hojong Lee\\Documents\\workspace\\LimeSociety\\pages\\components\\Container.tsx";
+var _jsxFileName = "C:\\Users\\gnosi\\Documents\\workspace\\LimeSociety\\pages\\components\\Container.tsx";
 
 
 
@@ -58594,7 +58592,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Hojong Lee\\Documents\\workspace\\LimeSociety\\pages\\components\\Header.tsx";
+var _jsxFileName = "C:\\Users\\gnosi\\Documents\\workspace\\LimeSociety\\pages\\components\\Header.tsx";
 
 
 
@@ -58639,7 +58637,7 @@ function (_React$Component) {
         width: "full",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 40
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_Container__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -58647,7 +58645,7 @@ function (_React$Component) {
         component: "section",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 41
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["Typography"], {
@@ -58657,7 +58655,7 @@ function (_React$Component) {
         variant: "h3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 42
         },
         __self: this
       }, title), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["Typography"], {
@@ -58666,7 +58664,7 @@ function (_React$Component) {
         variant: "body1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 50
         },
         __self: this
       }, content)));
@@ -58700,7 +58698,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_anchor_link_smooth_scroll__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_anchor_link_smooth_scroll__WEBPACK_IMPORTED_MODULE_5__);
 
 
-var _jsxFileName = "C:\\Users\\Hojong Lee\\Documents\\workspace\\LimeSociety\\pages\\components\\Link.tsx";
+var _jsxFileName = "C:\\Users\\gnosi\\Documents\\workspace\\LimeSociety\\pages\\components\\Link.tsx";
 
 
 
@@ -58780,7 +58778,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Hojong Lee\\Documents\\workspace\\LimeSociety\\pages\\components\\Markdown.tsx";
+var _jsxFileName = "C:\\Users\\gnosi\\Documents\\workspace\\LimeSociety\\pages\\components\\Markdown.tsx";
 
 
 
@@ -58925,13 +58923,13 @@ function (_React$Component) {
 /***/ }),
 
 /***/ 1:
-/*!*****************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fblog&absolutePagePath=C%3A%5CUsers%5CHojong%20Lee%5CDocuments%5Cworkspace%5CLimeSociety%5Cpages%5Cblog%5Cindex.tsx ***!
-  \*****************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fblog&absolutePagePath=C%3A%5CUsers%5Cgnosi%5CDocuments%5Cworkspace%5CLimeSociety%5Cpages%5Cblog%5Cindex.tsx ***!
+  \**********************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fblog&absolutePagePath=C%3A%5CUsers%5CHojong%20Lee%5CDocuments%5Cworkspace%5CLimeSociety%5Cpages%5Cblog%5Cindex.tsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fblog&absolutePagePath=C%3A%5CUsers%5CHojong%20Lee%5CDocuments%5Cworkspace%5CLimeSociety%5Cpages%5Cblog%5Cindex.tsx!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fblog&absolutePagePath=C%3A%5CUsers%5Cgnosi%5CDocuments%5Cworkspace%5CLimeSociety%5Cpages%5Cblog%5Cindex.tsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fblog&absolutePagePath=C%3A%5CUsers%5Cgnosi%5CDocuments%5Cworkspace%5CLimeSociety%5Cpages%5Cblog%5Cindex.tsx!./");
 
 
 /***/ }),

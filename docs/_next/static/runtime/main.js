@@ -5556,7 +5556,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      source_map_support_1.rewriteStacktrace(error, "C:\\Users\\Hojong Lee\\Documents\\workspace\\LimeSociety\\.next");
+      source_map_support_1.rewriteStacktrace(error, "C:\\Users\\gnosi\\Documents\\workspace\\LimeSociety\\.next");
       return error;
     }
   };

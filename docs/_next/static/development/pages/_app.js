@@ -63742,7 +63742,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Hojong Lee\\Documents\\workspace\\LimeSociety\\pages\\_app.tsx";
+var _jsxFileName = "C:\\Users\\gnosi\\Documents\\workspace\\LimeSociety\\pages\\_app.tsx";
 
 
 

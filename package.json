@@ -9,11 +9,11 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production next build",
     "dev": "next",
-    "export": "next export",
+    "export": "next export -o docs",
     "lint": "tslint --project .",
     "prettier": "prettier-tslint",
     "start": "next start",
-    "serve": "serve -l 3000 out",
+    "serve": "serve -l 3000 docs",
     "test": "jest",
     "type-check": "tsc"
   },
