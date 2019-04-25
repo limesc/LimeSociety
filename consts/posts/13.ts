@@ -4,12 +4,13 @@ const post: IPost = {
   thumbnail: '/static/blog/post-13-1.jpg',
   content: `
 # Medical DB : 의료 데이터 관리 시스템
+<br>
 
 ## ABOUT Medical DB : BEST OPTION IN INDUSTRY
 
-Medical DB는 2007년 서울대 의대 프로그래밍 동아리 PAIM의 GSBR Web DB에 기반을 둔 데이터베이스로, 이후로 축적해온 의료 DB에 대한 많은 경험을 통해 Medical DB를 의료진을 위한 최고의 옵션으로 만들었다고 자부합니다.
+Medical DB는 2007년 서울대 의대 프로그래밍 동아리 PAIM의 GSBR Web DB에 기반을 둔 데이터베이스로, 그때부터 시작된 의료 DB에 대한 많은 경험들이 Medical DB를 의료진을 위한 최고의 옵션으로 만들었다 자부합니다.
 
-## OBJECTIVES : ALMIGHTY DATABASE
+## OBJECTIVES : ALL-PURPOSE DATABASE
 
 저희는 Medical DB를 만들며, 개인부터 조직까지 의료 현장의 모든 곳에서 필요로 하는 기능들을 포괄하여, 최대한 많은 의료인들의 편의를 돕는 데이터베이스를 만들어내는 것을 목표로 삼고 있습니다.
 
@@ -18,6 +19,7 @@ Medical DB는 2007년 서울대 의대 프로그래밍 동아리 PAIM의 GSBR We
 &nbsp;  
 
 ## USER SIDE : DATA MANAGEMENT
+<br>
 
 ### 1. 강력한 검색 기능
 
@@ -31,7 +33,10 @@ Medical DB는 2007년 서울대 의대 프로그래밍 동아리 PAIM의 GSBR We
 
 검색에 따른 대상자들의 데이터가 어떻게 나올지 미리보기를 통해 확인하고, 내보낼 컬럼을 실시간으로 변경해가며 다양한 포맷으로 내보내는 기능을 제공합니다.
 
+&nbsp;
+
 ## ADMIN SIDE : MANAGEMENT FEATURE
+<br>
 
 ### 1. 튼튼한 보안 기능
 
@@ -50,8 +55,7 @@ Medical DB는 2007년 서울대 의대 프로그래밍 동아리 PAIM의 GSBR We
 &nbsp;  
 
 # LIME SOCIETY
-
-## SHORT DESCRIPTION
+<br>
 
 "세상에 오래토록 기억될 훌륭한 소프트웨어를 만들기 위해"
 
