@@ -92,6 +92,9 @@ const styles = theme =>
       backgroundImage: 'url("/static/index/components/header-bg.jpg")',
       backgroundColor: '#7fc7d9',
       backgroundPosition: 'center'
+    },
+    anchorLink: {
+      textDecoration: 'none'
     }
   })
 
@@ -122,22 +125,20 @@ class Header extends React.Component<HeaderProps> {
           >
             with Commitment and Passion
           </Typography>
-          <Button
-            className={classes.button}
-            color='primary'
-            component={linkProps => (
-              <AnchorLink
-                {...linkProps}
-                offset={appBarHeight}
-                href='#products'
-                variant='button'
-              />
-            )}
-            size='large'
-            variant='contained'
+          <AnchorLink
+            href='#products'
+            offset={appBarHeight}
+            className={classes.anchorLink}
           >
-            Tell Me More
-          </Button>
+            <Button
+              className={classes.button}
+              color='primary'
+              size='large'
+              variant='contained'
+            >
+              Tell Me More
+            </Button>
+          </AnchorLink>
           <div className={classes.backdrop} />
           <div className={classes.background} />
         </Container>
