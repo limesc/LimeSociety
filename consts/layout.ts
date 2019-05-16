@@ -1,3 +1,3 @@
 export const appBarHeight = 80
 export const lightLimeColor = '#EFFBEF'
-export const containerBreakpoint = theme => 850 + theme.spacing(6)
+export const containerBreakpoint = theme => 850 + theme.spacing.unit * 6

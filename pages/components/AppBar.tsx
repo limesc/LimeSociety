@@ -52,8 +52,8 @@ const styles = theme =>
         width: 850,
         marginLeft: 'auto',
         marginRight: 'auto',
-        paddingLeft: theme.spacing(1),
-        paddingRight: theme.spacing(1)
+        paddingLeft: theme.spacing.unit,
+        paddingRight: theme.spacing.unit
       }
     },
     left: {
@@ -93,7 +93,7 @@ const styles = theme =>
       color: theme.palette.common.white
     },
     rightLink: {
-      marginLeft: theme.spacing(3)
+      marginLeft: theme.spacing.unit * 3
     },
     rightLinkTypo: {
       fontSize: 14,
