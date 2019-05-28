@@ -21,12 +21,12 @@ const styles = theme =>
       overflow: 'hidden'
     },
     root: {
-      marginTop: theme.spacing.unit * 6,
+      marginTop: theme.spacing(6),
       [theme.breakpoints.down('sm')]: {
-        marginTop: theme.spacing.unit * 4,
-        marginBottom: theme.spacing.unit * 2
+        marginTop: theme.spacing(4),
+        marginBottom: theme.spacing(2)
       },
-      marginBottom: theme.spacing.unit * 6,
+      marginBottom: theme.spacing(6),
       position: 'relative',
       display: 'flex',
       flexDirection: 'column',
@@ -35,9 +35,9 @@ const styles = theme =>
     title: {
       fontSize: 30,
       fontWeight: 'bold',
-      marginBottom: theme.spacing.unit * 6,
+      marginBottom: theme.spacing(6),
       [theme.breakpoints.down('sm')]: {
-        marginBottom: theme.spacing.unit * 4
+        marginBottom: theme.spacing(4)
       }
     },
     item: {
@@ -45,11 +45,11 @@ const styles = theme =>
       flexDirection: 'column',
       alignItems: 'center',
       [theme.breakpoints.down('sm')]: {
-        marginBottom: theme.spacing.unit * 4
+        marginBottom: theme.spacing(4)
       }
     },
     itemIcon: {
-      marginBottom: theme.spacing.unit * 2,
+      marginBottom: theme.spacing(2),
       padding: '18px',
       backgroundColor: theme.palette.primary.main,
       borderRadius: '50%',

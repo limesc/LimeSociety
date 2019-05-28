@@ -11,8 +11,8 @@ import Markdown from '../../components/Markdown'
 const styles = theme =>
   createStyles({
     header: {
-      marginTop: theme.spacing.unit * 8,
-      marginBottom: theme.spacing.unit * 8
+      marginTop: theme.spacing(8),
+      marginBottom: theme.spacing(8)
     },
     title: {
       fontWeight: 'bold'

@@ -16,11 +16,11 @@ const styles = theme =>
       overflow: 'hidden'
     },
     root: {
-      marginTop: theme.spacing.unit * 10,
-      marginBottom: theme.spacing.unit * 10,
+      marginTop: theme.spacing(10),
+      marginBottom: theme.spacing(10),
       [theme.breakpoints.down('xs')]: {
-        marginTop: theme.spacing.unit * 4,
-        marginBottom: theme.spacing.unit * 4
+        marginTop: theme.spacing(4),
+        marginBottom: theme.spacing(4)
       }
     }
   })

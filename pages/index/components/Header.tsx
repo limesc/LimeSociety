@@ -25,8 +25,8 @@ const styles = theme =>
       }
     },
     root: {
-      marginTop: theme.spacing.unit * 10,
-      marginBottom: theme.spacing.unit * 10,
+      marginTop: theme.spacing(10),
+      marginBottom: theme.spacing(10),
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center'
@@ -63,9 +63,9 @@ const styles = theme =>
       fontSize: theme.typography.pxToRem(20),
       fontWeight: 'bold',
       minWidth: 250,
-      padding: `${theme.spacing.unit * 3 - 3}px ${theme.spacing.unit * 6}px`,
+      padding: `${theme.spacing(3) - 3}px ${theme.spacing(6)}px`,
       [theme.breakpoints.down('sm')]: {
-        padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px`,
+        padding: `${theme.spacing(2)}px ${theme.spacing(3)}px`,
         fontSize: theme.typography.pxToRem(15),
         minWidth: 200
       }
@@ -92,6 +92,9 @@ const styles = theme =>
       backgroundImage: 'url("/static/index/components/header-bg.jpg")',
       backgroundColor: '#7fc7d9',
       backgroundPosition: 'center'
+    },
+    anchorLink: {
+      textDecoration: 'none'
     }
   })
 
@@ -122,22 +125,20 @@ class Header extends React.Component<HeaderProps> {
           >
             with Commitment and Passion
           </Typography>
-          <Button
-            className={classes.button}
-            color='primary'
-            component={linkProps => (
-              <AnchorLink
-                {...linkProps}
-                offset={appBarHeight}
-                href='#products'
-                variant='button'
-              />
-            )}
-            size='large'
-            variant='contained'
+          <AnchorLink
+            href='#products'
+            offset={appBarHeight}
+            className={classes.anchorLink}
           >
-            Tell Me More
-          </Button>
+            <Button
+              className={classes.button}
+              color='primary'
+              size='large'
+              variant='contained'
+            >
+              Tell Me More
+            </Button>
+          </AnchorLink>
           <div className={classes.backdrop} />
           <div className={classes.background} />
         </Container>

@@ -1,23 +1,12 @@
-import { ServerPortal } from '@jesstelford/react-portal-universal/server'
+import { ServerStyleSheets } from '@material-ui/styles'
+import theme from 'consts/theme'
 import Document, { Head, Main, NextScript } from 'next/document'
 import React from 'react'
 import flush from 'styled-jsx/server'
 
-interface IMyDocumentProps {
-  pageContext: any
-}
-
 /** overrides Next.js's default server-side rendered document markup */
-class MyDocument extends Document<IMyDocumentProps> {
+class MyDocument extends Document {
   static async getInitialProps (ctx) {
-    const portals = new ServerPortal()
-    const originalRenderPage = ctx.renderPage
-
-    ctx.renderPage = () =>
-      originalRenderPage({
-        enhanceApp: App => props => portals.collectPortals(<App {...props} />)
-      })
-
     // Resolution order
     //
     // On the server:
@@ -41,39 +30,22 @@ class MyDocument extends Document<IMyDocumentProps> {
     // 4. page.render
 
     // Render app and page and get the context of the page with collected side effects.
-    let pageContext: any
+    const sheets = new ServerStyleSheets()
+    const originalRenderPage = ctx.renderPage
 
-    const page = ctx.renderPage(Component => {
-      const WrappedComponent = props => {
-        pageContext = props.pageContext
-        return <Component {...props} />
-      }
-
-      return WrappedComponent
-    })
-
-    let css: string
-    // It might be undefined, e.g. after an error.
-    if (pageContext) {
-      css = pageContext.sheetsRegistry.toString()
-    }
+    ctx.renderPage = () =>
+      originalRenderPage({
+        enhanceApp: App => props => sheets.collect(<App {...props} />)
+      })
 
     const initialProps = await Document.getInitialProps(ctx)
-    const { html, ...props } = initialProps
-    const htmlWithPortals = portals.appendUniversalPortals(html)
 
     return {
-      html: htmlWithPortals,
-      ...props,
-      ...page,
-      pageContext,
+      ...initialProps,
       // Styles fragment is rendered after the app and page rendering finish.
       styles: (
         <>
-          <style
-            id='jss-server-side'
-            dangerouslySetInnerHTML={{ __html: css }}
-          />
+          {sheets.getStyleElement()}
           {flush() || null}
         </>
       )
@@ -81,8 +53,6 @@ class MyDocument extends Document<IMyDocumentProps> {
   }
 
   render () {
-    const { pageContext } = this.props
-
     return (
       <html>
         <Head>
@@ -93,12 +63,7 @@ class MyDocument extends Document<IMyDocumentProps> {
             content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no'
           />
           {/* PWA primary color */}
-          <meta
-            name='theme-color'
-            content={
-              pageContext ? pageContext.theme.palette.primary.main : null
-            }
-          />
+          <meta name='theme-color' content={theme.palette.primary.main} />
           <link rel='shortcut icon' href='/static/favicon.ico' />
           <link
             rel='stylesheet'

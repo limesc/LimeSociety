@@ -20,26 +20,26 @@ const styles = theme =>
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      marginTop: theme.spacing.unit * 6,
-      marginBottom: theme.spacing.unit * 6,
+      marginTop: theme.spacing(6),
+      marginBottom: theme.spacing(6),
       [theme.breakpoints.down('sm')]: {
-        marginTop: theme.spacing.unit * 4,
-        marginBottom: theme.spacing.unit * 4
+        marginTop: theme.spacing(4),
+        marginBottom: theme.spacing(4)
       }
     },
     button: {
       border: '4px solid currentColor',
       borderRadius: 0,
       height: 'auto',
-      paddingLeft: theme.spacing.unit * 5,
-      paddingRight: theme.spacing.unit * 5,
-      paddingTop: theme.spacing.unit * 2,
-      paddingBottom: theme.spacing.unit * 2,
+      paddingLeft: theme.spacing(5),
+      paddingRight: theme.spacing(5),
+      paddingTop: theme.spacing(2),
+      paddingBottom: theme.spacing(2),
       [theme.breakpoints.down('sm')]: {
-        paddingLeft: theme.spacing.unit * 3,
-        paddingRight: theme.spacing.unit * 3,
-        paddingTop: theme.spacing.unit * 1,
-        paddingBottom: theme.spacing.unit * 1
+        paddingLeft: theme.spacing(3),
+        paddingRight: theme.spacing(3),
+        paddingTop: theme.spacing(1),
+        paddingBottom: theme.spacing(1)
       }
     },
     buttonTypo: {
