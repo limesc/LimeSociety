@@ -1,15 +1,24 @@
+import { prepareClientPortals } from '@jesstelford/react-portal-universal'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import { ThemeProvider } from '@material-ui/styles'
+import { MuiThemeProvider } from '@material-ui/core/styles'
 import { Provider as MobXProvider } from 'mobx-react'
 import NextSeo from 'next-seo'
 import App, { Container } from 'next/app'
 import Router from 'next/router'
 import NProgress from 'nprogress'
 import React from 'react'
+import JssProvider from 'react-jss/lib/JssProvider'
 
-import theme from 'consts/theme'
+import getPageContext from 'lib/get-page-context'
 import SEO from 'next-seo.config'
 import { initializeStore } from 'stores'
+
+if (process.browser) {
+  // On the client, we have to run this once before React attempts a render.
+  // Here in _app is a great place to do it as this file is only required once,
+  // and right now (outside the constructor) is before React is invoked.
+  prepareClientPortals()
+}
 
 Router.events.on('routeChangeStart', () => NProgress.start())
 Router.events.on('routeChangeComplete', () => NProgress.done())
@@ -24,9 +33,11 @@ interface IMyAppProps {
 /** overrides Next.js's default App component */
 class MyApp extends App<IMyAppProps> {
   mobxStore
+  pageContext: any
 
   constructor (props) {
     super(props)
+    this.pageContext = getPageContext()
     const isServer = !process.browser
     this.mobxStore = isServer
       ? props.initialMobxState
@@ -72,13 +83,23 @@ class MyApp extends App<IMyAppProps> {
     return (
       <Container>
         <MobXProvider store={this.mobxStore}>
-          <ThemeProvider theme={theme}>
-            <>
-              <NextSeo config={SEO} />
-              <CssBaseline />
-              <Component {...pageProps} />
-            </>
-          </ThemeProvider>
+          <JssProvider
+            registry={this.pageContext.sheetsRegistry}
+            generateClassName={this.pageContext.generateClassName}
+          >
+            <MuiThemeProvider
+              theme={this.pageContext.theme}
+              sheetsManager={this.pageContext.sheetsManager}
+            >
+              <>
+                <NextSeo config={SEO} />
+                <CssBaseline />
+                {/* This is where we'll render one of our universal portals */}
+                <div id='modal' />
+                <Component pageContext={this.pageContext} {...pageProps} />
+              </>
+            </MuiThemeProvider>
+          </JssProvider>
         </MobXProvider>
       </Container>
     )

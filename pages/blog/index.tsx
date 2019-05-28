@@ -21,11 +21,11 @@ import Post from './components/Post'
 const styles = theme =>
   createStyles({
     main: {
-      marginTop: theme.spacing(4),
-      marginBottom: theme.spacing(4)
+      marginTop: theme.spacing.unit * 4,
+      marginBottom: theme.spacing.unit * 4
     },
     postAppend: {
-      marginTop: theme.spacing(4)
+      marginTop: theme.spacing.unit * 4
     },
     backToBlogIcon: {
       verticalAlign: 'middle'

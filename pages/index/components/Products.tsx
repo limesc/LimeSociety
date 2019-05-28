@@ -22,24 +22,24 @@ const styles = theme =>
       overflow: 'hidden'
     },
     root: {
-      marginTop: theme.spacing(6),
-      marginBottom: theme.spacing(6),
+      marginTop: theme.spacing.unit * 6,
+      marginBottom: theme.spacing.unit * 6,
       [theme.breakpoints.down('sm')]: {
-        marginTop: theme.spacing(4),
-        marginBottom: theme.spacing(4)
+        marginTop: theme.spacing.unit * 4,
+        marginBottom: theme.spacing.unit * 4
       }
     },
     title: {
       fontSize: 30,
       fontWeight: 'bold',
-      marginBottom: theme.spacing(6),
+      marginBottom: theme.spacing.unit * 6,
       [theme.breakpoints.down('sm')]: {
-        marginBottom: theme.spacing(4)
+        marginBottom: theme.spacing.unit * 4
       }
     },
     product: {
       position: 'relative',
-      margin: theme.spacing(1),
+      margin: theme.spacing.unit,
       maxWidth: 'auto'
     },
     productTitle: {

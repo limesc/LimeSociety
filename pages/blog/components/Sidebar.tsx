@@ -20,25 +20,25 @@ const social = [
 const styles = theme =>
   createStyles({
     about: {
-      padding: theme.spacing(2),
-      marginBottom: theme.spacing(4),
+      padding: theme.spacing.unit * 2,
+      marginBottom: theme.spacing.unit * 4,
       backgroundColor: theme.palette.grey[200],
       lineHeight: 1.6
     },
     sticky: {
       position: 'sticky',
-      top: 80 + theme.spacing(2)
+      top: 80 + theme.spacing.unit * 2
     },
     section: {
-      marginBottom: theme.spacing(2)
+      marginBottom: theme.spacing.unit * 2
     },
     sectionTitle: {
-      paddingLeft: theme.spacing(2),
-      paddingRight: theme.spacing(2)
+      paddingLeft: theme.spacing.unit * 2,
+      paddingRight: theme.spacing.unit * 2
     },
     sectionListItem: {
-      paddingTop: theme.spacing(0.75),
-      paddingBottom: theme.spacing(0.75)
+      paddingTop: theme.spacing.unit * 0.75,
+      paddingBottom: theme.spacing.unit * 0.75
     }
   })
 

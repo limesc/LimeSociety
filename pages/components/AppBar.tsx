@@ -52,8 +52,8 @@ const styles = theme =>
         width: 850,
         marginLeft: 'auto',
         marginRight: 'auto',
-        paddingLeft: theme.spacing(1),
-        paddingRight: theme.spacing(1)
+        paddingLeft: theme.spacing.unit,
+        paddingRight: theme.spacing.unit
       }
     },
     left: {
@@ -93,7 +93,7 @@ const styles = theme =>
       color: theme.palette.common.white
     },
     rightLink: {
-      marginLeft: theme.spacing(3)
+      marginLeft: theme.spacing.unit * 3
     },
     rightLinkTypo: {
       fontSize: 14,
@@ -233,11 +233,7 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
             >
               <div className={classes.drawerList}>
                 <List>
-                  <Link
-                    underline='none'
-                    href={home ? '#top' : '/'}
-                    color='textPrimary'
-                  >
+                  <Link underline='none' href={home ? '#top' : '/'}>
                     <ListItem button>
                       <ListItemText primary='Home' />
                     </ListItem>
@@ -246,7 +242,6 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
                     underline='none'
                     href={home ? '#products' : '/#products'}
                     offset={appBarHeight}
-                    color='textPrimary'
                   >
                     <ListItem button>
                       <ListItemText primary='Products' />
@@ -256,13 +251,12 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
                     underline='none'
                     href={home ? '#company' : '/#company'}
                     offset={appBarHeight}
-                    color='textPrimary'
                   >
                     <ListItem button>
                       <ListItemText primary='Company' />
                     </ListItem>
                   </Link>
-                  <Link underline='none' href='/blog' color='textPrimary'>
+                  <Link underline='none' href='/blog'>
                     <ListItem button>
                       <ListItemText primary='Blog' />
                     </ListItem>

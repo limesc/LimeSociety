@@ -10,9 +10,9 @@ const styles = theme =>
   createStyles({
     widthSmall: {
       width: 'auto',
-      marginLeft: theme.spacing(3),
-      marginRight: theme.spacing(3),
-      [theme.breakpoints.up(660 + theme.spacing(6))]: {
+      marginLeft: theme.spacing.unit * 3,
+      marginRight: theme.spacing.unit * 3,
+      [theme.breakpoints.up(660 + theme.spacing.unit * 6)]: {
         width: 660,
         marginLeft: 'auto',
         marginRight: 'auto'
@@ -20,8 +20,8 @@ const styles = theme =>
     },
     widthMedium: {
       width: 'auto',
-      marginLeft: theme.spacing(3),
-      marginRight: theme.spacing(3),
+      marginLeft: theme.spacing.unit * 3,
+      marginRight: theme.spacing.unit * 3,
       [theme.breakpoints.up(containerBreakpoint(theme))]: {
         width: 850,
         marginLeft: 'auto',
@@ -30,8 +30,8 @@ const styles = theme =>
     },
     widthLarge: {
       width: 'auto',
-      marginLeft: theme.spacing(3),
-      marginRight: theme.spacing(3),
+      marginLeft: theme.spacing.unit * 3,
+      marginRight: theme.spacing.unit * 3,
       [theme.breakpoints.up('md')]: {
         width: 880,
         marginLeft: 'auto',
@@ -46,8 +46,8 @@ const styles = theme =>
     },
     widthXlarge: {
       width: 'auto',
-      marginLeft: theme.spacing(3),
-      marginRight: theme.spacing(3),
+      marginLeft: theme.spacing.unit * 3,
+      marginRight: theme.spacing.unit * 3,
       [theme.breakpoints.up('md')]: {
         width: 900,
         marginLeft: 'auto',
