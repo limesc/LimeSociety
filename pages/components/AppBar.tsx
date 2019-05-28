@@ -233,7 +233,11 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
             >
               <div className={classes.drawerList}>
                 <List>
-                  <Link underline='none' href={home ? '#top' : '/'}>
+                  <Link
+                    underline='none'
+                    href={home ? '#top' : '/'}
+                    color='textPrimary'
+                  >
                     <ListItem button>
                       <ListItemText primary='Home' />
                     </ListItem>
@@ -242,6 +246,7 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
                     underline='none'
                     href={home ? '#products' : '/#products'}
                     offset={appBarHeight}
+                    color='textPrimary'
                   >
                     <ListItem button>
                       <ListItemText primary='Products' />
@@ -251,12 +256,13 @@ class AppBar extends React.PureComponent<AppBarProps, AppBarState> {
                     underline='none'
                     href={home ? '#company' : '/#company'}
                     offset={appBarHeight}
+                    color='textPrimary'
                   >
                     <ListItem button>
                       <ListItemText primary='Company' />
                     </ListItem>
                   </Link>
-                  <Link underline='none' href='/blog'>
+                  <Link underline='none' href='/blog' color='textPrimary'>
                     <ListItem button>
                       <ListItemText primary='Blog' />
                     </ListItem>
